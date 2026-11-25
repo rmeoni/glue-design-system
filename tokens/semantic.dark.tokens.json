@@ -1,0 +1,56 @@
+{
+  "$description": "Glue Design System — semantic tokens, dark theme. Same keys as the light theme.",
+  "color": {
+    "$type": "color",
+    "bg": {
+      "page":        { "$value": "{color.neutral.900}" },
+      "surface":     { "$value": "{color.neutral.800}" },
+      "surface-alt": { "$value": "{color.neutral.800}" },
+      "raised":      { "$value": "{color.neutral.800}" },
+      "inverse":     { "$value": "{color.navy.200}" }
+    },
+    "text": {
+      "primary":   { "$value": "{color.neutral.100}" },
+      "secondary": { "$value": "{color.neutral.400}" },
+      "accent":    { "$value": "{color.coral.400}" },
+      "link":      { "$value": "{color.coral.400}" },
+      "on-inverse":{ "$value": "{color.navy.900}" }
+    },
+    "border": {
+      "default": { "$value": "{color.neutral.700}" },
+      "control": { "$value": "{color.neutral.500}", "$description": "3.73:1 on neutral-900." },
+      "strong":  { "$value": "{color.neutral.100}" }
+    },
+    "focus-ring": { "$value": "{color.coral.400}" },
+    "action": {
+      "primary-bg":          { "$value": "{color.navy.200}" },
+      "primary-bg-hover":    { "$value": "{color.navy.100}" },
+      "primary-fg":          { "$value": "{color.navy.900}" },
+      "secondary-border":    { "$value": "{color.neutral.100}" },
+      "secondary-fg":        { "$value": "{color.neutral.100}" },
+      "secondary-bg-hover":  { "$value": "{color.neutral.700}" },
+      "chip-bg":             { "$value": "{color.neutral.700}" },
+      "chip-bg-hover":       { "$value": "{color.neutral.600}" },
+      "chip-fg":             { "$value": "{color.neutral.100}" },
+      "chip-bg-selected":    { "$value": "{color.coral.400}" },
+      "chip-fg-selected":    { "$value": "{color.neutral.900}" },
+      "disabled-bg":         { "$value": "{color.neutral.800}" },
+      "disabled-fg":         { "$value": "{color.neutral.500}" }
+    },
+    "feedback": {
+      "success-fg": { "$value": "{color.green.300}" },
+      "success-bg": { "$value": "{color.green.900}" },
+      "warning-fg": { "$value": "{color.amber.300}" },
+      "warning-bg": { "$value": "{color.amber.900}" },
+      "error-fg":   { "$value": "{color.red.300}" },
+      "error-bg":   { "$value": "{color.red.900}" },
+      "info-fg":    { "$value": "{color.navy.200}" },
+      "info-bg":    { "$value": "{color.navy.900}" }
+    }
+  },
+  "elevation": {
+    "$type": "shadow",
+    "card":  { "$value": "{shadow.sm}" },
+    "raised":{ "$value": "{shadow.lg}" }
+  }
+}

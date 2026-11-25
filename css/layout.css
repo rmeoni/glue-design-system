@@ -1,0 +1,138 @@
+/* Glue Design System — layout.css
+   Container, section, 12-column grid and spacing primitives (stack, cluster).
+   Mobile first: 4 columns < 768px, 8 columns 768–991px, 12 columns ≥ 992px. */
+
+:root {
+  --layout-gutter: var(--layout-gutter-sm);
+  --layout-columns: 4;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --layout-gutter: var(--layout-gutter-md);
+    --layout-columns: 8;
+  }
+}
+
+@media (min-width: 992px) {
+  :root {
+    --layout-gutter: var(--layout-gutter-lg);
+    --layout-columns: 12;
+  }
+}
+
+/* ---------- Container ---------- */
+.g-container {
+  width: 100%;
+  max-width: var(--layout-container-max);
+  margin-inline: auto;
+  padding-inline: var(--layout-gutter);
+}
+
+.g-container--medium { max-width: calc(var(--layout-container-medium) + 2 * var(--layout-gutter)); }
+.g-container--narrow { max-width: calc(var(--layout-container-narrow) + 2 * var(--layout-gutter)); }
+
+/* ---------- Section ---------- */
+.g-section {
+  padding-block: var(--layout-section-sm);
+  background-color: var(--color-bg-page);
+}
+
+@media (min-width: 992px) {
+  .g-section { padding-block: var(--layout-section-lg); }
+}
+
+.g-section--compact { padding-block: var(--layout-section-sm); }
+.g-section--flush   { padding-block: 0; }
+.g-section--surface { background-color: var(--color-bg-surface); }
+.g-section--inverse {
+  background-color: var(--color-bg-inverse);
+  color: var(--color-text-on-inverse);
+}
+.g-section--inverse :is(h1, h2, h3, h4, h5, h6) { color: inherit; }
+.g-section--bordered { border-top: var(--border-width-thin) solid var(--color-border-default); }
+
+/* Centered section intro: eyebrow + heading + lead */
+.g-intro {
+  max-width: var(--layout-container-narrow);
+  margin: 0 auto var(--space-12);
+  text-align: center;
+}
+
+.g-intro--wide { max-width: var(--layout-container-medium); }
+
+/* ---------- Grid ----------
+   .g-col-{n}     span n of 4  (all sizes, until overridden)
+   .g-col-md-{n}  span n of 8  (≥ 768px)
+   .g-col-lg-{n}  span n of 12 (≥ 992px)
+   With no class a cell spans the full row. */
+.g-grid {
+  display: grid;
+  grid-template-columns: repeat(var(--layout-columns), minmax(0, 1fr));
+  column-gap: var(--layout-gutter);
+  row-gap: var(--space-8);
+}
+
+.g-grid > * { grid-column: 1 / -1; }
+
+.g-col-1 { grid-column: span 1; }
+.g-col-2 { grid-column: span 2; }
+.g-col-3 { grid-column: span 3; }
+.g-col-4 { grid-column: span 4; }
+
+@media (min-width: 768px) {
+  .g-col-md-1 { grid-column: span 1; }
+  .g-col-md-2 { grid-column: span 2; }
+  .g-col-md-3 { grid-column: span 3; }
+  .g-col-md-4 { grid-column: span 4; }
+  .g-col-md-5 { grid-column: span 5; }
+  .g-col-md-6 { grid-column: span 6; }
+  .g-col-md-7 { grid-column: span 7; }
+  .g-col-md-8 { grid-column: span 8; }
+}
+
+@media (min-width: 992px) {
+  .g-col-lg-1  { grid-column: span 1; }
+  .g-col-lg-2  { grid-column: span 2; }
+  .g-col-lg-3  { grid-column: span 3; }
+  .g-col-lg-4  { grid-column: span 4; }
+  .g-col-lg-5  { grid-column: span 5; }
+  .g-col-lg-6  { grid-column: span 6; }
+  .g-col-lg-7  { grid-column: span 7; }
+  .g-col-lg-8  { grid-column: span 8; }
+  .g-col-lg-9  { grid-column: span 9; }
+  .g-col-lg-10 { grid-column: span 10; }
+  .g-col-lg-11 { grid-column: span 11; }
+  .g-col-lg-12 { grid-column: span 12; }
+  .g-col-lg-start-2 { grid-column-start: 2; }
+  .g-col-lg-start-3 { grid-column-start: 3; }
+}
+
+/* Equal cards: 1 → 2 → 3 columns without counting spans */
+.g-auto-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
+  gap: var(--layout-gutter);
+}
+
+/* ---------- Stack & cluster ----------
+   Spacing between siblings lives on the parent, never on the child. */
+.g-stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--stack-gap, var(--space-4));
+}
+
+.g-cluster {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--cluster-gap, var(--space-3));
+}
+
+.g-gap-2  { --stack-gap: var(--space-2);  --cluster-gap: var(--space-2); }
+.g-gap-3  { --stack-gap: var(--space-3);  --cluster-gap: var(--space-3); }
+.g-gap-4  { --stack-gap: var(--space-4);  --cluster-gap: var(--space-4); }
+.g-gap-6  { --stack-gap: var(--space-6);  --cluster-gap: var(--space-6); }
+.g-gap-8  { --stack-gap: var(--space-8);  --cluster-gap: var(--space-8); }
+.g-gap-12 { --stack-gap: var(--space-12); --cluster-gap: var(--space-12); }

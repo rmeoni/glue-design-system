@@ -1,0 +1,56 @@
+{
+  "$description": "Glue Design System — semantic tokens, light theme. Components use only these.",
+  "color": {
+    "$type": "color",
+    "bg": {
+      "page":        { "$value": "{color.white}" },
+      "surface":     { "$value": "{color.neutral.50}" },
+      "surface-alt": { "$value": "{color.navy.50}" },
+      "raised":      { "$value": "{color.white}", "$description": "Cards and panels that sit on the page." },
+      "inverse":     { "$value": "{color.navy.700}" }
+    },
+    "text": {
+      "primary":   { "$value": "{color.neutral.900}" },
+      "secondary": { "$value": "{color.neutral.600}" },
+      "accent":    { "$value": "{color.coral.600}" },
+      "link":      { "$value": "{color.coral.600}" },
+      "on-inverse":{ "$value": "{color.white}" }
+    },
+    "border": {
+      "default": { "$value": "{color.neutral.200}", "$description": "Dividers and card edges. Decorative only: under 3:1." },
+      "control": { "$value": "{color.neutral.500}", "$description": "Edges of inputs and controls: 5.31:1 on white." },
+      "strong":  { "$value": "{color.navy.700}" }
+    },
+    "focus-ring": { "$value": "{color.coral.600}" },
+    "action": {
+      "primary-bg":          { "$value": "{color.navy.700}" },
+      "primary-bg-hover":    { "$value": "{color.navy.800}" },
+      "primary-fg":          { "$value": "{color.white}" },
+      "secondary-border":    { "$value": "{color.navy.700}" },
+      "secondary-fg":        { "$value": "{color.navy.700}" },
+      "secondary-bg-hover":  { "$value": "{color.navy.50}" },
+      "chip-bg":             { "$value": "{color.navy.50}" },
+      "chip-bg-hover":       { "$value": "{color.navy.100}" },
+      "chip-fg":             { "$value": "{color.navy.700}" },
+      "chip-bg-selected":    { "$value": "{color.coral.600}" },
+      "chip-fg-selected":    { "$value": "{color.white}" },
+      "disabled-bg":         { "$value": "{color.neutral.100}" },
+      "disabled-fg":         { "$value": "{color.neutral.500}" }
+    },
+    "feedback": {
+      "success-fg": { "$value": "{color.green.600}" },
+      "success-bg": { "$value": "{color.green.50}" },
+      "warning-fg": { "$value": "{color.amber.700}" },
+      "warning-bg": { "$value": "{color.amber.50}" },
+      "error-fg":   { "$value": "{color.red.600}" },
+      "error-bg":   { "$value": "{color.red.50}" },
+      "info-fg":    { "$value": "{color.navy.700}" },
+      "info-bg":    { "$value": "{color.navy.50}" }
+    }
+  },
+  "elevation": {
+    "$type": "shadow",
+    "card":  { "$value": "{shadow.card}" },
+    "raised":{ "$value": "{shadow.lg}" }
+  }
+}

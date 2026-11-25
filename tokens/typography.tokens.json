@@ -1,0 +1,20 @@
+{
+  "$description": "Glue Design System — text styles. Theme independent. Each one maps to a Figma text style.",
+  "typography": {
+    "$type": "typography",
+    "h1":       { "$value": { "fontFamily": "{font.family.sans}", "fontWeight": "{font.weight.bold}",     "fontSize": "{font.size.48}", "lineHeight": "{font.line-height.60}", "letterSpacing": "{font.letter-spacing.normal}" } },
+    "h1-mobile":{ "$value": { "fontFamily": "{font.family.sans}", "fontWeight": "{font.weight.bold}",     "fontSize": "{font.size.40}", "lineHeight": "{font.line-height.48}", "letterSpacing": "{font.letter-spacing.normal}" }, "$description": "H1 below 992px." },
+    "h2":       { "$value": { "fontFamily": "{font.family.sans}", "fontWeight": "{font.weight.bold}",     "fontSize": "{font.size.36}", "lineHeight": "{font.line-height.48}", "letterSpacing": "{font.letter-spacing.normal}" } },
+    "h3":       { "$value": { "fontFamily": "{font.family.sans}", "fontWeight": "{font.weight.bold}",     "fontSize": "{font.size.24}", "lineHeight": "{font.line-height.32}", "letterSpacing": "{font.letter-spacing.normal}" } },
+    "h4":       { "$value": { "fontFamily": "{font.family.sans}", "fontWeight": "{font.weight.bold}",     "fontSize": "{font.size.20}", "lineHeight": "{font.line-height.28}", "letterSpacing": "{font.letter-spacing.normal}" } },
+    "h5":       { "$value": { "fontFamily": "{font.family.sans}", "fontWeight": "{font.weight.bold}",     "fontSize": "{font.size.17}", "lineHeight": "{font.line-height.24}", "letterSpacing": "{font.letter-spacing.normal}" } },
+    "h6":       { "$value": { "fontFamily": "{font.family.sans}", "fontWeight": "{font.weight.bold}",     "fontSize": "{font.size.15}", "lineHeight": "{font.line-height.20}", "letterSpacing": "{font.letter-spacing.normal}" } },
+    "lead":     { "$value": { "fontFamily": "{font.family.sans}", "fontWeight": "{font.weight.regular}",  "fontSize": "{font.size.18}", "lineHeight": "{font.line-height.30}", "letterSpacing": "{font.letter-spacing.normal}" } },
+    "body":     { "$value": { "fontFamily": "{font.family.sans}", "fontWeight": "{font.weight.regular}",  "fontSize": "{font.size.15}", "lineHeight": "{font.line-height.24}", "letterSpacing": "{font.letter-spacing.normal}" } },
+    "quote":    { "$value": { "fontFamily": "{font.family.sans}", "fontWeight": "{font.weight.regular}",  "fontSize": "{font.size.17}", "lineHeight": "{font.line-height.24}", "letterSpacing": "{font.letter-spacing.normal}" } },
+    "small":    { "$value": { "fontFamily": "{font.family.sans}", "fontWeight": "{font.weight.regular}",  "fontSize": "{font.size.13}", "lineHeight": "{font.line-height.20}", "letterSpacing": "{font.letter-spacing.normal}" } },
+    "button":   { "$value": { "fontFamily": "{font.family.sans}", "fontWeight": "{font.weight.bold}",     "fontSize": "{font.size.15}", "lineHeight": "{font.line-height.20}", "letterSpacing": "{font.letter-spacing.normal}" } },
+    "chip":     { "$value": { "fontFamily": "{font.family.sans}", "fontWeight": "{font.weight.medium}",   "fontSize": "{font.size.13}", "lineHeight": "{font.line-height.20}", "letterSpacing": "{font.letter-spacing.normal}" }, "$description": "Always uppercase." },
+    "label":    { "$value": { "fontFamily": "{font.family.sans}", "fontWeight": "{font.weight.semibold}", "fontSize": "{font.size.11}", "lineHeight": "{font.line-height.16}", "letterSpacing": "{font.letter-spacing.label}" }, "$description": "Eyebrow and form labels. Always uppercase." }
+  }
+}

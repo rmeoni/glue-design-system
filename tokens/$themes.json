@@ -1,0 +1,22 @@
+[
+  {
+    "id": "glue-light",
+    "name": "Light",
+    "group": "Theme",
+    "selectedTokenSets": {
+      "primitives.tokens": "source",
+      "typography.tokens": "enabled",
+      "semantic.light.tokens": "enabled"
+    }
+  },
+  {
+    "id": "glue-dark",
+    "name": "Dark",
+    "group": "Theme",
+    "selectedTokenSets": {
+      "primitives.tokens": "source",
+      "typography.tokens": "enabled",
+      "semantic.dark.tokens": "enabled"
+    }
+  }
+]

@@ -1,0 +1,700 @@
+/* Glue Design System — components.css
+   Every rule uses semantic tokens only, so one rule serves both themes.
+   Class names: .g-{component}, .g-{component}--{variant}, .g-{component}__{part}.
+   States use native attributes (disabled, aria-pressed, aria-invalid, aria-current). */
+
+/* =========================================================
+   BUTTON
+   Primary (filled), secondary (outline), ghost (text).
+   Sizes: sm 36 · md 44 · lg 48 (default). Always pill-shaped.
+   ========================================================= */
+.g-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  height: var(--size-control-lg);
+  padding: 0 var(--space-6);
+  border: var(--border-width-control) solid transparent;
+  border-radius: var(--radius-full);
+  background-color: var(--color-action-primary-bg);
+  color: var(--color-action-primary-fg);
+  font: var(--typography-button);
+  line-height: 1;
+  white-space: nowrap;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color var(--duration-fast) var(--easing-standard),
+              color var(--duration-fast) var(--easing-standard);
+}
+
+.g-button:hover {
+  background-color: var(--color-action-primary-bg-hover);
+  color: var(--color-action-primary-fg);
+  text-decoration: none;
+}
+
+.g-button svg {
+  width: var(--size-icon-md);
+  height: var(--size-icon-md);
+  flex: none;
+}
+
+.g-button--secondary {
+  border-color: var(--color-action-secondary-border);
+  background-color: transparent;
+  color: var(--color-action-secondary-fg);
+}
+
+.g-button--secondary:hover {
+  background-color: var(--color-action-secondary-bg-hover);
+  color: var(--color-action-secondary-fg);
+}
+
+.g-button--ghost {
+  padding-inline: var(--space-3);
+  background-color: transparent;
+  color: var(--color-action-secondary-fg);
+}
+
+.g-button--ghost:hover {
+  background-color: var(--color-action-secondary-bg-hover);
+  color: var(--color-action-secondary-fg);
+}
+
+.g-button--md { height: var(--size-control-md); padding-inline: var(--space-5); }
+.g-button--sm { height: var(--size-control-sm); padding-inline: var(--space-4); font-size: var(--font-size-13); }
+.g-button--block { display: flex; width: 100%; }
+
+.g-button:disabled,
+.g-button[aria-disabled="true"] {
+  border-color: transparent;
+  background-color: var(--color-action-disabled-bg);
+  color: var(--color-action-disabled-fg);
+  cursor: not-allowed;
+}
+
+/* =========================================================
+   ICON BUTTON
+   Square hit area, round shape. Needs aria-label.
+   ========================================================= */
+.g-icon-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--size-control-md);
+  height: var(--size-control-md);
+  padding: 0;
+  border: var(--border-width-thin) solid var(--color-border-control);
+  border-radius: var(--radius-full);
+  background-color: var(--color-bg-surface);
+  color: var(--color-text-primary);
+  cursor: pointer;
+  transition: background-color var(--duration-fast) var(--easing-standard);
+}
+
+.g-icon-button:hover { background-color: var(--color-action-secondary-bg-hover); }
+
+.g-icon-button--primary {
+  border-color: transparent;
+  background-color: var(--color-action-primary-bg);
+  color: var(--color-action-primary-fg);
+}
+
+.g-icon-button--primary:hover { background-color: var(--color-action-primary-bg-hover); }
+
+.g-icon-button--plain {
+  border-color: transparent;
+  background-color: transparent;
+}
+
+.g-icon-button--sm { width: var(--size-control-sm); height: var(--size-control-sm); }
+
+.g-icon-button svg {
+  width: var(--size-icon-md);
+  height: var(--size-icon-md);
+}
+
+.g-icon-button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* =========================================================
+   CHIP (interactive filter) and BADGE (static tag)
+   Selected state comes from aria-pressed="true": coral fill,
+   heavier text and a check, so it is not shown by color alone.
+   ========================================================= */
+.g-chip,
+.g-badge {
+  display: inline-flex;
+  align-items: center;
+  height: var(--size-control-sm);
+  padding: 0 14px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-action-chip-bg);
+  color: var(--color-action-chip-fg);
+  font: var(--typography-chip);
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.g-badge {
+  height: 28px;
+  padding: 0 var(--space-3);
+  font-size: var(--font-size-11);
+  letter-spacing: var(--font-letter-spacing-label);
+}
+
+.g-chip {
+  border: var(--border-width-thin) solid var(--color-border-control);
+  cursor: pointer;
+  transition: background-color var(--duration-fast) var(--easing-standard),
+              color var(--duration-fast) var(--easing-standard);
+}
+
+.g-chip:hover { background-color: var(--color-action-chip-bg-hover); }
+
+.g-chip[aria-pressed="true"] {
+  border-color: var(--color-action-chip-bg-selected);
+  background-color: var(--color-action-chip-bg-selected);
+  color: var(--color-action-chip-fg-selected);
+  font-weight: var(--font-weight-semibold);
+}
+
+.g-chip[aria-pressed="true"]::before {
+  content: "";
+  width: 12px;
+  height: 12px;
+  margin-right: 6px;
+  background-color: currentColor;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2 6.5 4.8 9.2 10 3.5' fill='none' stroke='%23000' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat;
+          mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2 6.5 4.8 9.2 10 3.5' fill='none' stroke='%23000' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
+.g-chip-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+/* =========================================================
+   EYEBROW LABEL
+   The small coral uppercase line above a heading.
+   ========================================================= */
+.g-eyebrow {
+  display: inline-block;
+  margin-bottom: var(--space-3);
+  color: var(--color-text-accent);
+  font: var(--typography-label);
+  letter-spacing: var(--font-letter-spacing-label);
+  text-transform: uppercase;
+}
+
+/* =========================================================
+   FORM FIELD
+   .g-field > label.g-field__label + control + .g-field__hint
+   Error: aria-invalid="true" on the control and .g-field__error text.
+   ========================================================= */
+.g-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.g-field__label {
+  display: block;
+  margin-bottom: var(--space-2);
+  color: var(--color-text-secondary);
+  font: var(--typography-label);
+  letter-spacing: var(--font-letter-spacing-label);
+  text-transform: uppercase;
+}
+
+.g-field__label .g-required {
+  color: var(--color-text-accent);
+}
+
+.g-input,
+.g-textarea,
+.g-select {
+  display: block;
+  width: 100%;
+  min-height: var(--size-control-lg);
+  margin: 0;
+  padding: 12px var(--space-4);
+  border: var(--border-width-control) solid var(--color-border-control);
+  border-radius: var(--radius-md);
+  background-color: var(--color-bg-surface);
+  color: var(--color-text-primary);
+  font: var(--typography-body);
+  transition: border-color var(--duration-fast) var(--easing-standard);
+}
+
+.g-textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.g-select {
+  padding-right: var(--space-12);
+  -webkit-appearance: none;
+          appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23888888' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-position: right var(--space-4) center;
+  background-size: 18px;
+  background-repeat: no-repeat;
+}
+
+.g-input::placeholder,
+.g-textarea::placeholder {
+  color: var(--color-text-secondary);
+  opacity: 0.8;
+}
+
+.g-input:hover,
+.g-textarea:hover,
+.g-select:hover {
+  border-color: var(--color-border-strong);
+}
+
+.g-input:focus,
+.g-textarea:focus,
+.g-select:focus {
+  outline: none;
+  border-color: var(--color-border-strong);
+  box-shadow: 0 0 0 var(--border-width-focus) var(--color-focus-ring);
+}
+
+.g-input[aria-invalid="true"],
+.g-textarea[aria-invalid="true"],
+.g-select[aria-invalid="true"] {
+  border-color: var(--color-feedback-error-fg);
+}
+
+.g-input:disabled,
+.g-textarea:disabled,
+.g-select:disabled {
+  border-color: var(--color-border-default);
+  background-color: var(--color-action-disabled-bg);
+  color: var(--color-action-disabled-fg);
+  cursor: not-allowed;
+}
+
+.g-field__hint,
+.g-field__error {
+  margin: 6px 0 0;
+  font: var(--typography-small);
+}
+
+.g-field__hint  { color: var(--color-text-secondary); }
+.g-field__error { color: var(--color-feedback-error-fg); font-weight: var(--font-weight-medium); }
+
+/* Checkbox and radio */
+.g-check {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  cursor: pointer;
+}
+
+.g-check input {
+  flex: none;
+  width: 20px;
+  height: 20px;
+  margin: 2px 0 0;
+  border: var(--border-width-control) solid var(--color-border-control);
+  border-radius: 6px;
+  background: var(--color-bg-page);
+  -webkit-appearance: none;
+          appearance: none;
+  cursor: pointer;
+  display: grid;
+  place-content: center;
+}
+
+.g-check input[type="radio"] { border-radius: var(--radius-full); }
+
+.g-check input::before {
+  content: "";
+  width: 12px;
+  height: 12px;
+  background-color: var(--color-action-primary-fg);
+  transform: scale(0);
+  transition: transform var(--duration-fast) var(--easing-standard);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2 6.5 4.8 9.2 10 3.5' fill='none' stroke='%23000' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat;
+          mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2 6.5 4.8 9.2 10 3.5' fill='none' stroke='%23000' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
+.g-check input[type="radio"]::before {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+  -webkit-mask: none;
+          mask: none;
+}
+
+.g-check input:checked {
+  border-color: var(--color-action-primary-bg);
+  background-color: var(--color-action-primary-bg);
+}
+
+.g-check input:checked::before { transform: scale(1); }
+
+/* =========================================================
+   CARD
+   ========================================================= */
+.g-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: var(--space-8);
+  border: var(--border-width-thin) solid var(--color-border-default);
+  border-radius: var(--radius-lg);
+  background-color: var(--color-bg-raised);
+  box-shadow: var(--elevation-card);
+  color: var(--color-text-primary);
+}
+
+.g-card--flat { box-shadow: none; }
+.g-card--surface { border-color: transparent; background-color: var(--color-bg-surface); box-shadow: none; }
+
+.g-card__title { margin-bottom: var(--space-2); font: var(--typography-h3); }
+.g-card__meta  { margin: 0 0 var(--space-5); color: var(--color-text-secondary); font: var(--typography-small); }
+.g-card__footer { margin-top: auto; padding-top: var(--space-6); }
+
+/* Project card: media on top, text below, whole card is the link */
+.g-project-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  color: inherit;
+  text-decoration: none;
+}
+
+.g-project-card:hover { text-decoration: none; }
+.g-project-card:hover .g-media img { transform: scale(1.03); }
+.g-project-card__title { margin: 0; font: var(--typography-h4); }
+.g-project-card__text  { margin: 0; color: var(--color-text-secondary); }
+
+/* =========================================================
+   MEDIA (image / video frame)
+   48px radius from uxrodrigo.com. Logos and icons never get it.
+   ========================================================= */
+.g-media {
+  overflow: hidden;
+  border-radius: var(--radius-xl);
+  background-color: var(--color-bg-surface);
+  transform: translateZ(0);
+}
+
+.g-media img,
+.g-media video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--duration-slow) var(--easing-standard);
+}
+
+.g-media--16x9 { aspect-ratio: 16 / 9; }
+.g-media--4x3  { aspect-ratio: 4 / 3; }
+.g-media--1x1  { aspect-ratio: 1; }
+.g-media--sm   { border-radius: var(--radius-lg); }
+
+/* =========================================================
+   ALERT (inline feedback)
+   ========================================================= */
+.g-alert {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding: 14px var(--space-4);
+  border-radius: var(--radius-md);
+  background-color: var(--color-feedback-info-bg);
+  color: var(--color-feedback-info-fg);
+  font: var(--typography-body);
+}
+
+.g-alert svg { flex: none; width: var(--size-icon-md); height: var(--size-icon-md); margin-top: 2px; }
+.g-alert__title { display: block; font-weight: var(--font-weight-bold); }
+.g-alert p { margin: 0; color: var(--color-text-primary); }
+
+.g-alert--success { background-color: var(--color-feedback-success-bg); color: var(--color-feedback-success-fg); }
+.g-alert--warning { background-color: var(--color-feedback-warning-bg); color: var(--color-feedback-warning-fg); }
+.g-alert--error   { background-color: var(--color-feedback-error-bg);   color: var(--color-feedback-error-fg); }
+
+/* =========================================================
+   NAVBAR
+   Logo left, links centered (≥ 992px), actions right.
+   Below 992px links move into a panel opened by the menu button.
+   ========================================================= */
+.g-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  border-bottom: var(--border-width-thin) solid var(--color-border-default);
+  background-color: var(--color-bg-page);
+}
+
+.g-navbar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  height: 80px;
+}
+
+.g-navbar__brand {
+  display: inline-flex;
+  align-items: center;
+  color: var(--color-text-primary);
+  font-weight: var(--font-weight-extrabold);
+  font-size: var(--font-size-20);
+  text-decoration: none;
+}
+
+.g-navbar__brand:hover { text-decoration: none; }
+
+.g-navbar__links {
+  display: none;
+  gap: var(--space-8);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.g-navbar__link {
+  position: relative;
+  padding: var(--space-2) 0;
+  color: var(--color-text-primary);
+  font-weight: var(--font-weight-medium);
+  text-decoration: none;
+}
+
+.g-navbar__link::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  background-color: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--duration-base) var(--easing-standard);
+}
+
+.g-navbar__link:hover { text-decoration: none; }
+.g-navbar__link:hover::after,
+.g-navbar__link[aria-current="page"]::after { transform: scaleX(1); }
+
+.g-navbar__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.g-navbar__actions .g-button--secondary { display: none; }
+
+/* Phones: brand + CTA + theme + menu do not fit in 343px, so the CTA
+   moves into the panel (repeat it there with .g-button--block). */
+@media (max-width: 479px) {
+  .g-navbar__actions .g-button { display: none; }
+}
+
+.g-navbar__panel .g-button + .g-button { margin-top: var(--space-3); }
+
+.g-navbar__menu-button { display: inline-flex; }
+
+.g-navbar__panel {
+  display: none;
+  padding: var(--space-4) 0 var(--space-6);
+  border-top: var(--border-width-thin) solid var(--color-border-default);
+}
+
+.g-navbar__panel[data-open="true"] { display: block; }
+
+.g-navbar__panel ul {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  margin: 0 0 var(--space-4);
+  padding: 0;
+  list-style: none;
+}
+
+.g-navbar__panel .g-navbar__link { display: block; padding: var(--space-3) 0; }
+.g-navbar__panel .g-navbar__link::after { display: none; }
+
+@media (min-width: 992px) {
+  .g-navbar__links { display: flex; }
+  .g-navbar__menu-button,
+  .g-navbar__panel,
+  .g-navbar__panel[data-open="true"] { display: none; }
+}
+
+@media (min-width: 1280px) {
+  .g-navbar__actions .g-button--secondary { display: inline-flex; }
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+.g-footer {
+  padding-block: var(--space-16) var(--space-8);
+  border-top: var(--border-width-thin) solid var(--color-border-default);
+  background-color: var(--color-bg-surface);
+  color: var(--color-text-secondary);
+}
+
+.g-footer__heading {
+  margin-bottom: var(--space-4);
+  color: var(--color-text-primary);
+  font: var(--typography-h6);
+}
+
+.g-footer ul { margin: 0; padding: 0; list-style: none; }
+.g-footer li + li { margin-top: var(--space-2); }
+
+.g-footer a {
+  color: var(--color-text-secondary);
+  text-decoration: none;
+}
+
+.g-footer a:hover { color: var(--color-text-primary); text-decoration: underline; }
+
+.g-footer__bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--space-4);
+  margin-top: var(--space-12);
+  padding-top: var(--space-6);
+  border-top: var(--border-width-thin) solid var(--color-border-default);
+  font: var(--typography-small);
+}
+
+/* =========================================================
+   TIMELINE (experience / process)
+   ========================================================= */
+.g-timeline {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.g-timeline::before {
+  content: "";
+  position: absolute;
+  top: 6px;
+  bottom: 6px;
+  left: 5px;
+  width: 2px;
+  background-color: var(--color-border-default);
+}
+
+.g-timeline__item {
+  position: relative;
+  padding: 0 0 var(--space-8) var(--space-8);
+}
+
+.g-timeline__item::before {
+  content: "";
+  position: absolute;
+  top: 6px;
+  left: 0;
+  width: 12px;
+  height: 12px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-text-accent);
+  box-shadow: 0 0 0 6px color-mix(in srgb, var(--color-text-accent) 20%, transparent),
+              0 0 0 12px var(--color-bg-page);
+}
+
+.g-timeline__date  { display: block; margin-bottom: var(--space-1); color: var(--color-text-secondary); font: var(--typography-small); }
+.g-timeline__title { margin-bottom: var(--space-1); font: var(--typography-h5); }
+.g-timeline__text  { margin: 0; color: var(--color-text-secondary); }
+
+/* =========================================================
+   STAT (counter)
+   ========================================================= */
+.g-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  border-block: var(--border-width-thin) solid var(--color-border-default);
+}
+
+.g-stat {
+  padding: var(--space-8) var(--space-6);
+  box-shadow: 1px 0 0 0 var(--color-border-default);
+}
+
+.g-stat:last-child { box-shadow: none; }
+.g-stat__value { display: block; color: var(--color-text-primary); font: var(--typography-h1-mobile); }
+.g-stat__label { display: block; margin-top: var(--space-1); color: var(--color-text-primary); font-weight: var(--font-weight-semibold); }
+.g-stat__text  { margin: var(--space-1) 0 0; color: var(--color-text-secondary); font: var(--typography-small); }
+
+/* =========================================================
+   BLOCKQUOTE and FIGURE
+   ========================================================= */
+.g-quote {
+  margin: var(--space-6) 0;
+  padding: var(--space-2) 30px;
+  border-left: var(--border-width-focus) solid var(--color-text-accent);
+  font: var(--typography-quote);
+}
+
+.g-quote cite {
+  display: block;
+  margin-top: var(--space-3);
+  color: var(--color-text-secondary);
+  font: var(--typography-small);
+  font-style: normal;
+}
+
+.g-figure { margin: var(--space-8) 0; }
+
+.g-figure figcaption {
+  margin-top: var(--space-3);
+  color: var(--color-text-secondary);
+  font: var(--typography-small);
+  text-align: center;
+}
+
+/* =========================================================
+   THEME TOGGLE and BACK TO TOP
+   ========================================================= */
+.g-theme-toggle .g-icon-sun  { display: none; }
+[data-theme="dark"] .g-theme-toggle .g-icon-sun  { display: block; }
+[data-theme="dark"] .g-theme-toggle .g-icon-moon { display: none; }
+
+.g-back-to-top {
+  position: fixed;
+  right: var(--space-4);
+  bottom: var(--space-4);
+  z-index: 40;
+}
+
+/* =========================================================
+   BREADCRUMBS
+   ========================================================= */
+.g-breadcrumbs ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin: 0 0 var(--space-6);
+  padding: 0;
+  list-style: none;
+  font: var(--typography-small);
+}
+
+.g-breadcrumbs li + li::before {
+  content: "/";
+  margin-right: var(--space-2);
+  color: var(--color-text-secondary);
+}
+
+.g-breadcrumbs a { color: var(--color-text-secondary); text-decoration: none; }
+.g-breadcrumbs a:hover { color: var(--color-text-primary); text-decoration: underline; }
+.g-breadcrumbs [aria-current="page"] { color: var(--color-text-primary); font-weight: var(--font-weight-medium); }

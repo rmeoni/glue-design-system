@@ -1,0 +1,185 @@
+{
+  "$description": "Glue Design System — primitive tokens. Raw values only. Components never use these directly; they use the semantic tokens.",
+  "color": {
+    "$type": "color",
+    "navy": {
+      "$description": "Brand primary. Actions, links in navigation, inverse sections.",
+      "50":  { "$value": "#F1F5FF" },
+      "100": { "$value": "#DEE8FE" },
+      "200": { "$value": "#BED1F9" },
+      "300": { "$value": "#9DB4E4" },
+      "400": { "$value": "#7791CA" },
+      "500": { "$value": "#526FB0" },
+      "600": { "$value": "#335198" },
+      "700": { "$value": "#153180", "$description": "Brand navy." },
+      "800": { "$value": "#071C62" },
+      "900": { "$value": "#020C4C" }
+    },
+    "coral": {
+      "$description": "Brand accent. Eyebrow labels, links, focus ring, selected state.",
+      "50":  { "$value": "#FEF2EF" },
+      "100": { "$value": "#FEE0D9" },
+      "200": { "$value": "#FEC0B1" },
+      "300": { "$value": "#FE9780" },
+      "400": { "$value": "#F96A4C", "$description": "Brand coral. Under 3:1 on white: use only on dark backgrounds or as decoration." },
+      "500": { "$value": "#CF5339" },
+      "600": { "$value": "#AD412A", "$description": "Coral for text on light backgrounds (5.89:1 on white)." },
+      "700": { "$value": "#8C2F1C" },
+      "800": { "$value": "#6D1E0D" },
+      "900": { "$value": "#4B0B01" }
+    },
+    "neutral": {
+      "50":  { "$value": "#F7F7F8" },
+      "100": { "$value": "#E8E8E8" },
+      "200": { "$value": "#D4D4D6" },
+      "300": { "$value": "#B3B3B6" },
+      "400": { "$value": "#888888" },
+      "500": { "$value": "#6B6B6E" },
+      "600": { "$value": "#525255" },
+      "700": { "$value": "#2A2A2A" },
+      "800": { "$value": "#1A1A1A" },
+      "900": { "$value": "#0A0A0A" }
+    },
+    "green": {
+      "$description": "Feedback: success. New in Glue (not on uxrodrigo.com).",
+      "50":  { "$value": "#EAF7EF" },
+      "300": { "$value": "#6FD39A" },
+      "600": { "$value": "#1E7A46" },
+      "900": { "$value": "#0F2E1C" }
+    },
+    "red": {
+      "$description": "Feedback: error. New in Glue. Kept apart from coral so an error never reads as brand accent.",
+      "50":  { "$value": "#FDECEA" },
+      "300": { "$value": "#FF8A80" },
+      "600": { "$value": "#B3261E" },
+      "900": { "$value": "#3A0E0B" }
+    },
+    "amber": {
+      "$description": "Feedback: warning. New in Glue.",
+      "50":  { "$value": "#FFF6E0" },
+      "300": { "$value": "#F2B84B" },
+      "700": { "$value": "#8A5A00" },
+      "900": { "$value": "#3A2800" }
+    },
+    "white": { "$value": "#FFFFFF" },
+    "black": { "$value": "#000000" }
+  },
+  "font": {
+    "family": {
+      "$type": "fontFamily",
+      "sans": { "$value": ["Inter", "system-ui", "-apple-system", "Segoe UI", "Roboto", "sans-serif"] }
+    },
+    "weight": {
+      "$type": "fontWeight",
+      "regular":   { "$value": 400 },
+      "medium":    { "$value": 500 },
+      "semibold":  { "$value": 600 },
+      "bold":      { "$value": 700 },
+      "extrabold": { "$value": 800 }
+    },
+    "size": {
+      "$type": "dimension",
+      "11": { "$value": "11px" },
+      "13": { "$value": "13px" },
+      "14": { "$value": "14px" },
+      "15": { "$value": "15px" },
+      "17": { "$value": "17px" },
+      "18": { "$value": "18px" },
+      "20": { "$value": "20px" },
+      "24": { "$value": "24px" },
+      "36": { "$value": "36px" },
+      "40": { "$value": "40px" },
+      "48": { "$value": "48px" }
+    },
+    "line-height": {
+      "$type": "dimension",
+      "16": { "$value": "16px" },
+      "20": { "$value": "20px" },
+      "24": { "$value": "24px" },
+      "28": { "$value": "28px" },
+      "30": { "$value": "30px" },
+      "32": { "$value": "32px" },
+      "48": { "$value": "48px" },
+      "60": { "$value": "60px" }
+    },
+    "letter-spacing": {
+      "$type": "dimension",
+      "normal": { "$value": "0px" },
+      "label":  { "$value": "0.8px" }
+    }
+  },
+  "space": {
+    "$type": "dimension",
+    "$description": "4px base. The key is the multiple of 4 (space.6 = 24px).",
+    "0":  { "$value": "0px" },
+    "1":  { "$value": "4px" },
+    "2":  { "$value": "8px" },
+    "3":  { "$value": "12px" },
+    "4":  { "$value": "16px" },
+    "5":  { "$value": "20px" },
+    "6":  { "$value": "24px" },
+    "8":  { "$value": "32px" },
+    "12": { "$value": "48px" },
+    "16": { "$value": "64px" },
+    "24": { "$value": "96px" },
+    "32": { "$value": "128px" }
+  },
+  "radius": {
+    "$type": "dimension",
+    "xs":   { "$value": "4px" },
+    "sm":   { "$value": "8px" },
+    "md":   { "$value": "14px", "$description": "Form fields and inline panels." },
+    "lg":   { "$value": "32px", "$description": "Cards." },
+    "xl":   { "$value": "48px", "$description": "Images and videos." },
+    "full": { "$value": "9999px", "$description": "Buttons, chips, icon buttons." }
+  },
+  "border-width": {
+    "$type": "dimension",
+    "thin":    { "$value": "1px" },
+    "control": { "$value": "1.5px" },
+    "focus":   { "$value": "2px" }
+  },
+  "size": {
+    "$type": "dimension",
+    "control-sm": { "$value": "36px" },
+    "control-md": { "$value": "44px", "$description": "Minimum touch target." },
+    "control-lg": { "$value": "48px" },
+    "icon-sm":    { "$value": "16px" },
+    "icon-md":    { "$value": "20px" },
+    "icon-lg":    { "$value": "24px" }
+  },
+  "shadow": {
+    "$type": "shadow",
+    "sm":   { "$value": { "color": "#0000001F", "offsetX": "0px", "offsetY": "4px",  "blur": "12px", "spread": "0px" } },
+    "card": { "$value": { "color": "#15318014", "offsetX": "0px", "offsetY": "10px", "blur": "40px", "spread": "0px" } },
+    "lg":   { "$value": { "color": "#0000001C", "offsetX": "0px", "offsetY": "15px", "blur": "40px", "spread": "0px" } }
+  },
+  "duration": {
+    "$type": "duration",
+    "fast": { "$value": "200ms" },
+    "base": { "$value": "300ms" },
+    "slow": { "$value": "500ms" }
+  },
+  "easing": {
+    "$type": "cubicBezier",
+    "standard": { "$value": [0.25, 0.46, 0.45, 0.94] }
+  },
+  "breakpoint": {
+    "$type": "dimension",
+    "$description": "Min-width breakpoints, mobile first.",
+    "md": { "$value": "768px" },
+    "lg": { "$value": "992px" },
+    "xl": { "$value": "1280px" }
+  },
+  "layout": {
+    "$type": "dimension",
+    "container-max": { "$value": "1234px", "$description": "Includes the side padding: 1170px of content at desktop." },
+    "container-medium": { "$value": "770px" },
+    "container-narrow": { "$value": "570px" },
+    "gutter-sm": { "$value": "16px" },
+    "gutter-md": { "$value": "24px" },
+    "gutter-lg": { "$value": "32px" },
+    "section-sm": { "$value": "64px" },
+    "section-lg": { "$value": "128px" }
+  }
+}

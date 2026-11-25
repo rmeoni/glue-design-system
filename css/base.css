@@ -1,0 +1,156 @@
+/* Glue Design System — base.css
+   Element defaults and text utilities. Uses only semantic tokens.
+   Load Inter first: <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"> */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  color-scheme: light;
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+  }
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-bg-page);
+  color: var(--color-text-primary);
+  font: var(--typography-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ---------- Headings ---------- */
+h1, h2, h3, h4, h5, h6,
+.g-h1, .g-h2, .g-h3, .g-h4, .g-h5, .g-h6 {
+  margin: 0 0 var(--space-4);
+  color: var(--color-text-primary);
+}
+
+h1, .g-h1 { font: var(--typography-h1-mobile); }
+h2, .g-h2 { font: var(--typography-h2); }
+h3, .g-h3 { font: var(--typography-h3); margin-bottom: var(--space-3); }
+h4, .g-h4 { font: var(--typography-h4); margin-bottom: var(--space-3); }
+h5, .g-h5 { font: var(--typography-h5); }
+h6, .g-h6 { font: var(--typography-h6); }
+
+@media (min-width: 992px) {
+  h1, .g-h1 { font: var(--typography-h1); }
+}
+
+/* ---------- Text ---------- */
+p {
+  margin: 0 0 var(--space-5);
+}
+
+.g-lead {
+  font: var(--typography-lead);
+  color: var(--color-text-secondary);
+}
+
+.g-body  { font: var(--typography-body); }
+.g-small { font: var(--typography-small); }
+
+.g-text-secondary { color: var(--color-text-secondary); }
+.g-text-accent    { color: var(--color-text-accent); }
+.g-text-center    { text-align: center; }
+
+a,
+.g-link {
+  color: var(--color-text-link);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: color var(--duration-fast) var(--easing-standard);
+}
+
+a:hover,
+.g-link:hover {
+  text-decoration-thickness: 2px;
+}
+
+strong, b { font-weight: var(--font-weight-bold); }
+
+hr,
+.g-divider {
+  height: 0;
+  margin: var(--space-8) 0;
+  border: 0;
+  border-top: var(--border-width-thin) solid var(--color-border-default);
+}
+
+img,
+video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* ---------- Focus ----------
+   One visible ring for every interactive element, keyboard only. */
+:focus-visible {
+  outline: var(--border-width-focus) solid var(--color-focus-ring);
+  outline-offset: 2px;
+}
+
+::selection {
+  background: var(--color-action-chip-bg-hover);
+  color: var(--color-text-primary);
+}
+
+/* `hidden` must win over component display values (e.g. .g-alert is flex) */
+[hidden] {
+  display: none !important;
+}
+
+/* ---------- Accessibility helpers ---------- */
+.g-visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.g-skip-link {
+  position: absolute;
+  top: var(--space-2);
+  left: var(--space-2);
+  z-index: 100;
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-full);
+  background: var(--color-action-primary-bg);
+  color: var(--color-action-primary-fg);
+  transform: translateY(-200%);
+}
+
+.g-skip-link:focus {
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
