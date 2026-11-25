@@ -5,11 +5,22 @@ Cierre de página con el mismo estilo que uxrodrigo.com: una superficie navy (ca
 ```html
 <footer class="g-footer">
   <div class="g-container">
-    <nav class="g-footer__nav" aria-label="Pie de página">
-      <a href="home.html" aria-current="page">Inicio</a>
-      <a href="#trabajos">Trabajos</a>
-      <a href="#contacto">Contacto</a>
-    </nav>
+    <div class="g-footer__main">
+      <nav class="g-footer__nav" aria-label="Pie de página">
+        <a href="home.html" aria-current="page">Inicio</a>
+        <a href="#trabajos">Trabajos</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+      <div class="g-footer__contact">
+        <h2 class="g-footer__title">¡Pongámonos en contacto!</h2>
+        <p class="g-footer__text">¡Me encantaría saber de ti! Por favor contáctame.</p>
+        <div class="g-footer__email"><svg aria-hidden="true">…</svg><a href="mailto:hello@uxrodrigo.com">hello@uxrodrigo.com</a></div>
+      </div>
+      <nav class="g-footer__links" aria-label="Redes sociales">
+        <a href="https://dribbble.com/uxrodrigo" target="_blank" rel="noopener">Dribbble<span class="g-visually-hidden"> (se abre en una pestaña nueva)</span></a>
+        …
+      </nav>
+    </div>
   </div>
   <div class="g-footer__bottom">
     <div class="g-container g-footer__bottom-inner">
@@ -22,6 +33,9 @@ Cierre de página con el mismo estilo que uxrodrigo.com: una superficie navy (ca
 ```
 
 - **Enlaces principales (`.g-footer__nav`):** los mismos del navbar, en el mismo orden y con el mismo `aria-current`. 17 px, medium, separados 32 px (24 px en móvil).
+- **Contacto (`.g-footer__contact`):** título h3 (24/32 bold) en `footer.text`, texto en `footer.text-muted` y el email con el icono de sobre de 18 px (Material `email`) a 13 px medium.
+- **Redes (`.g-footer__links`):** IxDF, Dribbble, LinkedIn, Goodreads, GitHub e Instagram, en columna a 13 px semibold (en fila bajo 992 px). Abren en una pestaña nueva, con `rel="noopener"` y el aviso oculto "(se abre en una pestaña nueva)".
+- **Columnas (`.g-footer__main`):** enlaces · contacto · redes (`1fr auto auto`, separadas `8vw`), como en uxrodrigo.com; una sola columna bajo 992 px.
 - **Barra inferior (`.g-footer__bottom`):** 11 px, `footer.text-muted`; los enlaces en `footer.text`; puntos de 3 px entre elementos (`.g-footer__dot`, decorativos).
 - Ancho completo, como el navbar: márgenes `3vw` en escritorio (mínimo el gutter).
 

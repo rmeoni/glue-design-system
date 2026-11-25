@@ -90,6 +90,7 @@ Naming: `.g-{component}`, `--{variant}`, `__{part}`. State is set with native at
 ## Footer — `footer.g-footer`
 - Styled like uxrodrigo.com: navy surface (`--color-footer-bg`; near-black in dark) with light text.
 - `nav.g-footer__nav[aria-label]` repeats the navbar links (same order, same `aria-current`), 17px medium, in a row.
+- `.g-footer__main` grid (`1fr auto auto`): nav links · `.g-footer__contact` (`h2.g-footer__title`, `p.g-footer__text`, `.g-footer__email` with an 18px envelope icon + mailto link) · `nav.g-footer__links` (social links, 13px semibold, `target="_blank" rel="noopener"` with a visually hidden "(se abre en una pestaña nueva)"). Single column under 992px.
 - `.g-footer__bottom > .g-container.g-footer__bottom-inner`: copyright and legal links, 11px, separated by `span.g-footer__dot[aria-hidden]`.
 - Link states: normal `--color-footer-text`; hover animated 1px line (text color unchanged); pressed `--color-footer-text-muted`; current fixed line; focus outline `--color-footer-focus`; disabled `role="link" aria-disabled="true"` without `href`.
 

@@ -1287,7 +1287,7 @@ body:has(.g-snackbar[data-open="true"]) .g-back-to-top {
 /* Text blocks: one bar per line (mask stripes every 1lh) */
 .g-is-loading :is(h1, h2, h3, h4, h5, h6, p, blockquote, figcaption, th, td,
   .g-field__label, .g-eyebrow, .g-navbar__link, .g-stat__value, .g-stat__label,
-  .g-breadcrumbs li, .g-footer li a, .g-footer__nav a, .g-footer__bottom-inner > :not(.g-footer__dot)),
+  .g-breadcrumbs li, .g-footer li a, .g-footer__nav a, .g-footer__links a, .g-footer__email a, .g-footer__bottom-inner > :not(.g-footer__dot)),
 /* Controls: solid shapes */
 .g-is-loading :is(.g-button, .g-badge, .g-chip, .g-input, .g-textarea, .g-select, .g-icon-button, .g-theme-switch, .g-lang-toggle),
 /* Images that have not loaded yet */
@@ -1301,7 +1301,7 @@ body:has(.g-snackbar[data-open="true"]) .g-back-to-top {
 
 .g-is-loading :is(h1, h2, h3, h4, h5, h6, p, blockquote, figcaption, th, td,
   .g-field__label, .g-eyebrow, .g-navbar__link, .g-stat__value, .g-stat__label,
-  .g-breadcrumbs li, .g-footer li a, .g-footer__nav a, .g-footer__bottom-inner > :not(.g-footer__dot)) {
+  .g-breadcrumbs li, .g-footer li a, .g-footer__nav a, .g-footer__links a, .g-footer__email a, .g-footer__bottom-inner > :not(.g-footer__dot)) {
   border-radius: var(--radius-xs);
   -webkit-mask: linear-gradient(transparent 0 20%, #000 20% 80%, transparent 80%) 0 0 / 100% 1lh repeat-y content-box;
           mask: linear-gradient(transparent 0 20%, #000 20% 80%, transparent 80%) 0 0 / 100% 1lh repeat-y content-box;
@@ -1642,6 +1642,67 @@ body:has(.g-snackbar[data-open="true"]) .g-back-to-top {
 
 @media (max-width: 767px) {
   .g-footer__nav { column-gap: var(--space-6); }
+}
+
+/* Three columns, as on uxrodrigo.com: nav links · contact · social links.
+   One column under 992px, with the social links in a row. */
+.g-footer__main {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: start;
+  column-gap: 8vw;
+  row-gap: var(--space-8);
+}
+
+@media (max-width: 991px) {
+  .g-footer__main { grid-template-columns: 1fr; }
+}
+
+.g-footer__contact { padding-block: var(--space-2); }
+
+.g-footer__title {
+  margin: 0 0 var(--space-3);
+  color: var(--color-footer-text);
+  font: var(--typography-h3);
+}
+
+.g-footer__text {
+  margin: 0 0 var(--space-3);
+  color: var(--color-footer-text-muted);
+}
+
+.g-footer__email {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding-block: 6px;
+  font-size: var(--font-size-13);
+  line-height: var(--font-line-height-20);
+  font-weight: var(--font-weight-medium);
+}
+
+.g-footer__email svg { flex: none; width: 18px; height: 18px; }
+
+/* The animated line sits under the address only, not under the icon */
+.g-footer__email a::after { bottom: -2px; }
+
+.g-footer__links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding-right: 6vw;
+}
+
+.g-footer__links a {
+  padding-block: var(--space-1);
+  font-size: var(--font-size-13);
+  line-height: var(--font-line-height-16);
+  font-weight: var(--font-weight-semibold);
+}
+
+@media (max-width: 991px) {
+  .g-footer__links { flex-direction: row; flex-wrap: wrap; column-gap: var(--space-5); padding-right: 0; }
 }
 
 .g-footer__heading {
