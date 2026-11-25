@@ -14,7 +14,7 @@
     "./tokens.json": "./dist/tokens.json"
   },
   "scripts": {
-    "build": "node scripts/build-tokens.mjs && node scripts/build-zeroheight.mjs",
+    "build": "node scripts/build-tokens.mjs && node scripts/build-zeroheight.mjs && node scripts/version-assets.mjs",
     "dev": "npx serve ."
   },
   "keywords": ["design-system", "design-tokens", "dtcg", "css", "figma", "zeroheight"],

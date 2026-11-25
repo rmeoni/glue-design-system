@@ -18,6 +18,7 @@ Formato [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/), versionado 
 - Componente `.g-snackbar` basado en el snackbar de Material 3: aviso temporal fijo abajo, superficie inverse, acción opcional y cierre, autocierre a los 6 s con pausa en hover/foco y Escape (`Glue.snackbar(id)` en `glue.js`). Token `color.action.on-inverse`. Guía en `docs/componentes/snackbar.md`. `booking.html` confirma la reserva con un snackbar en vez de una alerta en línea.
 
 ### Corregido
+- Tras un deploy, el navegador podía combinar el HTML nuevo con un `glue.css` / `glue.js` viejo de su caché (GitHub Pages cachea 10 min), y los fondos de cabecera no se veían. El build añade ahora `?v=<hash del contenido>` a esos enlaces (`scripts/version-assets.mjs`).
 - Botones `--secondary` y `--ghost` dentro de `.g-section--inverse`: el hover ponía texto blanco sobre el celeste `navy.50` (ilegible) y en oscuro texto `navy.900` sobre `neutral.700`. Ahora el sistema los adapta y en hover se invierten (11.8:1 en ambos temas). Se quitaron los estilos inline de `examples/index.html` y `examples/screens/home.html`.
 - Grid: `.g-col-lg-start-*` hacía que la columna ocupara 1 sola columna. Los spans ahora son `grid-column: auto / span N`.
 
