@@ -112,7 +112,7 @@
         <span class="g-eyebrow">Paso 3</span>
         <h2 class="g-card__title">Tus datos</h2>
         <p class="g-card__meta">Miércoles 9 de diciembre · 11:30</p>
-        <form class="g-form" onsubmit="event.preventDefault(); document.getElementById('ok').hidden = false;">
+        <form class="g-form" onsubmit="event.preventDefault(); Glue.snackbar('booking-ok');">
           <div class="g-field">
             <label class="g-field__label" for="name">Nombre <span class="g-required" aria-hidden="true">*</span></label>
             <input class="g-input" id="name" type="text" autocomplete="name" required>
@@ -131,10 +131,6 @@
             <textarea class="g-textarea" id="notes"></textarea>
           </div>
           <button class="g-button g-button--block" type="submit">Confirmar reserva</button>
-          <div class="g-alert g-alert--success" id="ok" role="status" hidden>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></svg>
-            <div><strong class="g-alert__title">Reserva confirmada</strong><p>Te envié la invitación de Google Meet.</p></div>
-          </div>
         </form>
       </div>
     </div>
@@ -146,6 +142,12 @@
     <div class="g-footer__bottom" style="margin-top:0; border-top:0; padding-top:0"><span>© 2026 UXRodrigo</span><span class="g-cluster g-gap-4"><a href="#">Privacidad</a><a href="../index.html">Hecho con Glue · Ver el sistema</a></span></div>
   </div>
 </footer>
+
+<div class="g-snackbar" id="booking-ok" role="status" aria-live="polite" data-open="false">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></svg>
+  <p class="g-snackbar__text">Reserva confirmada. Te envié la invitación de Google Meet.</p>
+  <button class="g-snackbar__close" type="button" data-glue-snackbar-close aria-label="Cerrar aviso"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+</div>
 
 <script src="../assets/glue.js"></script>
 <script>

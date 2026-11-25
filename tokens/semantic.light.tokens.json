@@ -37,6 +37,7 @@
       "chip-fg":             { "$value": "{color.navy.700}" },
       "chip-bg-selected":    { "$value": "{color.coral.600}" },
       "chip-fg-selected":    { "$value": "{color.white}" },
+      "on-inverse":          { "$value": "{color.navy.200}", "$description": "Text actions on bg.inverse (snackbar action). 7.67:1 on navy.700." },
       "disabled-bg":         { "$value": "{color.neutral.100}" },
       "disabled-fg":         { "$value": "{color.neutral.500}" }
     },

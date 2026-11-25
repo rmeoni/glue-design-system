@@ -324,6 +324,15 @@
       </div>
 
       <div class="g-stack">
+        <h3>Snackbar</h3>
+        <p class="g-text-secondary">Aviso breve sobre algo que acabas de hacer. Aparece abajo, se cierra solo a los 6 s y no interrumpe. Para mensajes que deben quedarse en la página usa una alerta.</p>
+        <div class="g-cluster">
+          <button class="g-button g-button--secondary g-button--md" type="button" onclick="Glue.snackbar('sg-snack')">Mostrar snackbar</button>
+          <button class="g-button g-button--ghost g-button--md" type="button" onclick="Glue.snackbar('sg-snack-action')">Con acción</button>
+        </div>
+      </div>
+
+      <div class="g-stack">
         <h3>Tarjetas</h3>
         <div class="g-grid">
           <div class="g-col-md-4 g-col-lg-4">
@@ -393,6 +402,16 @@
     </div>
   </div>
 </footer>
+
+<div class="g-snackbar" id="sg-snack" role="status" aria-live="polite" data-open="false">
+  <p class="g-snackbar__text">Enlace copiado al portapapeles.</p>
+  <button class="g-snackbar__close" type="button" data-glue-snackbar-close aria-label="Cerrar aviso"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+</div>
+<div class="g-snackbar" id="sg-snack-action" role="status" aria-live="polite" data-open="false">
+  <p class="g-snackbar__text">Proyecto archivado.</p>
+  <button class="g-snackbar__action" type="button" data-glue-snackbar-close>Deshacer</button>
+  <button class="g-snackbar__close" type="button" data-glue-snackbar-close aria-label="Cerrar aviso"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+</div>
 
 <script src="assets/glue.js"></script>
 <script>

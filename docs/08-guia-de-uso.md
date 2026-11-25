@@ -62,7 +62,10 @@ Si una pantalla necesita CSS propio, **solo con tokens semánticos**:
 1. En zeroheight, crea un styleguide "Glue Design System".
 2. **Tokens:** añade un *token set* conectado a este repositorio de GitHub apuntando a la carpeta `tokens/`. Los archivos son DTCG con `$themes.json` de Tokens Studio, así que puedes conectarlo directamente o vía Tokens Studio. Light y Dark aparecen como temas.
 3. **Páginas:** crea una página por archivo de `docs/` en este orden: Principios, Color, Tipografía, Espaciado, Layouts y grids, Componentes (una subpágina por archivo de `docs/componentes/`), Pantallas de ejemplo, Guía de uso, Accesibilidad. Pega el Markdown: zeroheight conserva tablas y bloques de código.
-4. **Ejemplos en vivo:** publica `examples/` (GitHub Pages) y embébelos en zeroheight con bloques de iframe/código.
+4. **Ejemplos en vivo:** activa GitHub Pages desde `main`, carpeta raíz `/`, y embébelos en zeroheight con bloques de iframe/código. El `index.html` de la raíz da URLs cortas:
+   - `https://rmeoni.github.io/glue-design-system/` → guía viva (`examples/index.html`)
+   - `…/#home`, `…/#booking`, `…/#case-study` → cada pantalla de ejemplo
+   - `…/#componentes` (o cualquier otra sección) → esa sección de la guía viva
 5. **Figma:** enlaza la librería de Figma para mostrar los componentes junto al código.
 
 ## 6. Conectar con Figma

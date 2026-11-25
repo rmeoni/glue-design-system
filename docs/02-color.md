@@ -66,6 +66,7 @@ Separados del coral para que un error nunca se confunda con el acento de marca.
 | `color.action.chip-bg` / `-hover` / `-fg` | navy.50 / navy.100 / navy.700 | neutral.700 / 600 / 100 | Chip y badge |
 | `color.action.chip-bg-selected` / `-fg-selected` | coral.600 / white | coral.400 / neutral.900 | Chip seleccionado |
 | `color.action.disabled-bg` / `-fg` | neutral.100 / 500 | neutral.800 / 500 | Deshabilitado |
+| `color.action.on-inverse` | navy.200 | navy.700 | Acción de texto sobre `bg.inverse` (snackbar) |
 | `color.feedback.{success,warning,error,info}-{fg,bg}` | ver tabla anterior | | Alertas, errores de campo |
 
 En CSS cada token es una variable: `color.action.primary-bg` → `var(--color-action-primary-bg)`.
@@ -81,6 +82,7 @@ En CSS cada token es una variable: `color.action.primary-bg` → `var(--color-ac
 | navy.900 sobre navy.200 (primario oscuro) | 11.80:1 | AAA |
 | navy.700 sobre white (hover de secundario en `--inverse`, claro) | 11.78:1 | AAA |
 | navy.200 sobre navy.900 (hover de secundario en `--inverse`, oscuro) | 11.80:1 | AAA |
+| navy.200 sobre navy.700 / navy.700 sobre navy.200 (`action.on-inverse`, acción del snackbar) | 7.67:1 | AAA |
 | coral.400 sobre neutral.900 | 6.78:1 | AA |
 | neutral.400 sobre neutral.900 | 5.58:1 | AA |
 | green.600 / red.600 / amber.700 sobre white | 5.35 / 6.54 / 5.93 | AA |

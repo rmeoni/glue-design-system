@@ -185,6 +185,7 @@
   --color-action-chip-fg: var(--color-navy-700);
   --color-action-chip-bg-selected: var(--color-coral-600);
   --color-action-chip-fg-selected: var(--color-white);
+  --color-action-on-inverse: var(--color-navy-200);
   --color-action-disabled-bg: var(--color-neutral-100);
   --color-action-disabled-fg: var(--color-neutral-500);
   --color-feedback-success-fg: var(--color-green-600);
@@ -227,6 +228,7 @@
   --color-action-chip-fg: var(--color-neutral-100);
   --color-action-chip-bg-selected: var(--color-coral-400);
   --color-action-chip-fg-selected: var(--color-neutral-900);
+  --color-action-on-inverse: var(--color-navy-700);
   --color-action-disabled-bg: var(--color-neutral-800);
   --color-action-disabled-fg: var(--color-neutral-500);
   --color-feedback-success-fg: var(--color-green-300);
@@ -270,6 +272,7 @@
     --color-action-chip-fg: var(--color-neutral-100);
     --color-action-chip-bg-selected: var(--color-coral-400);
     --color-action-chip-fg-selected: var(--color-neutral-900);
+    --color-action-on-inverse: var(--color-navy-700);
     --color-action-disabled-bg: var(--color-neutral-800);
     --color-action-disabled-fg: var(--color-neutral-500);
     --color-feedback-success-fg: var(--color-green-300);
@@ -1023,6 +1026,91 @@ video {
 .g-alert--success { background-color: var(--color-feedback-success-bg); color: var(--color-feedback-success-fg); }
 .g-alert--warning { background-color: var(--color-feedback-warning-bg); color: var(--color-feedback-warning-fg); }
 .g-alert--error   { background-color: var(--color-feedback-error-bg);   color: var(--color-feedback-error-fg); }
+
+/* =========================================================
+   SNACKBAR (transient feedback, after Material 3)
+   Short message about an action the person just took. Fixed at the
+   bottom, inverse surface, optional text action and close. Shows and
+   hides with data-open; glue.js auto-dismisses it.
+   Alert = stays in the page. Snackbar = appears, then goes away.
+   ========================================================= */
+.g-snackbar {
+  position: fixed;
+  left: 50%;
+  bottom: var(--space-4);
+  z-index: 60;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  width: max-content;
+  min-width: min(344px, calc(100vw - 2 * var(--space-4)));
+  max-width: min(560px, calc(100vw - 2 * var(--space-4)));
+  min-height: var(--size-control-lg);
+  padding: var(--space-2) var(--space-2) var(--space-2) var(--space-4);
+  border-radius: var(--radius-xs);
+  background-color: var(--color-bg-inverse);
+  color: var(--color-text-on-inverse);
+  box-shadow: var(--elevation-raised);
+  font: var(--typography-body);
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(-50%, var(--space-4));
+  transition: opacity var(--duration-fast) var(--easing-standard),
+              transform var(--duration-fast) var(--easing-standard),
+              visibility 0s linear var(--duration-fast);
+}
+
+.g-snackbar[data-open="true"] {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, 0);
+  transition-delay: 0s;
+}
+
+.g-snackbar > svg { flex: none; width: var(--size-icon-md); height: var(--size-icon-md); }
+
+.g-snackbar__text {
+  flex: 1;
+  margin: 0;
+  padding-block: 6px;
+  color: inherit;
+}
+
+.g-snackbar__action,
+.g-snackbar__close {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--size-control-sm);
+  border: 0;
+  border-radius: var(--radius-xs);
+  background: transparent;
+  font: inherit;
+  cursor: pointer;
+}
+
+.g-snackbar__action {
+  padding-inline: var(--space-3);
+  color: var(--color-action-on-inverse);
+  font-weight: var(--font-weight-semibold);
+}
+
+.g-snackbar__close {
+  width: var(--size-control-sm);
+  color: inherit;
+}
+
+.g-snackbar__close svg { width: var(--size-icon-md); height: var(--size-icon-md); }
+
+.g-snackbar__action:hover,
+.g-snackbar__close:hover { background-color: color-mix(in srgb, currentColor 12%, transparent); }
+
+/* Keep back-to-top clear of an open snackbar */
+.g-back-to-top { transition: bottom var(--duration-fast) var(--easing-standard); }
+body:has(.g-snackbar[data-open="true"]) .g-back-to-top {
+  bottom: calc(var(--space-4) + var(--size-control-lg) + var(--space-4));
+}
 
 /* =========================================================
    SPOT ICON and FEATURE

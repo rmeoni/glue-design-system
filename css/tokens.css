@@ -184,6 +184,7 @@
   --color-action-chip-fg: var(--color-navy-700);
   --color-action-chip-bg-selected: var(--color-coral-600);
   --color-action-chip-fg-selected: var(--color-white);
+  --color-action-on-inverse: var(--color-navy-200);
   --color-action-disabled-bg: var(--color-neutral-100);
   --color-action-disabled-fg: var(--color-neutral-500);
   --color-feedback-success-fg: var(--color-green-600);
@@ -226,6 +227,7 @@
   --color-action-chip-fg: var(--color-neutral-100);
   --color-action-chip-bg-selected: var(--color-coral-400);
   --color-action-chip-fg-selected: var(--color-neutral-900);
+  --color-action-on-inverse: var(--color-navy-700);
   --color-action-disabled-bg: var(--color-neutral-800);
   --color-action-disabled-fg: var(--color-neutral-500);
   --color-feedback-success-fg: var(--color-green-300);
@@ -269,6 +271,7 @@
     --color-action-chip-fg: var(--color-neutral-100);
     --color-action-chip-bg-selected: var(--color-coral-400);
     --color-action-chip-fg-selected: var(--color-neutral-900);
+    --color-action-on-inverse: var(--color-navy-700);
     --color-action-disabled-bg: var(--color-neutral-800);
     --color-action-disabled-fg: var(--color-neutral-500);
     --color-feedback-success-fg: var(--color-green-300);

@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Glue Design System</title>
+  <!--
+    Short entry point for GitHub Pages.
+      /                -> examples/index.html (style guide)
+      /#home           -> examples/screens/home.html
+      /#booking        -> examples/screens/booking.html
+      /#case-study     -> examples/screens/case-study.html
+      /#<anything else> -> examples/index.html#<anything else> (e.g. #componentes)
+  -->
+  <script>
+    (function () {
+      var screens = { home: "home.html", booking: "booking.html", "case-study": "case-study.html" };
+      var hash = location.hash.slice(1);
+      var target = screens[hash]
+        ? "examples/screens/" + screens[hash]
+        : "examples/index.html" + (hash ? "#" + hash : "");
+      location.replace(target);
+    })();
+  </script>
+  <noscript><meta http-equiv="refresh" content="0; url=examples/index.html"></noscript>
+  <link rel="canonical" href="examples/index.html">
+  <link rel="icon" href="assets/logo/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+  <p><a href="examples/index.html">Ir a Glue Design System</a></p>
+</body>
+</html>

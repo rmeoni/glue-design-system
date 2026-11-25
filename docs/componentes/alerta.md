@@ -1,6 +1,6 @@
 # Alerta
 
-Mensaje en línea que informa del resultado de una acción o de algo que conviene saber.
+Mensaje en línea que informa del resultado de una acción o de algo que conviene saber. Se queda en la página. Para confirmar una acción de forma breve y temporal usa el [snackbar](snackbar.md).
 
 | Variante | Clase | Rol ARIA | Uso |
 |---|---|---|---|
