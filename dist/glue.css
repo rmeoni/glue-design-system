@@ -517,7 +517,8 @@ video {
    it to its bottom padding so content is never clipped. Inside a container
    (container-type: inline-size) it scales to that box instead of the viewport.
    Tint = color.bg.surface-alt, cut = color.bg.page, so it works in dark mode.
-   The diagonal is dropped on small screens, like the portfolio does. */
+   The profile hero drops its diagonal under 480px (the photo stacks above the
+   text). The project header keeps it on every size, with a 32px minimum. */
 .g-section--angled,
 .g-section--angled-subtle {
   --g-angle: 9deg;
@@ -530,18 +531,23 @@ video {
 
 .g-section--angled-subtle {
   --g-angle: 2.5deg;
-  --g-angle-rise: 4.37vw;                                   /* fallback: tan(2.5°) × 100vw */
-  --g-angle-rise: calc(100cqw * tan(var(--g-angle)));
+  --g-angle-rise: max(32px, 4.37vw);                        /* fallback: tan(2.5°) × 100vw */
+  /* At least 32px so the diagonal still reads on phones (2.5° on 375px is only 16px).
+     The floor only applies below ~730px wide; wider, the 2.5° angle is unchanged. */
+  --g-angle-rise: max(32px, calc(100cqw * tan(var(--g-angle))));
   clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--g-angle-rise)), 0 100%);
+}
+
+/* Badges and chips use the navy.50 tint too: give them the page background so
+   they keep their shape on the tinted header (light and dark). */
+:is(.g-section--angled, .g-section--angled-subtle) :is(.g-badge, .g-chip:not([aria-pressed="true"])) {
+  background-color: var(--color-bg-page);
 }
 
 @media (max-width: 479px) {
   .g-section--angled { --g-angle-rise: 0px; clip-path: none; }
 }
 
-@media (max-width: 767px) {
-  .g-section--angled-subtle { --g-angle-rise: 0px; clip-path: none; }
-}
 
 /* Centered section intro: eyebrow + heading + lead */
 .g-intro {
@@ -1245,6 +1251,15 @@ body:has(.g-snackbar[data-open="true"]) .g-back-to-top {
 .g-is-loading body *::after {
   color: transparent !important;
   text-shadow: none !important;
+}
+
+/* No transitions while loading or at the moment of reveal (glue.js keeps
+   .g-is-revealing for one tick), so everything appears at once instead of
+   links and icon buttons fading in from the skeleton grey. */
+:is(.g-is-loading, .g-is-revealing) body *,
+:is(.g-is-loading, .g-is-revealing) body *::before,
+:is(.g-is-loading, .g-is-revealing) body *::after {
+  transition: none !important;
 }
 
 /* Text blocks: one bar per line (mask stripes every 1lh) */

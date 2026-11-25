@@ -47,7 +47,7 @@ El fondo de la foto de perfil y de las páginas de proyecto de uxrodrigo.com. Un
 | Variante | Uso | Corte | Se quita en |
 |---|---|---|---|
 | `.g-section--angled` | Hero de perfil: foto (`.g-media--profile`) + presentación | 9°, alto a la izquierda | < 480 px |
-| `.g-section--angled-subtle` | Cabecera de un caso de estudio | 2,5°, alto a la derecha | < 768 px |
+| `.g-section--angled-subtle` | Cabecera de un caso de estudio | 2,5°, alto a la derecha (mínimo 32 px de alto en móvil) | No se quita |
 
 ```html
 <section class="g-section g-section--angled">
@@ -61,6 +61,7 @@ El fondo de la foto de perfil y de las páginas de proyecto de uxrodrigo.com. Un
 - El alto del corte es `tan(ángulo) × ancho` y se suma al padding inferior, así que el contenido nunca queda cortado. Dentro de un elemento con `container-type: inline-size` se calcula sobre ese ancho (así funcionan las demos de la guía).
 - En uxrodrigo.com el corte es una franja blanca rotada encima de la sección; en Glue es un `clip-path` de la propia sección, sin elementos extra. El tinte del sitio es `#f4f7ff` y Glue usa `navy.50` (#F1F5FF).
 - `.g-media--profile`: círculo de 300 px como máximo, 24vw en tablet y 40vw en móvil.
+- Badges y chips dentro de la cabecera usan el fondo de la página, porque su `navy.50` se confundiría con el tinte.
 - Una sola por página y siempre la primera sección. No la combines con `--surface` ni `--inverse`.
 
 ## Grid de 12 columnas

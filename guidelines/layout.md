@@ -11,7 +11,7 @@
 
 ## Structure
 
-- `.g-section` — vertical rhythm: 64px padding (128px from 992px). Modifiers: `--surface` (alternate background), `--inverse` (navy CTA, once per page, usually last), `--compact`, `--flush`, `--bordered`, `--angled` (profile hero: tinted bg-surface-alt header with a 9° diagonal bottom cut; pair with a circular `.g-media--profile` photo), `--angled-subtle` (project detail header: same tint, 2.5° cut). Angled headers: one per page, always the first section; the cut is dropped under 480px / 768px.
+- `.g-section` — vertical rhythm: 64px padding (128px from 992px). Modifiers: `--surface` (alternate background), `--inverse` (navy CTA, once per page, usually last), `--compact`, `--flush`, `--bordered`, `--angled` (profile hero: tinted bg-surface-alt header with a 9° diagonal bottom cut; pair with a circular `.g-media--profile` photo), `--angled-subtle` (project detail header: same tint, 2.5° cut, kept on phones with a 32px minimum height). Angled headers: one per page, always the first section; the profile hero drops its cut under 480px.
 - `.g-container` — max 1234px incl. gutters. `--medium` = 770px content, `--narrow` = 570px content.
 - `.g-intro` — centered eyebrow + h2 + text block, 570px wide (`--wide` 770px), 48px below.
 

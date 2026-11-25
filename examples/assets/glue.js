@@ -140,6 +140,9 @@
   });
   var fontsReady = document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve();
   Promise.all([domReady, fontsReady]).then(function () {
+    if (!root.classList.contains("g-is-loading")) return;
+    root.classList.add("g-is-revealing");
     root.classList.remove("g-is-loading");
+    setTimeout(function () { root.classList.remove("g-is-revealing"); }, 50);
   });
 })();

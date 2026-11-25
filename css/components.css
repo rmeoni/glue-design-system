@@ -616,6 +616,15 @@ body:has(.g-snackbar[data-open="true"]) .g-back-to-top {
   text-shadow: none !important;
 }
 
+/* No transitions while loading or at the moment of reveal (glue.js keeps
+   .g-is-revealing for one tick), so everything appears at once instead of
+   links and icon buttons fading in from the skeleton grey. */
+:is(.g-is-loading, .g-is-revealing) body *,
+:is(.g-is-loading, .g-is-revealing) body *::before,
+:is(.g-is-loading, .g-is-revealing) body *::after {
+  transition: none !important;
+}
+
 /* Text blocks: one bar per line (mask stripes every 1lh) */
 .g-is-loading :is(h1, h2, h3, h4, h5, h6, p, blockquote, figcaption, th, td,
   .g-field__label, .g-eyebrow, .g-navbar__link, .g-stat__value, .g-stat__label,

@@ -272,7 +272,7 @@
     "Contenido de la página": "Page content",
     "Cabecera de proyecto ·": "Project header ·",
     "Rediseño de una app de reservas": "Booking app redesign",
-    "Para el título de cada caso de estudio. Corte suave de 2,5°, alto a la derecha. En tablet y móvil (menos de 768 px) el corte se quita.": "For the title of each case study. A gentle 2.5° cut, high on the right. On tablets and phones (under 768 px) the cut is removed.",
+    "Para el título de cada caso de estudio. Corte suave de 2,5°, alto a la derecha. En móvil se mantiene, con un mínimo de 32 px de alto para que la diagonal se note.": "For the title of each case study. A gentle 2.5° cut, high on the right. It stays on phones, at least 32 px tall so the diagonal still reads.",
     "Parte": "Part",
     "Cabecera": "Header",
     "Corte": "Cut",
