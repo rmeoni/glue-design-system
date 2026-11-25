@@ -4,6 +4,8 @@
 (function () {
   var root = document.documentElement;
   var KEY = "glue-theme";
+  // Labels go through i18n.js when it is loaded; Spanish otherwise.
+  function T(es) { return window.Glue && window.Glue.t ? window.Glue.t(es) : es; }
 
   // Theme: saved choice, else the OS preference
   try {
@@ -21,7 +23,7 @@
     var dark = currentTheme() === "dark";
     document.querySelectorAll("[data-glue-theme-toggle]").forEach(function (b) {
       b.setAttribute("aria-pressed", String(dark));
-      b.setAttribute("aria-label", dark ? "Cambiar a modo claro" : "Cambiar a modo oscuro");
+      b.setAttribute("aria-label", T(dark ? "Cambiar a modo claro" : "Cambiar a modo oscuro"));
     });
     // Ensure the icon CSS sees an explicit theme
     root.setAttribute("data-theme", currentTheme());
@@ -42,7 +44,7 @@
       var panel = document.getElementById(menu.getAttribute("aria-controls"));
       var open = menu.getAttribute("aria-expanded") !== "true";
       menu.setAttribute("aria-expanded", String(open));
-      menu.setAttribute("aria-label", open ? "Cerrar menú" : "Abrir menú");
+      menu.setAttribute("aria-label", T(open ? "Cerrar menú" : "Abrir menú"));
       if (panel) panel.setAttribute("data-open", String(open));
       return;
     }

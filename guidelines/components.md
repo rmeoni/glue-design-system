@@ -61,6 +61,12 @@ Naming: `.g-{component}`, `--{variant}`, `__{part}`. State is set with native at
 - Info, success, warning and error share the same inverse surface; the icon marks the type. `.g-snackbar--inline` is a static preview for docs only.
 - Use `.g-alert` instead for anything that must stay on the page, and for blocking errors.
 
+## Skeleton — `.g-skeleton`
+- Loading placeholder in the shape of the real content. Shapes: `--text`, `--label`, `--heading`, `--avatar`, `--button`, `--media`.
+- Wrap the loading region with `aria-busy="true"`, put `aria-hidden="true"` on the shapes and add `<span class="g-visually-hidden">Cargando…</span>`.
+- Shimmer every `--duration-loop` (1600ms); static with reduced motion. Same markup in light and dark (colors are `--color-skeleton-*`).
+- Not for loads under 300ms. Never together with a spinner.
+
 ## Spot icon and feature — `.g-spot-icon`, `ul.g-features > li.g-feature`
 - Hand-made icons from `assets/icons/`, inlined. See [icons.md](icons.md).
 

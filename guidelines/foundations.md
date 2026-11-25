@@ -25,6 +25,7 @@ All values are CSS custom properties from `css/tokens.css`. Source of truth: `to
 | `--color-action-chip-bg` / `-bg-hover` / `-fg` | #F1F5FF / #DEE8FE / #153180 | #2A2A2A / #525255 / #E8E8E8 | Chip, badge |
 | `--color-action-chip-bg-selected` / `-fg-selected` | #AD412A / #FFF | #F96A4C / #0A0A0A | Selected chip |
 | `--color-action-on-inverse` | #BED1F9 | #153180 | Text action on bg-inverse (snackbar) |
+| `--color-skeleton-base` / `-highlight` | #E8E8E8 / #F7F7F8 | #2A2A2A / #525255 | Loading skeleton |
 | `--color-action-disabled-bg` / `-fg` | #E8E8E8 / #6B6B6E | #1A1A1A / #6B6B6E | Disabled |
 | `--color-feedback-{success,warning,error,info}-fg` | #1E7A46 / #8A5A00 / #B3261E / #153180 | #6FD39A / #F2B84B / #FF8A80 / #BED1F9 | Feedback text, icons, error borders |
 | `--color-feedback-{success,warning,error,info}-bg` | #EAF7EF / #FFF6E0 / #FDECEA / #F1F5FF | #0F2E1C / #3A2800 / #3A0E0B / #020C4C | Alert backgrounds |
@@ -72,4 +73,4 @@ Controls: `--size-control-sm` 36 · `-md` 44 · `-lg` 48. Icons: `--size-icon-sm
 
 ## Motion
 
-`--duration-fast` 200ms (hover) · `--duration-base` 300ms · `--duration-slow` 500ms · `--easing-standard`. Reduced motion is honored globally.
+`--duration-fast` 200ms (hover) · `--duration-base` 300ms · `--duration-slow` 500ms · `--duration-loop` 1600ms (skeleton shimmer) · `--easing-standard`. Reduced motion is honored globally (the skeleton shimmer is removed).

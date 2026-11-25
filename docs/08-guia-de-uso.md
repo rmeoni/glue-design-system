@@ -60,7 +60,11 @@ Si una pantalla necesita CSS propio, **solo con tokens semánticos**:
 ## 5. Conectar con zeroheight
 
 1. En zeroheight, crea un styleguide "Glue Design System".
-2. **Tokens:** añade un *token set* conectado a este repositorio de GitHub apuntando a la carpeta `tokens/`. Los archivos son DTCG con `$themes.json` de Tokens Studio, así que puedes conectarlo directamente o vía Tokens Studio. Light y Dark aparecen como temas.
+2. **Tokens:** en zeroheight ve a *Tokens*, crea un *token set*, elige *JSON import* como origen y sube [`dist/zeroheight/glue-light.tokens.json`](../dist/zeroheight/glue-light.tokens.json).
+   - Es DTCG 2025.10, el formato que importa zeroheight: colores como objeto `srgb` con `hex`, medidas como `{ value, unit }`, `lineHeight` de tipografía como proporción. Los alias (`{color.navy.700}`) se mantienen.
+   - Cada archivo trae primitivos + tipografía + semánticos de un tema y es autónomo. Para el tema oscuro usa [`glue-dark.tokens.json`](../dist/zeroheight/glue-dark.tokens.json): impórtalo como modo del mismo set si tu plan lo permite, o como un segundo set "Glue Dark".
+   - Se genera con `npm run build` desde `tokens/`. No lo edites a mano: cambia `tokens/` y vuelve a compilar.
+   - Alternativa: conectar el repositorio vía Tokens Studio, que lee `tokens/` y `$themes.json` directamente.
 3. **Páginas:** crea una página por archivo de `docs/` en este orden: Principios, Color, Tipografía, Espaciado, Layouts y grids, Componentes (una subpágina por archivo de `docs/componentes/`), Pantallas de ejemplo, Guía de uso, Accesibilidad. Pega el Markdown: zeroheight conserva tablas y bloques de código.
 4. **Ejemplos en vivo:** activa GitHub Pages desde `main`, carpeta raíz `/`, y embébelos en zeroheight con bloques de iframe/código. El `index.html` de la raíz da URLs cortas:
    - `https://rmeoni.github.io/glue-design-system/` → guía viva (`examples/index.html`)

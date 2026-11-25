@@ -9,6 +9,11 @@
       "raised":      { "$value": "{color.neutral.800}" },
       "inverse":     { "$value": "{color.navy.200}" }
     },
+    "skeleton": {
+      "$description": "Loading placeholders. Decorative: no contrast requirement, but the base must read against bg.page and bg.raised.",
+      "base":      { "$value": "{color.neutral.700}" },
+      "highlight": { "$value": "{color.neutral.600}", "$description": "Shimmer that sweeps across the base." }
+    },
     "text": {
       "primary":   { "$value": "{color.neutral.100}" },
       "secondary": { "$value": "{color.neutral.400}" },

@@ -114,6 +114,7 @@
   --duration-fast: 200ms;
   --duration-base: 300ms;
   --duration-slow: 500ms;
+  --duration-loop: 1600ms;
   --easing-standard: cubic-bezier(0.25, 0.46, 0.45, 0.94);
   --breakpoint-md: 768px;
   --breakpoint-lg: 992px;
@@ -164,6 +165,8 @@
   --color-bg-surface-alt: var(--color-navy-50);
   --color-bg-raised: var(--color-white);
   --color-bg-inverse: var(--color-navy-700);
+  --color-skeleton-base: var(--color-neutral-100);
+  --color-skeleton-highlight: var(--color-neutral-50);
   --color-text-primary: var(--color-neutral-900);
   --color-text-secondary: var(--color-neutral-600);
   --color-text-accent: var(--color-coral-600);
@@ -207,6 +210,8 @@
   --color-bg-surface-alt: var(--color-neutral-800);
   --color-bg-raised: var(--color-neutral-800);
   --color-bg-inverse: var(--color-navy-200);
+  --color-skeleton-base: var(--color-neutral-700);
+  --color-skeleton-highlight: var(--color-neutral-600);
   --color-text-primary: var(--color-neutral-100);
   --color-text-secondary: var(--color-neutral-400);
   --color-text-accent: var(--color-coral-400);
@@ -251,6 +256,8 @@
     --color-bg-surface-alt: var(--color-neutral-800);
     --color-bg-raised: var(--color-neutral-800);
     --color-bg-inverse: var(--color-navy-200);
+    --color-skeleton-base: var(--color-neutral-700);
+    --color-skeleton-highlight: var(--color-neutral-600);
     --color-text-primary: var(--color-neutral-100);
     --color-text-secondary: var(--color-neutral-400);
     --color-text-accent: var(--color-coral-400);
@@ -1128,6 +1135,50 @@ body:has(.g-snackbar[data-open="true"]) .g-back-to-top {
 }
 
 /* =========================================================
+   SKELETON (loading placeholder)
+   Grey shapes in the layout of the content that is loading, with a
+   highlight sweeping left → right every duration.loop. Colors are
+   theme tokens, so the same markup works in light and dark.
+   Put aria-busy="true" on the loading region and aria-hidden on the
+   shapes; announce "Cargando…" once with visually hidden text.
+   ========================================================= */
+.g-skeleton {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  height: 12px;
+  border-radius: var(--radius-xs);
+  background-color: var(--color-skeleton-base);
+}
+
+.g-skeleton::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(90deg, transparent 0%, var(--color-skeleton-highlight) 50%, transparent 100%);
+  transform: translateX(-100%);
+  animation: g-skeleton-shimmer var(--duration-loop) var(--easing-standard) infinite;
+}
+
+@keyframes g-skeleton-shimmer {
+  to { transform: translateX(100%); }
+}
+
+/* Shapes */
+.g-skeleton--text    { height: 12px; margin-block: 6px; }            /* one body line (24px rhythm) */
+.g-skeleton--text:last-child:not(:only-child) { width: 70%; }        /* ragged last line */
+.g-skeleton--label   { height: 10px; width: 30%; }
+.g-skeleton--heading { height: 24px; width: 60%; border-radius: var(--radius-sm); }
+.g-skeleton--avatar  { width: var(--size-control-lg); height: var(--size-control-lg); border-radius: var(--radius-full); }
+.g-skeleton--button  { width: 140px; height: var(--size-control-lg); border-radius: var(--radius-full); }
+.g-skeleton--media   { width: 100%; height: auto; aspect-ratio: 16 / 9; border-radius: var(--radius-md); }
+
+/* Reduced motion: no sweep, just the static base shape */
+@media (prefers-reduced-motion: reduce) {
+  .g-skeleton::after { display: none; }
+}
+
+/* =========================================================
    SPOT ICON and FEATURE
    Hand-made UXRodrigo line icons (assets/icons/). Inline the SVG
    so its stroke="currentColor" takes the token color.
@@ -1299,6 +1350,18 @@ body:has(.g-snackbar[data-open="true"]) .g-back-to-top {
 }
 
 .g-navbar__actions .g-button--secondary { display: none; }
+
+/* Language toggle: a plain icon button that shows the target language code (EN / ES).
+   On phones the bar has no room, so it lives in the menu panel instead. */
+.g-lang-toggle {
+  font: var(--typography-label);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--font-letter-spacing-label);
+}
+
+@media (max-width: 479px) {
+  .g-navbar__actions .g-lang-toggle { display: none; }
+}
 
 /* Phones: brand + CTA + theme + menu do not fit in 343px, so the CTA
    moves into the panel (repeat it there with .g-button--block). */

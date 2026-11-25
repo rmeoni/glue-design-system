@@ -68,7 +68,7 @@ npm run build    # regenera css/tokens.css, dist/glue.css y dist/tokens.json (No
 
 ## Integraciones
 
-- **zeroheight:** conecta la carpeta `tokens/` como token set y crea una página por archivo de `docs/`.
+- **zeroheight:** importa `dist/zeroheight/glue-light.tokens.json` (y `glue-dark`) como token set (*JSON import*) y crea una página por archivo de `docs/`.
 - **Figma:** Tokens Studio → sync con GitHub (`tokens/`, multi-archivo) → exportar a Variables con modos Light/Dark.
 - **Figma Make:** usa `guidelines/Guidelines.md` como guidelines e importa `dist/glue.css`.
 

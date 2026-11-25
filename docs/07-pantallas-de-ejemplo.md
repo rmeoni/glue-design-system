@@ -31,3 +31,15 @@ npx serve .
 ```
 
 O abre los `.html` directamente: no necesitan build.
+
+## Idioma (español / inglés)
+
+La guía viva y las tres pantallas se escriben en español y se traducen al inglés con [`examples/assets/i18n.js`](../examples/assets/i18n.js).
+
+- **Toggle:** botón `ES`/`EN` en el navbar (`data-glue-lang-toggle="short"`) y "English"/"Español" en el menú móvil (`data-glue-lang-toggle="long"`). En móvil solo aparece en el menú.
+- **Persistencia:** la elección se guarda en `localStorage` (`glue-lang`) y se mantiene entre páginas y recargas.
+- **Primera visita:** español si el idioma del navegador es español o si la región (locale o zona horaria) es de un país hispanohablante; si no, inglés.
+- **Enlace directo:** `?lang=en` o `?lang=es` fuerza y guarda el idioma (útil para embeber en zeroheight).
+- Carga `i18n.js` en el `<head>`, antes de `glue.js`, para que la página no muestre el otro idioma un instante.
+
+**Al añadir o cambiar texto** en `examples/`, añade la pareja español → inglés al diccionario `ES_EN` de `i18n.js`. El texto sin entrada se queda en español. Para textos ambiguos de una sola letra o palabra usa `data-en` en el elemento: `<span data-en="M">L</span>`.

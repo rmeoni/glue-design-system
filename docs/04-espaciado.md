@@ -72,6 +72,11 @@ Glue es plano por defecto. La sombra solo indica que algo flota sobre la página
 | `duration.fast` | 200 ms | Hover, color |
 | `duration.base` | 300 ms | Subrayado de nav, paneles |
 | `duration.slow` | 500 ms | Zoom de imagen en tarjeta |
+| `duration.loop` | 1600 ms | Un ciclo de un indicador en bucle (brillo del skeleton) |
 | `easing.standard` | `cubic-bezier(.25,.46,.45,.94)` | Todo |
 
-Con `prefers-reduced-motion: reduce` las transiciones se desactivan.
+Con `prefers-reduced-motion: reduce` las transiciones se desactivan y el brillo del skeleton se quita.
+
+### Skeleton de carga
+
+El único movimiento en bucle del sistema. Base `color.skeleton.base` con un brillo `color.skeleton.highlight` que la recorre cada `duration.loop`. Funciona igual en claro y oscuro porque solo cambian los tokens. Detalle en [Skeleton](componentes/skeleton.md).

@@ -165,7 +165,8 @@
     "$type": "duration",
     "fast": { "$value": "200ms" },
     "base": { "$value": "300ms" },
-    "slow": { "$value": "500ms" }
+    "slow": { "$value": "500ms" },
+    "loop": { "$value": "1600ms", "$description": "One cycle of a looping indicator (skeleton shimmer)." }
   },
   "easing": {
     "$type": "cubicBezier",

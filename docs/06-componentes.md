@@ -21,6 +21,7 @@ Todos los componentes viven en [`css/components.css`](../css/components.css), us
 | Media | `.g-media`, `.g-figure` | [media.md](componentes/media.md) |
 | Alerta | `.g-alert` | [alerta.md](componentes/alerta.md) |
 | Snackbar | `.g-snackbar` | [snackbar.md](componentes/snackbar.md) |
+| Skeleton | `.g-skeleton` | [skeleton.md](componentes/skeleton.md) |
 | Logo | `.g-logo` | [10-logo.md](10-logo.md) |
 | Icono ilustrativo y feature | `.g-spot-icon`, `.g-features`, `.g-feature` | [11-iconos.md](11-iconos.md) |
 | Navbar | `.g-navbar` | [navbar.md](componentes/navbar.md) |

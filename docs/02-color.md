@@ -67,6 +67,7 @@ Separados del coral para que un error nunca se confunda con el acento de marca.
 | `color.action.chip-bg-selected` / `-fg-selected` | coral.600 / white | coral.400 / neutral.900 | Chip seleccionado |
 | `color.action.disabled-bg` / `-fg` | neutral.100 / 500 | neutral.800 / 500 | Deshabilitado |
 | `color.action.on-inverse` | navy.200 | navy.700 | Acción de texto sobre `bg.inverse` (snackbar) |
+| `color.skeleton.base` / `-highlight` | neutral.100 / 50 | neutral.700 / 600 | Skeleton de carga (decorativo) |
 | `color.feedback.{success,warning,error,info}-{fg,bg}` | ver tabla anterior | | Alertas, errores de campo |
 
 En CSS cada token es una variable: `color.action.primary-bg` → `var(--color-action-primary-bg)`.

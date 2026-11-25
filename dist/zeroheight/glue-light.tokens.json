@@ -1,0 +1,1397 @@
+{
+  "color": {
+    "$type": "color",
+    "navy": {
+      "50": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.9451,
+            0.9608,
+            1
+          ],
+          "hex": "#f1f5ff"
+        }
+      },
+      "100": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.8706,
+            0.9098,
+            0.9961
+          ],
+          "hex": "#dee8fe"
+        }
+      },
+      "200": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.7451,
+            0.8196,
+            0.9765
+          ],
+          "hex": "#bed1f9"
+        }
+      },
+      "300": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.6157,
+            0.7059,
+            0.8941
+          ],
+          "hex": "#9db4e4"
+        }
+      },
+      "400": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.4667,
+            0.5686,
+            0.7922
+          ],
+          "hex": "#7791ca"
+        }
+      },
+      "500": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.3216,
+            0.4353,
+            0.6902
+          ],
+          "hex": "#526fb0"
+        }
+      },
+      "600": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.2,
+            0.3176,
+            0.5961
+          ],
+          "hex": "#335198"
+        }
+      },
+      "700": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.0824,
+            0.1922,
+            0.502
+          ],
+          "hex": "#153180"
+        },
+        "$description": "Brand navy."
+      },
+      "800": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.0275,
+            0.1098,
+            0.3843
+          ],
+          "hex": "#071c62"
+        }
+      },
+      "900": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.0078,
+            0.0471,
+            0.298
+          ],
+          "hex": "#020c4c"
+        }
+      },
+      "$description": "Brand primary. Actions, links in navigation, inverse sections."
+    },
+    "coral": {
+      "50": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.9961,
+            0.949,
+            0.9373
+          ],
+          "hex": "#fef2ef"
+        }
+      },
+      "100": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.9961,
+            0.8784,
+            0.851
+          ],
+          "hex": "#fee0d9"
+        }
+      },
+      "200": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.9961,
+            0.7529,
+            0.6941
+          ],
+          "hex": "#fec0b1"
+        }
+      },
+      "300": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.9961,
+            0.5922,
+            0.502
+          ],
+          "hex": "#fe9780"
+        }
+      },
+      "400": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.9765,
+            0.4157,
+            0.298
+          ],
+          "hex": "#f96a4c"
+        },
+        "$description": "Brand coral. Under 3:1 on white: use only on dark backgrounds or as decoration."
+      },
+      "500": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.8118,
+            0.3255,
+            0.2235
+          ],
+          "hex": "#cf5339"
+        }
+      },
+      "600": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.6784,
+            0.2549,
+            0.1647
+          ],
+          "hex": "#ad412a"
+        },
+        "$description": "Coral for text on light backgrounds (5.89:1 on white)."
+      },
+      "700": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.549,
+            0.1843,
+            0.1098
+          ],
+          "hex": "#8c2f1c"
+        }
+      },
+      "800": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.4275,
+            0.1176,
+            0.051
+          ],
+          "hex": "#6d1e0d"
+        }
+      },
+      "900": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.2941,
+            0.0431,
+            0.0039
+          ],
+          "hex": "#4b0b01"
+        }
+      },
+      "$description": "Brand accent. Eyebrow labels, links, focus ring, selected state."
+    },
+    "neutral": {
+      "50": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.9686,
+            0.9686,
+            0.9725
+          ],
+          "hex": "#f7f7f8"
+        }
+      },
+      "100": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.9098,
+            0.9098,
+            0.9098
+          ],
+          "hex": "#e8e8e8"
+        }
+      },
+      "200": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.8314,
+            0.8314,
+            0.8392
+          ],
+          "hex": "#d4d4d6"
+        }
+      },
+      "300": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.702,
+            0.702,
+            0.7137
+          ],
+          "hex": "#b3b3b6"
+        }
+      },
+      "400": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.5333,
+            0.5333,
+            0.5333
+          ],
+          "hex": "#888888"
+        }
+      },
+      "500": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.4196,
+            0.4196,
+            0.4314
+          ],
+          "hex": "#6b6b6e"
+        }
+      },
+      "600": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.3216,
+            0.3216,
+            0.3333
+          ],
+          "hex": "#525255"
+        }
+      },
+      "700": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.1647,
+            0.1647,
+            0.1647
+          ],
+          "hex": "#2a2a2a"
+        }
+      },
+      "800": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.102,
+            0.102,
+            0.102
+          ],
+          "hex": "#1a1a1a"
+        }
+      },
+      "900": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.0392,
+            0.0392,
+            0.0392
+          ],
+          "hex": "#0a0a0a"
+        }
+      }
+    },
+    "green": {
+      "50": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.9176,
+            0.9686,
+            0.9373
+          ],
+          "hex": "#eaf7ef"
+        }
+      },
+      "300": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.4353,
+            0.8275,
+            0.6039
+          ],
+          "hex": "#6fd39a"
+        }
+      },
+      "600": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.1176,
+            0.4784,
+            0.2745
+          ],
+          "hex": "#1e7a46"
+        }
+      },
+      "900": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.0588,
+            0.1804,
+            0.1098
+          ],
+          "hex": "#0f2e1c"
+        }
+      },
+      "$description": "Feedback: success. New in Glue (not on uxrodrigo.com)."
+    },
+    "red": {
+      "50": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.9922,
+            0.9255,
+            0.9176
+          ],
+          "hex": "#fdecea"
+        }
+      },
+      "300": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            1,
+            0.5412,
+            0.502
+          ],
+          "hex": "#ff8a80"
+        }
+      },
+      "600": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.702,
+            0.149,
+            0.1176
+          ],
+          "hex": "#b3261e"
+        }
+      },
+      "900": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.2275,
+            0.0549,
+            0.0431
+          ],
+          "hex": "#3a0e0b"
+        }
+      },
+      "$description": "Feedback: error. New in Glue. Kept apart from coral so an error never reads as brand accent."
+    },
+    "amber": {
+      "50": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            1,
+            0.9647,
+            0.8784
+          ],
+          "hex": "#fff6e0"
+        }
+      },
+      "300": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.949,
+            0.7216,
+            0.2941
+          ],
+          "hex": "#f2b84b"
+        }
+      },
+      "700": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.5412,
+            0.3529,
+            0
+          ],
+          "hex": "#8a5a00"
+        }
+      },
+      "900": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.2275,
+            0.1569,
+            0
+          ],
+          "hex": "#3a2800"
+        }
+      },
+      "$description": "Feedback: warning. New in Glue."
+    },
+    "verified": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0,
+          0.5843,
+          0.9647
+        ],
+        "hex": "#0095f6"
+      },
+      "$description": "Verified badge in the UXRodrigo logo. Logo only: never for UI."
+    },
+    "white": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1,
+          1,
+          1
+        ],
+        "hex": "#ffffff"
+      }
+    },
+    "black": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0,
+          0,
+          0
+        ],
+        "hex": "#000000"
+      }
+    },
+    "bg": {
+      "page": {
+        "$value": "{color.white}"
+      },
+      "surface": {
+        "$value": "{color.neutral.50}"
+      },
+      "surface-alt": {
+        "$value": "{color.navy.50}"
+      },
+      "raised": {
+        "$value": "{color.white}",
+        "$description": "Cards and panels that sit on the page."
+      },
+      "inverse": {
+        "$value": "{color.navy.700}"
+      }
+    },
+    "skeleton": {
+      "$description": "Loading placeholders. Decorative: no contrast requirement, but the base must read against bg.page and bg.raised.",
+      "base": {
+        "$value": "{color.neutral.100}"
+      },
+      "highlight": {
+        "$value": "{color.neutral.50}",
+        "$description": "Shimmer that sweeps across the base."
+      }
+    },
+    "text": {
+      "primary": {
+        "$value": "{color.neutral.900}"
+      },
+      "secondary": {
+        "$value": "{color.neutral.600}"
+      },
+      "accent": {
+        "$value": "{color.coral.600}"
+      },
+      "link": {
+        "$value": "{color.coral.600}"
+      },
+      "on-inverse": {
+        "$value": "{color.white}"
+      }
+    },
+    "border": {
+      "default": {
+        "$value": "{color.neutral.200}",
+        "$description": "Dividers and card edges. Decorative only: under 3:1."
+      },
+      "control": {
+        "$value": "{color.neutral.500}",
+        "$description": "Edges of inputs and controls: 5.31:1 on white."
+      },
+      "strong": {
+        "$value": "{color.navy.700}"
+      }
+    },
+    "icon": {
+      "spot": {
+        "$value": "{color.navy.700}",
+        "$description": "Hand-made spot icons."
+      }
+    },
+    "focus-ring": {
+      "$value": "{color.coral.600}"
+    },
+    "action": {
+      "primary-bg": {
+        "$value": "{color.navy.700}"
+      },
+      "primary-bg-hover": {
+        "$value": "{color.navy.800}"
+      },
+      "primary-fg": {
+        "$value": "{color.white}"
+      },
+      "secondary-border": {
+        "$value": "{color.navy.700}"
+      },
+      "secondary-fg": {
+        "$value": "{color.navy.700}"
+      },
+      "secondary-bg-hover": {
+        "$value": "{color.navy.50}"
+      },
+      "chip-bg": {
+        "$value": "{color.navy.50}"
+      },
+      "chip-bg-hover": {
+        "$value": "{color.navy.100}"
+      },
+      "chip-fg": {
+        "$value": "{color.navy.700}"
+      },
+      "chip-bg-selected": {
+        "$value": "{color.coral.600}"
+      },
+      "chip-fg-selected": {
+        "$value": "{color.white}"
+      },
+      "on-inverse": {
+        "$value": "{color.navy.200}",
+        "$description": "Text actions on bg.inverse (snackbar action). 7.67:1 on navy.700."
+      },
+      "disabled-bg": {
+        "$value": "{color.neutral.100}"
+      },
+      "disabled-fg": {
+        "$value": "{color.neutral.500}"
+      }
+    },
+    "feedback": {
+      "success-fg": {
+        "$value": "{color.green.600}"
+      },
+      "success-bg": {
+        "$value": "{color.green.50}"
+      },
+      "warning-fg": {
+        "$value": "{color.amber.700}"
+      },
+      "warning-bg": {
+        "$value": "{color.amber.50}"
+      },
+      "error-fg": {
+        "$value": "{color.red.600}"
+      },
+      "error-bg": {
+        "$value": "{color.red.50}"
+      },
+      "info-fg": {
+        "$value": "{color.navy.700}"
+      },
+      "info-bg": {
+        "$value": "{color.navy.50}"
+      }
+    }
+  },
+  "font": {
+    "family": {
+      "$type": "fontFamily",
+      "sans": {
+        "$value": [
+          "Inter",
+          "system-ui",
+          "-apple-system",
+          "Segoe UI",
+          "Roboto",
+          "sans-serif"
+        ]
+      }
+    },
+    "weight": {
+      "$type": "fontWeight",
+      "regular": {
+        "$value": 400
+      },
+      "medium": {
+        "$value": 500
+      },
+      "semibold": {
+        "$value": 600
+      },
+      "bold": {
+        "$value": 700
+      },
+      "extrabold": {
+        "$value": 800
+      }
+    },
+    "size": {
+      "11": {
+        "$value": {
+          "value": 11,
+          "unit": "px"
+        }
+      },
+      "13": {
+        "$value": {
+          "value": 13,
+          "unit": "px"
+        }
+      },
+      "14": {
+        "$value": {
+          "value": 14,
+          "unit": "px"
+        }
+      },
+      "15": {
+        "$value": {
+          "value": 15,
+          "unit": "px"
+        }
+      },
+      "17": {
+        "$value": {
+          "value": 17,
+          "unit": "px"
+        }
+      },
+      "18": {
+        "$value": {
+          "value": 18,
+          "unit": "px"
+        }
+      },
+      "20": {
+        "$value": {
+          "value": 20,
+          "unit": "px"
+        }
+      },
+      "24": {
+        "$value": {
+          "value": 24,
+          "unit": "px"
+        }
+      },
+      "36": {
+        "$value": {
+          "value": 36,
+          "unit": "px"
+        }
+      },
+      "40": {
+        "$value": {
+          "value": 40,
+          "unit": "px"
+        }
+      },
+      "48": {
+        "$value": {
+          "value": 48,
+          "unit": "px"
+        }
+      },
+      "$type": "dimension"
+    },
+    "line-height": {
+      "16": {
+        "$value": {
+          "value": 16,
+          "unit": "px"
+        }
+      },
+      "20": {
+        "$value": {
+          "value": 20,
+          "unit": "px"
+        }
+      },
+      "24": {
+        "$value": {
+          "value": 24,
+          "unit": "px"
+        }
+      },
+      "28": {
+        "$value": {
+          "value": 28,
+          "unit": "px"
+        }
+      },
+      "30": {
+        "$value": {
+          "value": 30,
+          "unit": "px"
+        }
+      },
+      "32": {
+        "$value": {
+          "value": 32,
+          "unit": "px"
+        }
+      },
+      "48": {
+        "$value": {
+          "value": 48,
+          "unit": "px"
+        }
+      },
+      "60": {
+        "$value": {
+          "value": 60,
+          "unit": "px"
+        }
+      },
+      "$type": "dimension"
+    },
+    "letter-spacing": {
+      "$type": "dimension",
+      "normal": {
+        "$value": {
+          "value": 0,
+          "unit": "px"
+        }
+      },
+      "label": {
+        "$value": {
+          "value": 0.8,
+          "unit": "px"
+        }
+      }
+    }
+  },
+  "space": {
+    "0": {
+      "$value": {
+        "value": 0,
+        "unit": "px"
+      }
+    },
+    "1": {
+      "$value": {
+        "value": 4,
+        "unit": "px"
+      }
+    },
+    "2": {
+      "$value": {
+        "value": 8,
+        "unit": "px"
+      }
+    },
+    "3": {
+      "$value": {
+        "value": 12,
+        "unit": "px"
+      }
+    },
+    "4": {
+      "$value": {
+        "value": 16,
+        "unit": "px"
+      }
+    },
+    "5": {
+      "$value": {
+        "value": 20,
+        "unit": "px"
+      }
+    },
+    "6": {
+      "$value": {
+        "value": 24,
+        "unit": "px"
+      }
+    },
+    "8": {
+      "$value": {
+        "value": 32,
+        "unit": "px"
+      }
+    },
+    "12": {
+      "$value": {
+        "value": 48,
+        "unit": "px"
+      }
+    },
+    "16": {
+      "$value": {
+        "value": 64,
+        "unit": "px"
+      }
+    },
+    "24": {
+      "$value": {
+        "value": 96,
+        "unit": "px"
+      }
+    },
+    "32": {
+      "$value": {
+        "value": 128,
+        "unit": "px"
+      }
+    },
+    "$type": "dimension",
+    "$description": "4px base. The key is the multiple of 4 (space.6 = 24px)."
+  },
+  "radius": {
+    "$type": "dimension",
+    "xs": {
+      "$value": {
+        "value": 4,
+        "unit": "px"
+      }
+    },
+    "sm": {
+      "$value": {
+        "value": 8,
+        "unit": "px"
+      }
+    },
+    "md": {
+      "$value": {
+        "value": 14,
+        "unit": "px"
+      },
+      "$description": "Form fields and inline panels."
+    },
+    "lg": {
+      "$value": {
+        "value": 32,
+        "unit": "px"
+      },
+      "$description": "Cards."
+    },
+    "xl": {
+      "$value": {
+        "value": 48,
+        "unit": "px"
+      },
+      "$description": "Images and videos."
+    },
+    "full": {
+      "$value": {
+        "value": 9999,
+        "unit": "px"
+      },
+      "$description": "Buttons, chips, icon buttons."
+    }
+  },
+  "border-width": {
+    "$type": "dimension",
+    "thin": {
+      "$value": {
+        "value": 1,
+        "unit": "px"
+      }
+    },
+    "control": {
+      "$value": {
+        "value": 1.5,
+        "unit": "px"
+      }
+    },
+    "focus": {
+      "$value": {
+        "value": 2,
+        "unit": "px"
+      }
+    }
+  },
+  "size": {
+    "$type": "dimension",
+    "control-sm": {
+      "$value": {
+        "value": 36,
+        "unit": "px"
+      }
+    },
+    "control-md": {
+      "$value": {
+        "value": 44,
+        "unit": "px"
+      },
+      "$description": "Minimum touch target."
+    },
+    "control-lg": {
+      "$value": {
+        "value": 48,
+        "unit": "px"
+      }
+    },
+    "icon-sm": {
+      "$value": {
+        "value": 16,
+        "unit": "px"
+      }
+    },
+    "icon-md": {
+      "$value": {
+        "value": 20,
+        "unit": "px"
+      }
+    },
+    "icon-lg": {
+      "$value": {
+        "value": 24,
+        "unit": "px"
+      }
+    },
+    "logo-sm": {
+      "$value": {
+        "value": 24,
+        "unit": "px"
+      },
+      "$description": "Logo height on phones (≈159px wide)."
+    },
+    "logo-md": {
+      "$value": {
+        "value": 30,
+        "unit": "px"
+      },
+      "$description": "Logo height in the navbar (≈199px wide, as on uxrodrigo.com)."
+    },
+    "logo-lg": {
+      "$value": {
+        "value": 48,
+        "unit": "px"
+      },
+      "$description": "Logo height in heroes and covers."
+    },
+    "spot-sm": {
+      "$value": {
+        "value": 32,
+        "unit": "px"
+      },
+      "$description": "Spot icon height in dense lists."
+    },
+    "spot-md": {
+      "$value": {
+        "value": 48,
+        "unit": "px"
+      },
+      "$description": "Spot icon height by default (as on uxrodrigo.com)."
+    },
+    "spot-lg": {
+      "$value": {
+        "value": 64,
+        "unit": "px"
+      },
+      "$description": "Spot icon height in heroes and empty states."
+    }
+  },
+  "shadow": {
+    "$type": "shadow",
+    "sm": {
+      "$value": {
+        "color": {
+          "colorSpace": "srgb",
+          "components": [
+            0,
+            0,
+            0
+          ],
+          "alpha": 0.1216,
+          "hex": "#000000"
+        },
+        "offsetX": {
+          "value": 0,
+          "unit": "px"
+        },
+        "offsetY": {
+          "value": 4,
+          "unit": "px"
+        },
+        "blur": {
+          "value": 12,
+          "unit": "px"
+        },
+        "spread": {
+          "value": 0,
+          "unit": "px"
+        }
+      }
+    },
+    "card": {
+      "$value": {
+        "color": {
+          "colorSpace": "srgb",
+          "components": [
+            0.0824,
+            0.1922,
+            0.502
+          ],
+          "alpha": 0.0784,
+          "hex": "#153180"
+        },
+        "offsetX": {
+          "value": 0,
+          "unit": "px"
+        },
+        "offsetY": {
+          "value": 10,
+          "unit": "px"
+        },
+        "blur": {
+          "value": 40,
+          "unit": "px"
+        },
+        "spread": {
+          "value": 0,
+          "unit": "px"
+        }
+      }
+    },
+    "lg": {
+      "$value": {
+        "color": {
+          "colorSpace": "srgb",
+          "components": [
+            0,
+            0,
+            0
+          ],
+          "alpha": 0.1098,
+          "hex": "#000000"
+        },
+        "offsetX": {
+          "value": 0,
+          "unit": "px"
+        },
+        "offsetY": {
+          "value": 15,
+          "unit": "px"
+        },
+        "blur": {
+          "value": 40,
+          "unit": "px"
+        },
+        "spread": {
+          "value": 0,
+          "unit": "px"
+        }
+      }
+    }
+  },
+  "duration": {
+    "$type": "duration",
+    "fast": {
+      "$value": {
+        "value": 200,
+        "unit": "ms"
+      }
+    },
+    "base": {
+      "$value": {
+        "value": 300,
+        "unit": "ms"
+      }
+    },
+    "slow": {
+      "$value": {
+        "value": 500,
+        "unit": "ms"
+      }
+    },
+    "loop": {
+      "$value": {
+        "value": 1600,
+        "unit": "ms"
+      },
+      "$description": "One cycle of a looping indicator (skeleton shimmer)."
+    }
+  },
+  "easing": {
+    "$type": "cubicBezier",
+    "standard": {
+      "$value": [
+        0.25,
+        0.46,
+        0.45,
+        0.94
+      ]
+    }
+  },
+  "breakpoint": {
+    "$type": "dimension",
+    "$description": "Min-width breakpoints, mobile first.",
+    "md": {
+      "$value": {
+        "value": 768,
+        "unit": "px"
+      }
+    },
+    "lg": {
+      "$value": {
+        "value": 992,
+        "unit": "px"
+      }
+    },
+    "xl": {
+      "$value": {
+        "value": 1280,
+        "unit": "px"
+      }
+    }
+  },
+  "layout": {
+    "$type": "dimension",
+    "container-max": {
+      "$value": {
+        "value": 1234,
+        "unit": "px"
+      },
+      "$description": "Includes the side padding: 1170px of content at desktop."
+    },
+    "container-medium": {
+      "$value": {
+        "value": 770,
+        "unit": "px"
+      }
+    },
+    "container-narrow": {
+      "$value": {
+        "value": 570,
+        "unit": "px"
+      }
+    },
+    "gutter-sm": {
+      "$value": {
+        "value": 16,
+        "unit": "px"
+      }
+    },
+    "gutter-md": {
+      "$value": {
+        "value": 24,
+        "unit": "px"
+      }
+    },
+    "gutter-lg": {
+      "$value": {
+        "value": 32,
+        "unit": "px"
+      }
+    },
+    "section-sm": {
+      "$value": {
+        "value": 64,
+        "unit": "px"
+      }
+    },
+    "section-lg": {
+      "$value": {
+        "value": 128,
+        "unit": "px"
+      }
+    }
+  },
+  "typography": {
+    "$type": "typography",
+    "h1": {
+      "$value": {
+        "fontFamily": "{font.family.sans}",
+        "fontSize": "{font.size.48}",
+        "fontWeight": "{font.weight.bold}",
+        "letterSpacing": "{font.letter-spacing.normal}",
+        "lineHeight": 1.25
+      }
+    },
+    "h1-mobile": {
+      "$value": {
+        "fontFamily": "{font.family.sans}",
+        "fontSize": "{font.size.40}",
+        "fontWeight": "{font.weight.bold}",
+        "letterSpacing": "{font.letter-spacing.normal}",
+        "lineHeight": 1.2
+      },
+      "$description": "H1 below 992px."
+    },
+    "h2": {
+      "$value": {
+        "fontFamily": "{font.family.sans}",
+        "fontSize": "{font.size.36}",
+        "fontWeight": "{font.weight.bold}",
+        "letterSpacing": "{font.letter-spacing.normal}",
+        "lineHeight": 1.3333
+      }
+    },
+    "h3": {
+      "$value": {
+        "fontFamily": "{font.family.sans}",
+        "fontSize": "{font.size.24}",
+        "fontWeight": "{font.weight.bold}",
+        "letterSpacing": "{font.letter-spacing.normal}",
+        "lineHeight": 1.3333
+      }
+    },
+    "h4": {
+      "$value": {
+        "fontFamily": "{font.family.sans}",
+        "fontSize": "{font.size.20}",
+        "fontWeight": "{font.weight.bold}",
+        "letterSpacing": "{font.letter-spacing.normal}",
+        "lineHeight": 1.4
+      }
+    },
+    "h5": {
+      "$value": {
+        "fontFamily": "{font.family.sans}",
+        "fontSize": "{font.size.17}",
+        "fontWeight": "{font.weight.bold}",
+        "letterSpacing": "{font.letter-spacing.normal}",
+        "lineHeight": 1.4118
+      }
+    },
+    "h6": {
+      "$value": {
+        "fontFamily": "{font.family.sans}",
+        "fontSize": "{font.size.15}",
+        "fontWeight": "{font.weight.bold}",
+        "letterSpacing": "{font.letter-spacing.normal}",
+        "lineHeight": 1.3333
+      }
+    },
+    "lead": {
+      "$value": {
+        "fontFamily": "{font.family.sans}",
+        "fontSize": "{font.size.18}",
+        "fontWeight": "{font.weight.regular}",
+        "letterSpacing": "{font.letter-spacing.normal}",
+        "lineHeight": 1.6667
+      }
+    },
+    "body": {
+      "$value": {
+        "fontFamily": "{font.family.sans}",
+        "fontSize": "{font.size.15}",
+        "fontWeight": "{font.weight.regular}",
+        "letterSpacing": "{font.letter-spacing.normal}",
+        "lineHeight": 1.6
+      }
+    },
+    "quote": {
+      "$value": {
+        "fontFamily": "{font.family.sans}",
+        "fontSize": "{font.size.17}",
+        "fontWeight": "{font.weight.regular}",
+        "letterSpacing": "{font.letter-spacing.normal}",
+        "lineHeight": 1.4118
+      }
+    },
+    "small": {
+      "$value": {
+        "fontFamily": "{font.family.sans}",
+        "fontSize": "{font.size.13}",
+        "fontWeight": "{font.weight.regular}",
+        "letterSpacing": "{font.letter-spacing.normal}",
+        "lineHeight": 1.5385
+      }
+    },
+    "button": {
+      "$value": {
+        "fontFamily": "{font.family.sans}",
+        "fontSize": "{font.size.15}",
+        "fontWeight": "{font.weight.bold}",
+        "letterSpacing": "{font.letter-spacing.normal}",
+        "lineHeight": 1.3333
+      }
+    },
+    "chip": {
+      "$value": {
+        "fontFamily": "{font.family.sans}",
+        "fontSize": "{font.size.13}",
+        "fontWeight": "{font.weight.medium}",
+        "letterSpacing": "{font.letter-spacing.normal}",
+        "lineHeight": 1.5385
+      },
+      "$description": "Always uppercase."
+    },
+    "label": {
+      "$value": {
+        "fontFamily": "{font.family.sans}",
+        "fontSize": "{font.size.11}",
+        "fontWeight": "{font.weight.semibold}",
+        "letterSpacing": "{font.letter-spacing.label}",
+        "lineHeight": 1.4545
+      },
+      "$description": "Eyebrow and form labels. Always uppercase."
+    }
+  },
+  "elevation": {
+    "$type": "shadow",
+    "card": {
+      "$value": "{shadow.card}"
+    },
+    "raised": {
+      "$value": "{shadow.lg}"
+    }
+  },
+  "$description": "Glue Design System — Light theme. Primitives, text styles and light semantic tokens. DTCG 2025.10, generated by scripts/build-zeroheight.mjs. Do not edit by hand."
+}
