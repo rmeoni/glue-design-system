@@ -60,11 +60,11 @@ Si una pantalla necesita CSS propio, **solo con tokens semánticos**:
 ## 5. Conectar con zeroheight
 
 1. En zeroheight, crea un styleguide "Glue Design System".
-2. **Tokens:** en zeroheight ve a *Tokens*, crea un *token set*, elige *JSON import* como origen y sube [`dist/zeroheight/glue-light.tokens.json`](../dist/zeroheight/glue-light.tokens.json).
-   - Es DTCG 2025.10, el formato que importa zeroheight: colores como objeto `srgb` con `hex`, medidas como `{ value, unit }`, `lineHeight` de tipografía como proporción. Los alias (`{color.navy.700}`) se mantienen.
-   - Cada archivo trae primitivos + tipografía + semánticos de un tema y es autónomo. Para el tema oscuro usa [`glue-dark.tokens.json`](../dist/zeroheight/glue-dark.tokens.json): impórtalo como modo del mismo set si tu plan lo permite, o como un segundo set "Glue Dark".
-   - Se genera con `npm run build` desde `tokens/`. No lo edites a mano: cambia `tokens/` y vuelve a compilar.
-   - Alternativa: conectar el repositorio vía Tokens Studio, que lee `tokens/` y `$themes.json` directamente.
+2. **Tokens:** en zeroheight ve a *Tokens*, crea un *token set*, elige *JSON import* como origen y sube [`dist/zeroheight/glue.tokens.json`](../dist/zeroheight/glue.tokens.json).
+   - Un solo archivo y un solo set con los dos temas: primitivos y tipografía compartidos, y los semánticos en `light.*` y `dark.*` (por ejemplo `light.color.bg.inverse` → `{color.navy.700}` y `dark.color.bg.inverse` → `{color.navy.200}`).
+   - Valores en el formato que valida zeroheight: colores hex (`#153180`), medidas como texto con `px` o `rem` (`16px`), duraciones en `ms`. Los alias se mantienen.
+   - Se genera con `npm run build` desde `tokens/` y el build falla si algún valor no pasa esas reglas. No lo edites a mano: cambia `tokens/` y vuelve a compilar.
+   - Si zeroheight marca algún token como no importable, copia el mensaje y corrige el origen en `tokens/`.
 3. **Páginas:** crea una página por archivo de `docs/` en este orden: Principios, Color, Tipografía, Espaciado, Layouts y grids, Componentes (una subpágina por archivo de `docs/componentes/`), Pantallas de ejemplo, Guía de uso, Accesibilidad. Pega el Markdown: zeroheight conserva tablas y bloques de código.
 4. **Ejemplos en vivo:** activa GitHub Pages desde `main`, carpeta raíz `/`, y embébelos en zeroheight con bloques de iframe/código. El `index.html` de la raíz da URLs cortas:
    - `https://rmeoni.github.io/glue-design-system/` → guía viva (`examples/index.html`)

@@ -66,6 +66,7 @@ Naming: `.g-{component}`, `--{variant}`, `__{part}`. State is set with native at
 - Wrap the loading region with `aria-busy="true"`, put `aria-hidden="true"` on the shapes and add `<span class="g-visually-hidden">Cargando…</span>`.
 - Shimmer every `--duration-loop` (1600ms); static with reduced motion. Same markup in light and dark (colors are `--color-skeleton-*`).
 - Not for loads under 300ms. Never together with a spinner.
+- Page and image loading: put `<script>document.documentElement.classList.add("g-js","g-is-loading");setTimeout(function(){document.documentElement.classList.remove("g-is-loading")},4000)</script>` first in `<head>` and load `glue.js`. While loading, text becomes per-line skeleton bars and controls solid shapes; each `.g-media` image shows a skeleton until it loads, then fades in. Always put content images inside `.g-media`.
 
 ## Spot icon and feature — `.g-spot-icon`, `ul.g-features > li.g-feature`
 - Hand-made icons from `assets/icons/`, inlined. See [icons.md](icons.md).

@@ -262,6 +262,26 @@
     "Todos los trabajos": "All work",
     "Dashboard financiero": "Finance dashboard",
     "Mostrar snackbar": "Show snackbar",
+    "Fondos de cabecera": "Header backgrounds",
+    "El fondo de la foto de perfil y de las páginas de proyecto de uxrodrigo.com: una cabecera con tinte navy cuyo borde inferior se corta en diagonal y deja ver el fondo de la página.": "The background behind the profile photo and the project pages on uxrodrigo.com: a navy-tinted header whose bottom edge is cut on a diagonal, revealing the page background.",
+    "Hero de perfil ·": "Profile hero ·",
+    "Para la foto de perfil y la presentación. Corte de 9°, alto a la izquierda. La foto es un círculo de 300 px como máximo (": "For the profile photo and intro. A 9° cut, high on the left. The photo is a circle, 300 px at most (",
+    "). En móvil (menos de 480 px) el corte se quita.": "). On phones (under 480 px) the cut is removed.",
+    "Foto de perfil de ejemplo": "Sample profile photo",
+    "Hola, soy Rodrigo": "Hi, I'm Rodrigo",
+    "Contenido de la página": "Page content",
+    "Cabecera de proyecto ·": "Project header ·",
+    "Rediseño de una app de reservas": "Booking app redesign",
+    "Para el título de cada caso de estudio. Corte suave de 2,5°, alto a la derecha. En tablet y móvil (menos de 768 px) el corte se quita.": "For the title of each case study. A gentle 2.5° cut, high on the right. On tablets and phones (under 768 px) the cut is removed.",
+    "Parte": "Part",
+    "Cabecera": "Header",
+    "Corte": "Cut",
+    "Una sola cabecera con corte por página, siempre la primera sección.": "One angled header per page, always the first section.",
+    "El alto del corte sigue al ancho y se suma al padding inferior: el contenido nunca queda cortado.": "The cut height follows the width and is added to the bottom padding, so content is never clipped.",
+    "No combines el corte con": "Don't combine the cut with",
+    "o": "or",
+    "ni lo uses en secciones intermedias.": "or use it on sections in the middle of the page.",
+    "Glue, el sistema de diseño de UXRodrigo: tokens, estilos y componentes que unen diseño y código.": "Glue, UXRodrigo's design system: tokens, styles and components that bring design and code together.",
     "Movimiento": "Motion",
     "Movimiento corto y discreto: confirma una acción o indica que algo está cargando, nunca decora. Con movimiento reducido todo se queda quieto.": "Short, quiet motion: it confirms an action or shows that something is loading, never decorates. With reduced motion, everything stays still.",
     "Hover, color, aparición del snackbar.": "Hover, color, snackbar entrance.",
@@ -396,7 +416,9 @@
   root.lang = current;
 
   // Hide the page until English is applied, so Spanish never flashes. Failsafe after 1.5 s.
-  if (current === "en") {
+  // Not needed when the page shows its loading skeleton: text is transparent until
+  // glue.js reveals it, which happens after this file has translated the page.
+  if (current === "en" && !root.classList.contains("g-is-loading")) {
     root.classList.add("glue-i18n-pending");
     var style = document.createElement("style");
     style.textContent = ".glue-i18n-pending body{visibility:hidden}";

@@ -119,4 +119,27 @@
   window.Glue.hideSnackbar = function (id) { hideSnackbar(typeof id === "string" ? document.getElementById(id) : id); };
 
   document.addEventListener("DOMContentLoaded", syncToggles);
+
+  // Skeleton loading (see "Skeleton while the page paints" in components.css)
+  // Images: mark each .g-media image when it loads (or fails), so its skeleton goes away.
+  function markImages() {
+    document.querySelectorAll(".g-media > img:not([data-loaded])").forEach(function (img) {
+      var done = function () { img.setAttribute("data-loaded", ""); };
+      if (img.complete) done();
+      else { img.addEventListener("load", done, { once: true }); img.addEventListener("error", done, { once: true }); }
+    });
+  }
+  markImages();
+  document.addEventListener("DOMContentLoaded", markImages);
+
+  // Page: reveal text once the DOM is parsed (i18n has run) and the web font is ready.
+  // The inline <head> snippet also reveals after 4 s in case this file never loads.
+  var domReady = new Promise(function (resolve) {
+    if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", resolve);
+    else resolve();
+  });
+  var fontsReady = document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve();
+  Promise.all([domReady, fontsReady]).then(function () {
+    root.classList.remove("g-is-loading");
+  });
 })();

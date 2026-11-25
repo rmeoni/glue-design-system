@@ -11,6 +11,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../dist/glue.css">
+  <script>/* Skeleton while the page paints; glue.js removes it. Failsafe after 4 s. */
+    document.documentElement.classList.add("g-js", "g-is-loading");
+    setTimeout(function () { document.documentElement.classList.remove("g-is-loading"); }, 4000);
+  </script>
   <script src="../assets/i18n.js"></script>
 </head>
 <body>
@@ -53,7 +57,8 @@
 
 <main id="main">
   <article>
-    <section class="g-section" style="padding-bottom: var(--space-12)">
+    <!-- Project header background (subtle angle, like uxrodrigo.com) -->
+    <section class="g-section g-section--angled-subtle">
       <div class="g-container">
         <nav class="g-breadcrumbs" aria-label="Migas de pan">
           <ol><li><a href="home.html">Inicio</a></li><li><a href="home.html#trabajos">Trabajos</a></li><li><span aria-current="page">App de reservas</span></li></ol>

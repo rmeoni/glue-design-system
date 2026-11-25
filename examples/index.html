@@ -4,6 +4,24 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Glue Design System</title>
+  <meta name="description" content="Glue, el sistema de diseño de UXRodrigo: tokens, estilos y componentes que unen diseño y código.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Glue Design System">
+  <meta property="og:title" content="Glue Design System">
+  <meta property="og:description" content="Tokens, estilos y componentes que unen diseño y código. Una sola fuente para uxrodrigo.com, Figma, Figma Make y zeroheight.">
+  <meta property="og:url" content="https://glue.uxrodrigo.com/examples/index.html">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:image" content="https://glue.uxrodrigo.com/assets/og/glue-og.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Glue Design System: logo de UXRodrigo, paleta de colores y componentes de ejemplo.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Glue Design System">
+  <meta name="twitter:description" content="Tokens, estilos y componentes que unen diseño y código.">
+  <meta name="twitter:image" content="https://glue.uxrodrigo.com/assets/og/glue-og.png">
+  <meta name="twitter:image:alt" content="Glue Design System: logo de UXRodrigo, paleta de colores y componentes de ejemplo.">
   <link rel="icon" href="../assets/logo/favicon.svg" type="image/svg+xml">
   <link rel="icon" href="../assets/logo/favicon-32.png" sizes="32x32" type="image/png">
   <link rel="apple-touch-icon" href="../assets/logo/apple-touch-icon.png">
@@ -11,6 +29,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../dist/glue.css">
+  <script>/* Skeleton while the page paints; glue.js removes it. Failsafe after 4 s. */
+    document.documentElement.classList.add("g-js", "g-is-loading");
+    setTimeout(function () { document.documentElement.classList.remove("g-is-loading"); }, 4000);
+  </script>
   <script src="assets/i18n.js"></script>
   <style>
     /* Style-guide only helpers (not part of Glue) */
@@ -44,6 +66,12 @@
     .sg-tokens { width: 100%; border-collapse: collapse; font: var(--typography-small); }
     .sg-tokens th, .sg-tokens td { padding: var(--space-3) var(--space-2); border-bottom: 1px solid var(--color-border-default); text-align: left; }
     .sg-rules { margin: 0; padding-left: 0; list-style: none; display: grid; gap: var(--space-3); }
+    .sg-angle-demo { container-type: inline-size; margin: 0; overflow: hidden; border: 1px solid var(--color-border-default); border-radius: var(--radius-lg); background: var(--color-bg-page); color: var(--color-text-primary); --layout-section-sm: var(--space-8); --layout-section-lg: var(--space-8); }
+    .sg-angle-demo > .g-section { padding-inline: var(--space-6); }
+    .sg-angle-demo .g-media--profile { width: 96px; flex: none; }
+    .sg-angle-hero { display: flex; align-items: center; gap: var(--space-5); }
+    .sg-angle-below { margin: 0; padding: 0 var(--space-6) var(--space-6); color: var(--color-text-secondary); font: var(--typography-small); }
+    .sg-angle-demo figcaption { padding: var(--space-3) var(--space-6); border-top: 1px solid var(--color-border-default); font: var(--typography-label); letter-spacing: var(--font-letter-spacing-label); text-transform: uppercase; color: var(--color-text-secondary); }
     @media (max-width: 600px) { .sg-row { grid-template-columns: 1fr; gap: var(--space-1); } }
   </style>
 </head>
@@ -339,6 +367,92 @@
   </section>
 
   <!-- Components -->
+  <!-- Header backgrounds -->
+  <section class="g-section g-section--bordered" id="fondos">
+    <div class="g-container">
+      <span class="g-eyebrow">Layout</span>
+      <h2>Fondos de cabecera</h2>
+      <p class="g-lead">El fondo de la foto de perfil y de las páginas de proyecto de uxrodrigo.com: una cabecera con tinte navy cuyo borde inferior se corta en diagonal y deja ver el fondo de la página.</p>
+
+      <h3 style="margin-top: var(--space-12)">Hero de perfil · <code>.g-section--angled</code></h3>
+      <p class="g-text-secondary" style="max-width: 720px">Para la foto de perfil y la presentación. Corte de 9°, alto a la izquierda. La foto es un círculo de 300 px como máximo (<code>.g-media--profile</code>). En móvil (menos de 480 px) el corte se quita.</p>
+      <div class="g-grid" style="margin-top: var(--space-6)">
+        <div class="g-col-md-4 g-col-lg-6">
+          <figure class="sg-angle-demo" data-theme="light">
+            <section class="g-section g-section--angled">
+              <div class="sg-angle-hero">
+                <div class="g-media g-media--profile"><img src="assets/placeholder-2.svg" alt="Foto de perfil de ejemplo"></div>
+                <div>
+                  <span class="g-eyebrow">Product designer · UX/UI</span>
+                  <h4 style="margin:0">Hola, soy Rodrigo</h4>
+                </div>
+              </div>
+            </section>
+            <p class="sg-angle-below">Contenido de la página</p>
+            <figcaption>Claro</figcaption>
+          </figure>
+        </div>
+        <div class="g-col-md-4 g-col-lg-6">
+          <figure class="sg-angle-demo" data-theme="dark">
+            <section class="g-section g-section--angled">
+              <div class="sg-angle-hero">
+                <div class="g-media g-media--profile"><img src="assets/placeholder-2.svg" alt="Foto de perfil de ejemplo"></div>
+                <div>
+                  <span class="g-eyebrow">Product designer · UX/UI</span>
+                  <h4 style="margin:0">Hola, soy Rodrigo</h4>
+                </div>
+              </div>
+            </section>
+            <p class="sg-angle-below">Contenido de la página</p>
+            <figcaption>Oscuro</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <h3 style="margin-top: var(--space-12)">Cabecera de proyecto · <code>.g-section--angled-subtle</code></h3>
+      <p class="g-text-secondary" style="max-width: 720px">Para el título de cada caso de estudio. Corte suave de 2,5°, alto a la derecha. En tablet y móvil (menos de 768 px) el corte se quita.</p>
+      <div class="g-grid" style="margin-top: var(--space-6)">
+        <div class="g-col-md-4 g-col-lg-6">
+          <figure class="sg-angle-demo" data-theme="light">
+            <section class="g-section g-section--angled-subtle">
+              <span class="g-eyebrow">Caso de estudio · UX · UI</span>
+              <h4 style="margin:0">Rediseño de una app de reservas</h4>
+            </section>
+            <p class="sg-angle-below">Contenido de la página</p>
+            <figcaption>Claro</figcaption>
+          </figure>
+        </div>
+        <div class="g-col-md-4 g-col-lg-6">
+          <figure class="sg-angle-demo" data-theme="dark">
+            <section class="g-section g-section--angled-subtle">
+              <span class="g-eyebrow">Caso de estudio · UX · UI</span>
+              <h4 style="margin:0">Rediseño de una app de reservas</h4>
+            </section>
+            <p class="sg-angle-below">Contenido de la página</p>
+            <figcaption>Oscuro</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div class="g-grid" style="margin-top: var(--space-8)">
+        <div class="g-col-md-4 g-col-lg-6">
+          <table class="sg-tokens">
+            <thead><tr><th>Parte</th><th>Token</th><th>Claro</th><th>Oscuro</th></tr></thead>
+            <tbody>
+              <tr><td>Cabecera</td><td><code>color.bg.surface-alt</code></td><td>#F1F5FF</td><td>#1A1A1A</td></tr>
+              <tr><td>Corte</td><td><code>color.bg.page</code></td><td>#FFFFFF</td><td>#0A0A0A</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <ul class="g-col-md-4 g-col-lg-6 sg-rules">
+          <li><strong>Sí:</strong> Una sola cabecera con corte por página, siempre la primera sección.</li>
+          <li><strong>Sí:</strong> El alto del corte sigue al ancho y se suma al padding inferior: el contenido nunca queda cortado.</li>
+          <li><strong>No:</strong> No combines el corte con <code>--surface</code> o <code>--inverse</code> ni lo uses en secciones intermedias.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
   <section class="g-section" id="componentes">
     <div class="g-container g-stack g-gap-12">
       <div>

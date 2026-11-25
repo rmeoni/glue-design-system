@@ -52,6 +52,41 @@
 .g-section--inverse :is(h1, h2, h3, h4, h5, h6) { color: inherit; }
 .g-section--bordered { border-top: var(--border-width-thin) solid var(--color-border-default); }
 
+/* ---------- Angled header backgrounds (from uxrodrigo.com) ----------
+   A tinted header whose bottom edge is cut on a diagonal, revealing the page
+   background below. Two variants, as on the portfolio:
+     --angled         profile hero (photo + intro): 9°, high on the left
+     --angled-subtle  project detail header:        2.5°, high on the right
+   The cut height follows the width (tan(angle) × width), and the section adds
+   it to its bottom padding so content is never clipped. Inside a container
+   (container-type: inline-size) it scales to that box instead of the viewport.
+   Tint = color.bg.surface-alt, cut = color.bg.page, so it works in dark mode.
+   The diagonal is dropped on small screens, like the portfolio does. */
+.g-section--angled,
+.g-section--angled-subtle {
+  --g-angle: 9deg;
+  --g-angle-rise: 15.84vw;                                  /* fallback: tan(9°) × 100vw */
+  --g-angle-rise: calc(100cqw * tan(var(--g-angle)));
+  background-color: var(--color-bg-surface-alt);
+  padding-bottom: calc(var(--layout-section-sm) + var(--g-angle-rise));
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - var(--g-angle-rise)));
+}
+
+.g-section--angled-subtle {
+  --g-angle: 2.5deg;
+  --g-angle-rise: 4.37vw;                                   /* fallback: tan(2.5°) × 100vw */
+  --g-angle-rise: calc(100cqw * tan(var(--g-angle)));
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--g-angle-rise)), 0 100%);
+}
+
+@media (max-width: 479px) {
+  .g-section--angled { --g-angle-rise: 0px; clip-path: none; }
+}
+
+@media (max-width: 767px) {
+  .g-section--angled-subtle { --g-angle-rise: 0px; clip-path: none; }
+}
+
 /* Centered section intro: eyebrow + heading + lead */
 .g-intro {
   max-width: var(--layout-container-narrow);

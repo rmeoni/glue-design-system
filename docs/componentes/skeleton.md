@@ -47,3 +47,26 @@ El mismo HTML sirve en los dos temas: solo cambian los tokens. La base se distin
 - ✅ `aria-busy="true"` en la zona que carga y `aria-hidden="true"` en las formas; un "Cargando…" oculto para lectores de pantalla. Quita `aria-busy` al terminar.
 - ❌ No lo uses en cargas de menos de 300 ms: el parpadeo molesta más que la espera.
 - ❌ No mezcles skeleton y spinner en la misma zona. ❌ No lo uses para contenido que nunca llega (errores): muestra el error.
+
+## Skeleton de página e imágenes
+
+Además del componente, Glue puede mostrar el skeleton en toda la página mientras se pinta, y en cada imagen hasta que carga. Lo usan la guía viva y las tres pantallas de ejemplo.
+
+1. Primera línea del `<head>`, antes de cualquier otro script:
+   ```html
+   <script>
+     document.documentElement.classList.add("g-js", "g-is-loading");
+     setTimeout(function () { document.documentElement.classList.remove("g-is-loading"); }, 4000);
+   </script>
+   ```
+2. Carga `glue.js` al final del `<body>`. Quita `g-is-loading` cuando el DOM y la fuente están listos, y marca cada imagen de `.g-media` con `data-loaded` al cargar.
+
+| Estado | Qué se ve |
+|---|---|
+| `html.g-is-loading` | El texto se vuelve transparente. Títulos, párrafos, etiquetas, enlaces de navegación y celdas se ven como una barra por línea; botones, chips, badges, campos y botones de icono como formas sólidas. Nada cambia de tamaño, así que no hay saltos. |
+| `.g-js .g-media` sin `img[data-loaded]` | El contenedor muestra el skeleton con su brillo; la imagen aparece con un fundido (`duration.base`) al cargar. |
+
+- Sin JavaScript no se añade ninguna clase y la página se ve normal. Si `glue.js` no carga, el texto aparece a los 4 s y las imágenes a los 5 s.
+- Con `prefers-reduced-motion` las formas se quedan quietas.
+- Con `i18n.js` el texto ya está oculto durante la carga, así que en inglés no se ve el español ni un instante.
+- Las imágenes de contenido van siempre dentro de `.g-media` para tener su skeleton. Los logos no lo necesitan.

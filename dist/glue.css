@@ -508,6 +508,41 @@ video {
 .g-section--inverse :is(h1, h2, h3, h4, h5, h6) { color: inherit; }
 .g-section--bordered { border-top: var(--border-width-thin) solid var(--color-border-default); }
 
+/* ---------- Angled header backgrounds (from uxrodrigo.com) ----------
+   A tinted header whose bottom edge is cut on a diagonal, revealing the page
+   background below. Two variants, as on the portfolio:
+     --angled         profile hero (photo + intro): 9°, high on the left
+     --angled-subtle  project detail header:        2.5°, high on the right
+   The cut height follows the width (tan(angle) × width), and the section adds
+   it to its bottom padding so content is never clipped. Inside a container
+   (container-type: inline-size) it scales to that box instead of the viewport.
+   Tint = color.bg.surface-alt, cut = color.bg.page, so it works in dark mode.
+   The diagonal is dropped on small screens, like the portfolio does. */
+.g-section--angled,
+.g-section--angled-subtle {
+  --g-angle: 9deg;
+  --g-angle-rise: 15.84vw;                                  /* fallback: tan(9°) × 100vw */
+  --g-angle-rise: calc(100cqw * tan(var(--g-angle)));
+  background-color: var(--color-bg-surface-alt);
+  padding-bottom: calc(var(--layout-section-sm) + var(--g-angle-rise));
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - var(--g-angle-rise)));
+}
+
+.g-section--angled-subtle {
+  --g-angle: 2.5deg;
+  --g-angle-rise: 4.37vw;                                   /* fallback: tan(2.5°) × 100vw */
+  --g-angle-rise: calc(100cqw * tan(var(--g-angle)));
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--g-angle-rise)), 0 100%);
+}
+
+@media (max-width: 479px) {
+  .g-section--angled { --g-angle-rise: 0px; clip-path: none; }
+}
+
+@media (max-width: 767px) {
+  .g-section--angled-subtle { --g-angle-rise: 0px; clip-path: none; }
+}
+
 /* Centered section intro: eyebrow + heading + lead */
 .g-intro {
   max-width: var(--layout-container-narrow);
@@ -1004,13 +1039,25 @@ video {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform var(--duration-slow) var(--easing-standard);
+  transition: transform var(--duration-slow) var(--easing-standard),
+              opacity var(--duration-base) var(--easing-standard);
 }
 
 .g-media--16x9 { aspect-ratio: 16 / 9; }
 .g-media--4x3  { aspect-ratio: 4 / 3; }
 .g-media--1x1  { aspect-ratio: 1; }
 .g-media--sm   { border-radius: var(--radius-lg); }
+
+/* Profile photo: a circle, 300px max, 24vw on tablet, 40vw on phones (as on uxrodrigo.com) */
+.g-media--profile {
+  width: clamp(160px, 24vw, 300px);
+  aspect-ratio: 1;
+  border-radius: var(--radius-full);
+}
+
+@media (max-width: 479px) {
+  .g-media--profile { width: 40vw; }
+}
 
 /* =========================================================
    ALERT (inline feedback)
@@ -1176,6 +1223,70 @@ body:has(.g-snackbar[data-open="true"]) .g-back-to-top {
 /* Reduced motion: no sweep, just the static base shape */
 @media (prefers-reduced-motion: reduce) {
   .g-skeleton::after { display: none; }
+}
+
+/* ---------- Skeleton while the page paints and images load ----------
+   Two states, both opt-in from the page <head>:
+     <script>document.documentElement.classList.add("g-js", "g-is-loading")</script>
+   .g-is-loading  set on <html> until the DOM and fonts are ready (glue.js removes it).
+                  Text turns transparent; text blocks become one bar per line,
+                  controls become solid shapes. Nothing changes size, so no layout shift.
+   .g-js          lets each .g-media show a skeleton until its image has loaded
+                  (glue.js sets data-loaded on the <img>), then the image fades in.
+   Without JavaScript neither class is set and the page renders normally. */
+@keyframes g-skeleton-sweep {
+  from { background-position: 150% 0; }
+  to   { background-position: -50% 0; }
+}
+
+.g-is-loading body,
+.g-is-loading body *,
+.g-is-loading body *::before,
+.g-is-loading body *::after {
+  color: transparent !important;
+  text-shadow: none !important;
+}
+
+/* Text blocks: one bar per line (mask stripes every 1lh) */
+.g-is-loading :is(h1, h2, h3, h4, h5, h6, p, blockquote, figcaption, th, td,
+  .g-field__label, .g-eyebrow, .g-navbar__link, .g-stat__value, .g-stat__label,
+  .g-breadcrumbs li, .g-footer li a, .g-footer__bottom > *),
+/* Controls: solid shapes */
+.g-is-loading :is(.g-button, .g-badge, .g-chip, .g-input, .g-textarea, .g-select, .g-icon-button),
+/* Images that have not loaded yet */
+.g-js .g-media:not(:has(> img[data-loaded])) {
+  background-color: var(--color-skeleton-base) !important;
+  background-image: linear-gradient(90deg, transparent 25%, var(--color-skeleton-highlight) 50%, transparent 75%) !important;
+  background-size: 200% 100% !important;
+  background-repeat: no-repeat !important;
+  animation: g-skeleton-sweep var(--duration-loop) var(--easing-standard) infinite;
+}
+
+.g-is-loading :is(h1, h2, h3, h4, h5, h6, p, blockquote, figcaption, th, td,
+  .g-field__label, .g-eyebrow, .g-navbar__link, .g-stat__value, .g-stat__label,
+  .g-breadcrumbs li, .g-footer li a, .g-footer__bottom > *) {
+  border-radius: var(--radius-xs);
+  -webkit-mask: linear-gradient(transparent 0 20%, #000 20% 80%, transparent 80%) 0 0 / 100% 1lh repeat-y content-box;
+          mask: linear-gradient(transparent 0 20%, #000 20% 80%, transparent 80%) 0 0 / 100% 1lh repeat-y content-box;
+}
+
+.g-is-loading :is(.g-button, .g-badge, .g-chip, .g-input, .g-textarea, .g-select, .g-icon-button) {
+  border-color: transparent !important;
+  box-shadow: none !important;
+}
+
+/* Images stay hidden until loaded, then fade in. Failsafe: shown after 5 s anyway. */
+.g-js .g-media > img:not([data-loaded]) {
+  opacity: 0;
+  animation: g-skeleton-failsafe 0s 5s forwards;
+}
+
+@keyframes g-skeleton-failsafe { to { opacity: 1; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .g-is-loading *,
+  .g-js .g-media { background-image: none !important; animation-name: none !important; }
+  .g-js .g-media > img:not([data-loaded]) { animation: g-skeleton-failsafe 0s 5s forwards !important; }
 }
 
 /* =========================================================

@@ -34,9 +34,34 @@ Tokens: `breakpoint.md/lg/xl`, `layout.gutter-sm/md/lg`. En CSS el gutter vigent
 | `--flush` | Sin padding vertical |
 | `--surface` | Fondo `bg.surface` para alternar |
 | `--inverse` | Fondo navy, texto blanco (uno por página) |
+| `--angled` | Hero de perfil: tinte `bg.surface-alt` con corte diagonal de 9° abajo |
+| `--angled-subtle` | Cabecera de proyecto: mismo tinte con corte de 2,5° |
 | `--bordered` | Línea superior `border.default` |
 
 `.g-intro` centra eyebrow + título + texto a 570 px (`--wide`: 770 px) con 48 px hasta el contenido.
+
+### Fondos de cabecera
+
+El fondo de la foto de perfil y de las páginas de proyecto de uxrodrigo.com. Una cabecera con tinte (`color.bg.surface-alt`) cuyo borde inferior se corta en diagonal y deja ver `color.bg.page`. Funciona en claro y oscuro.
+
+| Variante | Uso | Corte | Se quita en |
+|---|---|---|---|
+| `.g-section--angled` | Hero de perfil: foto (`.g-media--profile`) + presentación | 9°, alto a la izquierda | < 480 px |
+| `.g-section--angled-subtle` | Cabecera de un caso de estudio | 2,5°, alto a la derecha | < 768 px |
+
+```html
+<section class="g-section g-section--angled">
+  <div class="g-container g-grid">
+    <div class="g-col-lg-7">…presentación…</div>
+    <div class="g-col-lg-5"><div class="g-media g-media--profile"><img src="profile.jpg" alt="Rodrigo Meono"></div></div>
+  </div>
+</section>
+```
+
+- El alto del corte es `tan(ángulo) × ancho` y se suma al padding inferior, así que el contenido nunca queda cortado. Dentro de un elemento con `container-type: inline-size` se calcula sobre ese ancho (así funcionan las demos de la guía).
+- En uxrodrigo.com el corte es una franja blanca rotada encima de la sección; en Glue es un `clip-path` de la propia sección, sin elementos extra. El tinte del sitio es `#f4f7ff` y Glue usa `navy.50` (#F1F5FF).
+- `.g-media--profile`: círculo de 300 px como máximo, 24vw en tablet y 40vw en móvil.
+- Una sola por página y siempre la primera sección. No la combines con `--surface` ni `--inverse`.
 
 ## Grid de 12 columnas
 
