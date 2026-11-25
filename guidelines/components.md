@@ -58,6 +58,7 @@ Naming: `.g-{component}`, `--{variant}`, `__{part}`. State is set with native at
 - Transient confirmation of an action the user just took ("Reserva confirmada", "Enlace copiado"). Fixed bottom center, inverse surface, auto-dismisses in 6 s.
 - Markup: `div.g-snackbar#id[role="status"][aria-live="polite"][data-open="false"]` > optional icon SVG, `p.g-snackbar__text`, optional `button.g-snackbar__action[data-glue-snackbar-close]`, `button.g-snackbar__close[data-glue-snackbar-close][aria-label]`. Place it at the end of `body`.
 - Show with `Glue.snackbar("id")` or `Glue.snackbar("id", "message")`. One at a time; max one short text action.
+- Info, success, warning and error share the same inverse surface; the icon marks the type. `.g-snackbar--inline` is a static preview for docs only.
 - Use `.g-alert` instead for anything that must stay on the page, and for blocking errors.
 
 ## Spot icon and feature — `.g-spot-icon`, `ul.g-features > li.g-feature`

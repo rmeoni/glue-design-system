@@ -478,6 +478,21 @@
   transition-delay: 0s;
 }
 
+/* Static preview (style guides, docs): sits in the flow, always visible */
+.g-snackbar--inline {
+  position: relative;
+  left: auto;
+  bottom: auto;
+  z-index: auto;
+  width: auto;
+  min-width: 0;
+  max-width: 560px;
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+  transition: none;
+}
+
 .g-snackbar > svg { flex: none; width: var(--size-icon-md); height: var(--size-icon-md); }
 
 .g-snackbar__text {

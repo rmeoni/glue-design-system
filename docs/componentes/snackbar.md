@@ -20,6 +20,8 @@ Aviso breve y temporal sobre una acción que la persona acaba de hacer. Basado e
         Glue.snackbar("booking-ok", "Otro texto"); // o uno nuevo</script>
 ```
 
+- **Tipos:** el mismo snackbar sirve para info, éxito, aviso y error. El tipo lo marca el icono (círculo con i, check, triángulo, cruz), no el color: la superficie es siempre `bg.inverse`.
+- **`.g-snackbar--inline`:** vista estática, dentro del flujo y siempre visible. Solo para guías y documentación (zeroheight, capturas); en producto usa el snackbar fijo.
 - Superficie `bg.inverse`, texto `text.on-inverse`, acción `action.on-inverse` (7.67:1 en ambos temas). En oscuro la superficie es navy claro, igual que el "inverse surface" de Material.
 - `radius.xs` · alto mínimo 48 px · ancho 344–560 px (en móvil, ancho de pantalla menos 16 px por lado) · `elevation.raised`.
 - Entra y sale con opacidad + 16 px de desplazamiento en `duration.fast`. Respeta `prefers-reduced-motion`.

@@ -314,21 +314,20 @@
       </div>
 
       <div class="g-stack">
-        <h3>Alertas</h3>
+        <h3>Alertas · snackbar</h3>
+        <p class="g-text-secondary">Aviso breve sobre algo que acabas de hacer, basado en el snackbar de Material 3. Aparece abajo, se cierra solo a los 6 s y no interrumpe. El tipo lo marca el icono; como máximo una acción de texto.</p>
         <div class="g-stack g-gap-3">
-          <div class="g-alert" role="status"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v4h1"/></svg><div><strong class="g-alert__title">Información</strong><p>La llamada se hace por Google Meet.</p></div></div>
-          <div class="g-alert g-alert--success" role="status"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></svg><div><strong class="g-alert__title">Reserva confirmada</strong><p>Te envié la invitación a tu email.</p></div></div>
-          <div class="g-alert g-alert--warning" role="status"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 3 2 21h20L12 3z"/><path d="M12 10v4M12 17h.01"/></svg><div><strong class="g-alert__title">Quedan pocos horarios</strong><p>Esta semana solo hay dos huecos libres.</p></div></div>
-          <div class="g-alert g-alert--error" role="alert"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M15 9l-6 6M9 9l6 6"/></svg><div><strong class="g-alert__title">No se pudo enviar</strong><p>Revisa tu conexión y vuelve a intentarlo.</p></div></div>
+          <div class="g-snackbar g-snackbar--inline" id="sg-prev-info"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v4h1"/></svg><p class="g-snackbar__text">La llamada se hace por Google Meet.</p><button class="g-snackbar__close" type="button" data-glue-snackbar-close aria-label="Cerrar aviso"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button></div>
+          <div class="g-snackbar g-snackbar--inline" id="sg-prev-success"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></svg><p class="g-snackbar__text">Reserva confirmada. Te envié la invitación a tu email.</p><button class="g-snackbar__close" type="button" data-glue-snackbar-close aria-label="Cerrar aviso"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button></div>
+          <div class="g-snackbar g-snackbar--inline" id="sg-prev-warning"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 3 2 21h20L12 3z"/><path d="M12 10v4M12 17h.01"/></svg><p class="g-snackbar__text">Quedan pocos horarios esta semana.</p><button class="g-snackbar__action" type="button" data-glue-snackbar-close>Ver horarios</button><button class="g-snackbar__close" type="button" data-glue-snackbar-close aria-label="Cerrar aviso"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button></div>
+          <div class="g-snackbar g-snackbar--inline" id="sg-prev-error"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M15 9l-6 6M9 9l6 6"/></svg><p class="g-snackbar__text">No se pudo enviar. Revisa tu conexión.</p><button class="g-snackbar__action" type="button" data-glue-snackbar-close>Reintentar</button><button class="g-snackbar__close" type="button" data-glue-snackbar-close aria-label="Cerrar aviso"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button></div>
         </div>
-      </div>
-
-      <div class="g-stack">
-        <h3>Snackbar</h3>
-        <p class="g-text-secondary">Aviso breve sobre algo que acabas de hacer. Aparece abajo, se cierra solo a los 6 s y no interrumpe. Para mensajes que deben quedarse en la página usa una alerta.</p>
+        <p class="g-small g-text-secondary">Pruébalos en vivo:</p>
         <div class="g-cluster">
-          <button class="g-button g-button--secondary g-button--md" type="button" onclick="Glue.snackbar('sg-snack')">Mostrar snackbar</button>
-          <button class="g-button g-button--ghost g-button--md" type="button" onclick="Glue.snackbar('sg-snack-action')">Con acción</button>
+          <button class="g-button g-button--secondary g-button--md" type="button" data-sg-snack="sg-prev-info">Información</button>
+          <button class="g-button g-button--secondary g-button--md" type="button" data-sg-snack="sg-prev-success">Éxito</button>
+          <button class="g-button g-button--secondary g-button--md" type="button" data-sg-snack="sg-prev-warning">Aviso</button>
+          <button class="g-button g-button--secondary g-button--md" type="button" data-sg-snack="sg-prev-error">Error</button>
         </div>
       </div>
 
@@ -403,17 +402,19 @@
   </div>
 </footer>
 
-<div class="g-snackbar" id="sg-snack" role="status" aria-live="polite" data-open="false">
-  <p class="g-snackbar__text">Enlace copiado al portapapeles.</p>
-  <button class="g-snackbar__close" type="button" data-glue-snackbar-close aria-label="Cerrar aviso"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
-</div>
-<div class="g-snackbar" id="sg-snack-action" role="status" aria-live="polite" data-open="false">
-  <p class="g-snackbar__text">Proyecto archivado.</p>
-  <button class="g-snackbar__action" type="button" data-glue-snackbar-close>Deshacer</button>
-  <button class="g-snackbar__close" type="button" data-glue-snackbar-close aria-label="Cerrar aviso"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
-</div>
+<div class="g-snackbar" id="sg-live" role="status" aria-live="polite" data-open="false"></div>
 
 <script src="assets/glue.js"></script>
+<script>
+  // Style guide only: show a live copy of a static snackbar preview.
+  document.addEventListener("click", function (e) {
+    var b = e.target.closest("[data-sg-snack]");
+    if (!b) return;
+    var live = document.getElementById("sg-live");
+    live.innerHTML = document.getElementById(b.getAttribute("data-sg-snack")).innerHTML;
+    Glue.snackbar(live);
+  });
+</script>
 <script>
   // Swatches generated from the live CSS variables, so they always match the tokens.
   (function () {

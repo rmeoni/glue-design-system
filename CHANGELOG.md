@@ -4,6 +4,9 @@ Formato [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/), versionado 
 
 ## [Sin publicar]
 
+### Cambiado
+- La sección "Alertas" de la guía viva (`examples/index.html`) muestra los cuatro tipos (info, éxito, aviso, error) como snackbars de Material 3, con botones para verlos en vivo. Nueva variante `.g-snackbar--inline` para vistas estáticas en documentación.
+
 ### Añadido
 - Componente `.g-snackbar` basado en el snackbar de Material 3: aviso temporal fijo abajo, superficie inverse, acción opcional y cierre, autocierre a los 6 s con pausa en hover/foco y Escape (`Glue.snackbar(id)` en `glue.js`). Token `color.action.on-inverse`. Guía en `docs/componentes/snackbar.md`. `booking.html` confirma la reserva con un snackbar en vez de una alerta en línea.
 
