@@ -1,192 +1,606 @@
 {
-  "$description": "Glue Design System — primitive tokens. Raw values only. Components never use these directly; they use the semantic tokens.",
+  "border-width": {
+    "$type": "dimension",
+    "control": {
+      "$type": "dimension",
+      "$value": "1.5px"
+    },
+    "focus": {
+      "$type": "dimension",
+      "$value": "2px"
+    },
+    "thin": {
+      "$type": "dimension",
+      "$value": "1px"
+    }
+  },
+  "breakpoint": {
+    "$description": "Min-width breakpoints, mobile first.",
+    "$type": "dimension",
+    "lg": {
+      "$type": "dimension",
+      "$value": "992px"
+    },
+    "md": {
+      "$type": "dimension",
+      "$value": "768px"
+    },
+    "xl": {
+      "$type": "dimension",
+      "$value": "1280px"
+    }
+  },
   "color": {
     "$type": "color",
-    "navy": {
-      "$description": "Brand primary. Actions, links in navigation, inverse sections.",
-      "50":  { "$value": "#F1F5FF" },
-      "100": { "$value": "#DEE8FE" },
-      "200": { "$value": "#BED1F9" },
-      "300": { "$value": "#9DB4E4" },
-      "400": { "$value": "#7791CA" },
-      "500": { "$value": "#526FB0" },
-      "600": { "$value": "#335198" },
-      "700": { "$value": "#153180", "$description": "Brand navy." },
-      "800": { "$value": "#071C62" },
-      "900": { "$value": "#020C4C" }
+    "amber": {
+      "$description": "Feedback: warning. New in Glue.",
+      "300": {
+        "$type": "color",
+        "$value": "#F2B84B"
+      },
+      "50": {
+        "$type": "color",
+        "$value": "#FFF6E0"
+      },
+      "700": {
+        "$type": "color",
+        "$value": "#8A5A00"
+      },
+      "900": {
+        "$type": "color",
+        "$value": "#3A2800"
+      }
+    },
+    "black": {
+      "$type": "color",
+      "$value": "#000000"
     },
     "coral": {
       "$description": "Brand accent. Eyebrow labels, links, focus ring, selected state.",
-      "50":  { "$value": "#FEF2EF" },
-      "100": { "$value": "#FEE0D9" },
-      "200": { "$value": "#FEC0B1" },
-      "300": { "$value": "#FE9780" },
-      "400": { "$value": "#F96A4C", "$description": "Brand coral. Under 3:1 on white: use only on dark backgrounds or as decoration." },
-      "500": { "$value": "#CF5339" },
-      "600": { "$value": "#AD412A", "$description": "Coral for text on light backgrounds (5.89:1 on white)." },
-      "700": { "$value": "#8C2F1C" },
-      "800": { "$value": "#6D1E0D" },
-      "900": { "$value": "#4B0B01" }
-    },
-    "neutral": {
-      "50":  { "$value": "#F7F7F8" },
-      "100": { "$value": "#E8E8E8" },
-      "200": { "$value": "#D4D4D6" },
-      "300": { "$value": "#B3B3B6" },
-      "400": { "$value": "#888888" },
-      "500": { "$value": "#6B6B6E" },
-      "600": { "$value": "#525255" },
-      "700": { "$value": "#2A2A2A" },
-      "800": { "$value": "#1A1A1A" },
-      "900": { "$value": "#0A0A0A" }
+      "100": {
+        "$type": "color",
+        "$value": "#FEE0D9"
+      },
+      "200": {
+        "$type": "color",
+        "$value": "#FEC0B1"
+      },
+      "300": {
+        "$type": "color",
+        "$value": "#FE9780"
+      },
+      "400": {
+        "$type": "color",
+        "$value": "#F96A4C",
+        "$description": "Brand coral. Under 3:1 on white: use only on dark backgrounds or as decoration."
+      },
+      "50": {
+        "$type": "color",
+        "$value": "#FEF2EF"
+      },
+      "500": {
+        "$type": "color",
+        "$value": "#CF5339"
+      },
+      "600": {
+        "$type": "color",
+        "$value": "#AD412A",
+        "$description": "Coral for text on light backgrounds (5.89:1 on white)."
+      },
+      "700": {
+        "$type": "color",
+        "$value": "#8C2F1C"
+      },
+      "800": {
+        "$type": "color",
+        "$value": "#6D1E0D"
+      },
+      "900": {
+        "$type": "color",
+        "$value": "#4B0B01"
+      }
     },
     "green": {
       "$description": "Feedback: success. New in Glue (not on uxrodrigo.com).",
-      "50":  { "$value": "#EAF7EF" },
-      "300": { "$value": "#6FD39A" },
-      "600": { "$value": "#1E7A46" },
-      "900": { "$value": "#0F2E1C" }
+      "300": {
+        "$type": "color",
+        "$value": "#6FD39A"
+      },
+      "50": {
+        "$type": "color",
+        "$value": "#EAF7EF"
+      },
+      "600": {
+        "$type": "color",
+        "$value": "#1E7A46"
+      },
+      "900": {
+        "$type": "color",
+        "$value": "#0F2E1C"
+      }
+    },
+    "navy": {
+      "$description": "Brand primary. Actions, links in navigation, inverse sections.",
+      "100": {
+        "$type": "color",
+        "$value": "#DEE8FE"
+      },
+      "200": {
+        "$type": "color",
+        "$value": "#BED1F9"
+      },
+      "300": {
+        "$type": "color",
+        "$value": "#9DB4E4"
+      },
+      "400": {
+        "$type": "color",
+        "$value": "#7791CA"
+      },
+      "50": {
+        "$type": "color",
+        "$value": "#F1F5FF"
+      },
+      "500": {
+        "$type": "color",
+        "$value": "#526FB0"
+      },
+      "600": {
+        "$type": "color",
+        "$value": "#335198"
+      },
+      "700": {
+        "$type": "color",
+        "$value": "#153180",
+        "$description": "Brand navy."
+      },
+      "800": {
+        "$type": "color",
+        "$value": "#071C62"
+      },
+      "900": {
+        "$type": "color",
+        "$value": "#020C4C"
+      }
+    },
+    "neutral": {
+      "100": {
+        "$type": "color",
+        "$value": "#E8E8E8"
+      },
+      "200": {
+        "$type": "color",
+        "$value": "#D4D4D6"
+      },
+      "300": {
+        "$type": "color",
+        "$value": "#B3B3B6"
+      },
+      "400": {
+        "$type": "color",
+        "$value": "#888888"
+      },
+      "50": {
+        "$type": "color",
+        "$value": "#F7F7F8"
+      },
+      "500": {
+        "$type": "color",
+        "$value": "#6B6B6E"
+      },
+      "600": {
+        "$type": "color",
+        "$value": "#525255"
+      },
+      "700": {
+        "$type": "color",
+        "$value": "#2A2A2A"
+      },
+      "800": {
+        "$type": "color",
+        "$value": "#1A1A1A"
+      },
+      "900": {
+        "$type": "color",
+        "$value": "#0A0A0A"
+      }
     },
     "red": {
       "$description": "Feedback: error. New in Glue. Kept apart from coral so an error never reads as brand accent.",
-      "50":  { "$value": "#FDECEA" },
-      "300": { "$value": "#FF8A80" },
-      "600": { "$value": "#B3261E" },
-      "900": { "$value": "#3A0E0B" }
+      "300": {
+        "$type": "color",
+        "$value": "#FF8A80"
+      },
+      "50": {
+        "$type": "color",
+        "$value": "#FDECEA"
+      },
+      "600": {
+        "$type": "color",
+        "$value": "#B3261E"
+      },
+      "900": {
+        "$type": "color",
+        "$value": "#3A0E0B"
+      }
     },
-    "amber": {
-      "$description": "Feedback: warning. New in Glue.",
-      "50":  { "$value": "#FFF6E0" },
-      "300": { "$value": "#F2B84B" },
-      "700": { "$value": "#8A5A00" },
-      "900": { "$value": "#3A2800" }
+    "verified": {
+      "$type": "color",
+      "$value": "#0095F6",
+      "$description": "Verified badge in the UXRodrigo logo. Logo only: never for UI."
     },
-    "verified": { "$value": "#0095F6", "$description": "Verified badge in the UXRodrigo logo. Logo only: never for UI." },
-    "white": { "$value": "#FFFFFF" },
-    "black": { "$value": "#000000" }
+    "white": {
+      "$type": "color",
+      "$value": "#FFFFFF"
+    }
+  },
+  "duration": {
+    "$type": "duration",
+    "base": {
+      "$type": "duration",
+      "$value": "300ms"
+    },
+    "fast": {
+      "$type": "duration",
+      "$value": "200ms"
+    },
+    "slow": {
+      "$type": "duration",
+      "$value": "500ms"
+    }
+  },
+  "easing": {
+    "$type": "cubicBezier",
+    "standard": {
+      "$type": "cubicBezier",
+      "$value": [
+        0.25,
+        0.46,
+        0.45,
+        0.94
+      ]
+    }
   },
   "font": {
     "family": {
       "$type": "fontFamily",
-      "sans": { "$value": ["Inter", "system-ui", "-apple-system", "Segoe UI", "Roboto", "sans-serif"] }
-    },
-    "weight": {
-      "$type": "fontWeight",
-      "regular":   { "$value": 400 },
-      "medium":    { "$value": 500 },
-      "semibold":  { "$value": 600 },
-      "bold":      { "$value": 700 },
-      "extrabold": { "$value": 800 }
-    },
-    "size": {
-      "$type": "dimension",
-      "11": { "$value": "11px" },
-      "13": { "$value": "13px" },
-      "14": { "$value": "14px" },
-      "15": { "$value": "15px" },
-      "17": { "$value": "17px" },
-      "18": { "$value": "18px" },
-      "20": { "$value": "20px" },
-      "24": { "$value": "24px" },
-      "36": { "$value": "36px" },
-      "40": { "$value": "40px" },
-      "48": { "$value": "48px" }
-    },
-    "line-height": {
-      "$type": "dimension",
-      "16": { "$value": "16px" },
-      "20": { "$value": "20px" },
-      "24": { "$value": "24px" },
-      "28": { "$value": "28px" },
-      "30": { "$value": "30px" },
-      "32": { "$value": "32px" },
-      "48": { "$value": "48px" },
-      "60": { "$value": "60px" }
+      "sans": {
+        "$type": "fontFamily",
+        "$value": [
+          "Inter",
+          "system-ui",
+          "-apple-system",
+          "Segoe UI",
+          "Roboto",
+          "sans-serif"
+        ]
+      }
     },
     "letter-spacing": {
       "$type": "dimension",
-      "normal": { "$value": "0px" },
-      "label":  { "$value": "0.8px" }
+      "label": {
+        "$type": "dimension",
+        "$value": "0.8px"
+      },
+      "normal": {
+        "$type": "dimension",
+        "$value": "0px"
+      }
+    },
+    "line-height": {
+      "$type": "dimension",
+      "16": {
+        "$type": "dimension",
+        "$value": "16px"
+      },
+      "20": {
+        "$type": "dimension",
+        "$value": "20px"
+      },
+      "24": {
+        "$type": "dimension",
+        "$value": "24px"
+      },
+      "28": {
+        "$type": "dimension",
+        "$value": "28px"
+      },
+      "30": {
+        "$type": "dimension",
+        "$value": "30px"
+      },
+      "32": {
+        "$type": "dimension",
+        "$value": "32px"
+      },
+      "48": {
+        "$type": "dimension",
+        "$value": "48px"
+      },
+      "60": {
+        "$type": "dimension",
+        "$value": "60px"
+      }
+    },
+    "size": {
+      "$type": "dimension",
+      "11": {
+        "$type": "dimension",
+        "$value": "11px"
+      },
+      "13": {
+        "$type": "dimension",
+        "$value": "13px"
+      },
+      "14": {
+        "$type": "dimension",
+        "$value": "14px"
+      },
+      "15": {
+        "$type": "dimension",
+        "$value": "15px"
+      },
+      "17": {
+        "$type": "dimension",
+        "$value": "17px"
+      },
+      "18": {
+        "$type": "dimension",
+        "$value": "18px"
+      },
+      "20": {
+        "$type": "dimension",
+        "$value": "20px"
+      },
+      "24": {
+        "$type": "dimension",
+        "$value": "24px"
+      },
+      "36": {
+        "$type": "dimension",
+        "$value": "36px"
+      },
+      "40": {
+        "$type": "dimension",
+        "$value": "40px"
+      },
+      "48": {
+        "$type": "dimension",
+        "$value": "48px"
+      }
+    },
+    "weight": {
+      "$type": "fontWeight",
+      "bold": {
+        "$type": "fontWeight",
+        "$value": 700
+      },
+      "extrabold": {
+        "$type": "fontWeight",
+        "$value": 800
+      },
+      "medium": {
+        "$type": "fontWeight",
+        "$value": 500
+      },
+      "regular": {
+        "$type": "fontWeight",
+        "$value": 400
+      },
+      "semibold": {
+        "$type": "fontWeight",
+        "$value": 600
+      }
     }
-  },
-  "space": {
-    "$type": "dimension",
-    "$description": "4px base. The key is the multiple of 4 (space.6 = 24px).",
-    "0":  { "$value": "0px" },
-    "1":  { "$value": "4px" },
-    "2":  { "$value": "8px" },
-    "3":  { "$value": "12px" },
-    "4":  { "$value": "16px" },
-    "5":  { "$value": "20px" },
-    "6":  { "$value": "24px" },
-    "8":  { "$value": "32px" },
-    "12": { "$value": "48px" },
-    "16": { "$value": "64px" },
-    "24": { "$value": "96px" },
-    "32": { "$value": "128px" }
-  },
-  "radius": {
-    "$type": "dimension",
-    "xs":   { "$value": "4px" },
-    "sm":   { "$value": "8px" },
-    "md":   { "$value": "14px", "$description": "Form fields and inline panels." },
-    "lg":   { "$value": "32px", "$description": "Cards." },
-    "xl":   { "$value": "48px", "$description": "Images and videos." },
-    "full": { "$value": "9999px", "$description": "Buttons, chips, icon buttons." }
-  },
-  "border-width": {
-    "$type": "dimension",
-    "thin":    { "$value": "1px" },
-    "control": { "$value": "1.5px" },
-    "focus":   { "$value": "2px" }
-  },
-  "size": {
-    "$type": "dimension",
-    "control-sm": { "$value": "36px" },
-    "control-md": { "$value": "44px", "$description": "Minimum touch target." },
-    "control-lg": { "$value": "48px" },
-    "icon-sm":    { "$value": "16px" },
-    "icon-md":    { "$value": "20px" },
-    "icon-lg":    { "$value": "24px" },
-    "logo-sm":    { "$value": "24px", "$description": "Logo height on phones (≈159px wide)." },
-    "logo-md":    { "$value": "30px", "$description": "Logo height in the navbar (≈199px wide, as on uxrodrigo.com)." },
-    "logo-lg":    { "$value": "48px", "$description": "Logo height in heroes and covers." },
-    "spot-sm":    { "$value": "32px", "$description": "Spot icon height in dense lists." },
-    "spot-md":    { "$value": "48px", "$description": "Spot icon height by default (as on uxrodrigo.com)." },
-    "spot-lg":    { "$value": "64px", "$description": "Spot icon height in heroes and empty states." }
-  },
-  "shadow": {
-    "$type": "shadow",
-    "sm":   { "$value": { "color": "#0000001F", "offsetX": "0px", "offsetY": "4px",  "blur": "12px", "spread": "0px" } },
-    "card": { "$value": { "color": "#15318014", "offsetX": "0px", "offsetY": "10px", "blur": "40px", "spread": "0px" } },
-    "lg":   { "$value": { "color": "#0000001C", "offsetX": "0px", "offsetY": "15px", "blur": "40px", "spread": "0px" } }
-  },
-  "duration": {
-    "$type": "duration",
-    "fast": { "$value": "200ms" },
-    "base": { "$value": "300ms" },
-    "slow": { "$value": "500ms" }
-  },
-  "easing": {
-    "$type": "cubicBezier",
-    "standard": { "$value": [0.25, 0.46, 0.45, 0.94] }
-  },
-  "breakpoint": {
-    "$type": "dimension",
-    "$description": "Min-width breakpoints, mobile first.",
-    "md": { "$value": "768px" },
-    "lg": { "$value": "992px" },
-    "xl": { "$value": "1280px" }
   },
   "layout": {
     "$type": "dimension",
-    "container-max": { "$value": "1234px", "$description": "Includes the side padding: 1170px of content at desktop." },
-    "container-medium": { "$value": "770px" },
-    "container-narrow": { "$value": "570px" },
-    "gutter-sm": { "$value": "16px" },
-    "gutter-md": { "$value": "24px" },
-    "gutter-lg": { "$value": "32px" },
-    "section-sm": { "$value": "64px" },
-    "section-lg": { "$value": "128px" }
+    "container-max": {
+      "$type": "dimension",
+      "$value": "1234px",
+      "$description": "Includes the side padding: 1170px of content at desktop."
+    },
+    "container-medium": {
+      "$type": "dimension",
+      "$value": "770px"
+    },
+    "container-narrow": {
+      "$type": "dimension",
+      "$value": "570px"
+    },
+    "gutter-lg": {
+      "$type": "dimension",
+      "$value": "32px"
+    },
+    "gutter-md": {
+      "$type": "dimension",
+      "$value": "24px"
+    },
+    "gutter-sm": {
+      "$type": "dimension",
+      "$value": "16px"
+    },
+    "section-lg": {
+      "$type": "dimension",
+      "$value": "128px"
+    },
+    "section-sm": {
+      "$type": "dimension",
+      "$value": "64px"
+    }
+  },
+  "radius": {
+    "$type": "dimension",
+    "full": {
+      "$type": "dimension",
+      "$value": "9999px",
+      "$description": "Buttons, chips, icon buttons."
+    },
+    "lg": {
+      "$type": "dimension",
+      "$value": "32px",
+      "$description": "Cards."
+    },
+    "md": {
+      "$type": "dimension",
+      "$value": "14px",
+      "$description": "Form fields and inline panels."
+    },
+    "sm": {
+      "$type": "dimension",
+      "$value": "8px"
+    },
+    "xl": {
+      "$type": "dimension",
+      "$value": "48px",
+      "$description": "Images and videos."
+    },
+    "xs": {
+      "$type": "dimension",
+      "$value": "4px"
+    }
+  },
+  "shadow": {
+    "$type": "shadow",
+    "card": {
+      "$type": "shadow",
+      "$value": {
+        "blur": "40px",
+        "color": "#15318014",
+        "spread": "0px",
+        "offsetX": "0px",
+        "offsetY": "10px"
+      }
+    },
+    "lg": {
+      "$type": "shadow",
+      "$value": {
+        "blur": "40px",
+        "color": "#0000001C",
+        "spread": "0px",
+        "offsetX": "0px",
+        "offsetY": "15px"
+      }
+    },
+    "sm": {
+      "$type": "shadow",
+      "$value": {
+        "blur": "12px",
+        "color": "#0000001F",
+        "spread": "0px",
+        "offsetX": "0px",
+        "offsetY": "4px"
+      }
+    }
+  },
+  "size": {
+    "$type": "dimension",
+    "control-lg": {
+      "$type": "dimension",
+      "$value": "48px"
+    },
+    "control-md": {
+      "$type": "dimension",
+      "$value": "44px",
+      "$description": "Minimum touch target."
+    },
+    "control-sm": {
+      "$type": "dimension",
+      "$value": "36px"
+    },
+    "icon-lg": {
+      "$type": "dimension",
+      "$value": "24px"
+    },
+    "icon-md": {
+      "$type": "dimension",
+      "$value": "20px"
+    },
+    "icon-sm": {
+      "$type": "dimension",
+      "$value": "16px"
+    },
+    "logo-lg": {
+      "$type": "dimension",
+      "$value": "48px",
+      "$description": "Logo height in heroes and covers."
+    },
+    "logo-md": {
+      "$type": "dimension",
+      "$value": "30px",
+      "$description": "Logo height in the navbar (≈199px wide, as on uxrodrigo.com)."
+    },
+    "logo-sm": {
+      "$type": "dimension",
+      "$value": "24px",
+      "$description": "Logo height on phones (≈159px wide)."
+    },
+    "spot-lg": {
+      "$type": "dimension",
+      "$value": "64px",
+      "$description": "Spot icon height in heroes and empty states."
+    },
+    "spot-md": {
+      "$type": "dimension",
+      "$value": "48px",
+      "$description": "Spot icon height by default (as on uxrodrigo.com)."
+    },
+    "spot-sm": {
+      "$type": "dimension",
+      "$value": "32px",
+      "$description": "Spot icon height in dense lists."
+    }
+  },
+  "space": {
+    "$description": "4px base. The key is the multiple of 4 (space.6 = 24px).",
+    "$type": "dimension",
+    "0": {
+      "$type": "dimension",
+      "$value": "0px"
+    },
+    "1": {
+      "$type": "dimension",
+      "$value": "4px"
+    },
+    "12": {
+      "$type": "dimension",
+      "$value": "48px"
+    },
+    "16": {
+      "$type": "dimension",
+      "$value": "64px"
+    },
+    "2": {
+      "$type": "dimension",
+      "$value": "8px"
+    },
+    "24": {
+      "$type": "dimension",
+      "$value": "96px"
+    },
+    "3": {
+      "$type": "dimension",
+      "$value": "12px"
+    },
+    "32": {
+      "$type": "dimension",
+      "$value": "128px"
+    },
+    "4": {
+      "$type": "dimension",
+      "$value": "16px"
+    },
+    "5": {
+      "$type": "dimension",
+      "$value": "20px"
+    },
+    "6": {
+      "$type": "dimension",
+      "$value": "24px"
+    },
+    "8": {
+      "$type": "dimension",
+      "$value": "32px"
+    }
   }
 }
