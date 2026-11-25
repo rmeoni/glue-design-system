@@ -80,8 +80,18 @@ Naming: `.g-{component}`, `--{variant}`, `__{part}`. State is set with native at
 - Actions: optional secondary `--md` button (shows ≥1280px), primary `--md` CTA, theme toggle, menu button (`aria-expanded`, `aria-controls`, hidden ≥992px).
 - Below 480px the bar hides its buttons: repeat the primary CTA inside `.g-navbar__panel` as `g-button g-button--md g-button--block`.
 
+### Navbar link states
+- Hover: 1px line, 2px below the text; enters from the left and leaves to the right over `--duration-moderate` (400ms), as on uxrodrigo.com. Current: fixed underline, set with `aria-current="page"` (this page), `"true"` (parent section, e.g. Work on a case study) or `"location"` (one-page anchors; add `data-glue-spy` to the header and glue.js tracks the section in view). Pressed (`:active`): `--color-text-accent` + full underline. Focus: global coral outline.
+- Disabled: `<a class="g-navbar__link" role="link" aria-disabled="true">` with no `href` (grey `--color-action-disabled-fg`, no underline, not focusable).
+- In the mobile panel, hover / current / pressed use a 2px text underline instead.
+- Footer and breadcrumb links use the same animated 1px line on hover, in the link color; their text color does not change.
+- Every nav and footer link needs a real destination. Never `href="#"`; use the disabled state until the page exists.
+
 ## Footer — `footer.g-footer`
-- `.g-grid` of columns, column titles `h2.g-footer__heading`, plain `ul` link lists, `.g-footer__bottom` with copyright.
+- Styled like uxrodrigo.com: navy surface (`--color-footer-bg`; near-black in dark) with light text.
+- `nav.g-footer__nav[aria-label]` repeats the navbar links (same order, same `aria-current`), 17px medium, in a row.
+- `.g-footer__bottom > .g-container.g-footer__bottom-inner`: copyright and legal links, 11px, separated by `span.g-footer__dot[aria-hidden]`.
+- Link states: normal `--color-footer-text`; hover animated 1px line (text color unchanged); pressed `--color-footer-text-muted`; current fixed line; focus outline `--color-footer-focus`; disabled `role="link" aria-disabled="true"` without `href`.
 
 ## Timeline — `ol.g-timeline > li.g-timeline__item`
 - Parts: `__date`, `__title` (h3/h5), `__text`. Most recent first.
@@ -94,7 +104,7 @@ Naming: `.g-{component}`, `--{variant}`, `__{part}`. State is set with native at
 ## Breadcrumbs — `nav.g-breadcrumbs[aria-label] > ol > li`, current item is `<span aria-current="page">`.
 
 ## Utilities
-`.g-stack`, `.g-cluster`, `.g-gap-*`, `.g-text-secondary`, `.g-text-accent`, `.g-text-center`, `.g-h1…h6`, `.g-lead`, `.g-small`, `.g-divider`, `.g-visually-hidden`, `.g-skip-link`, `.g-theme-toggle`, `.g-back-to-top`.
+`.g-stack`, `.g-cluster`, `.g-gap-*`, `.g-text-secondary`, `.g-text-accent`, `.g-text-center`, `.g-h1…h6`, `.g-lead`, `.g-small`, `.g-divider`, `.g-visually-hidden`, `.g-skip-link`, `.g-theme-switch` (theme switch from uxrodrigo.com: sun · track with knob · moon, `role="switch"` + `aria-checked`, label "Modo oscuro"; copy its markup from any page in `examples/`), `.g-lang-toggle` (globe icon + target language code, placed after the theme switch, as on uxrodrigo.com), `.g-back-to-top`.
 
 ## Do not
 - Invent new components when composition with existing ones works.

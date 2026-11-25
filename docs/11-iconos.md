@@ -1,6 +1,6 @@
 # Iconos ilustrativos
 
-Iconos de línea **dibujados a mano para UXRodrigo**. Son iconos "spot": acompañan a un título para presentar un servicio, una sección o un estado vacío. No son iconos de interfaz (para flechas, cerrar, menú, etc. Glue usa iconos de línea de 2 px tipo Lucide, inline en cada componente).
+Iconos de línea **dibujados a mano para UXRodrigo**. Son iconos "spot": acompañan a un título para presentar un servicio, una sección o un estado vacío. No son iconos de interfaz: para flechas, cerrar, menú, etc. Glue usa iconos de línea de 2 px tipo Lucide, inline en cada componente, y para el tema y el idioma, [Material Symbols](#iconos-de-interfaz-material-symbols).
 
 Archivos en [`assets/icons/`](../assets/icons/).
 
@@ -69,3 +69,20 @@ Icono + título centrados, en una lista. Es la sección "Enfoque en design think
 - ❌ No los uses dentro de botones ni como iconos de interfaz.
 - ❌ No mezcles estos iconos con iconos de otras librerías en la misma fila.
 - Para un icono nuevo: dibújalo con las mismas reglas, guárdalo en `assets/icons/{nombre}.svg` con `stroke="currentColor"` y un `<title>`, y ejecuta `npm run build`.
+
+## Iconos de interfaz: Material Symbols
+
+Algunos controles usan iconos de [Google Material Symbols](https://fonts.google.com/icons), los mismos de uxrodrigo.com.
+
+| Icono | Uso |
+|---|---|
+| `light_mode` | Interruptor de tema (`.g-theme-switch`), lado claro |
+| `dark_mode` | Interruptor de tema, lado oscuro |
+| `language` | Botón de idioma (`.g-lang-toggle`) |
+
+- Familia **Material Symbols Outlined**: relleno 0, peso 400, grado 0, tamaño óptico 24. Licencia Apache 2.0.
+- 22 px en el navbar (18 px bajo 480 px); 20–24 px en otros controles.
+- SVG inline con `fill="currentColor"`, `aria-hidden="true"` y `focusable="false"`; toman `text.primary` en claro y oscuro. La etiqueta accesible va en el botón.
+- ✅ Descarga el SVG del icono desde Google Fonts. ❌ No cargues la fuente de iconos de Material.
+- ❌ No los mezcles con los iconos dibujados a mano en el mismo control.
+- Guía viva: `examples/index.html#iconos-material`.

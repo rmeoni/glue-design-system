@@ -425,6 +425,10 @@
     "base": {
       "$value": "300ms"
     },
+    "moderate": {
+      "$value": "400ms",
+      "$description": "Nav link underline (as on uxrodrigo.com)."
+    },
     "slow": {
       "$value": "500ms"
     },
@@ -649,6 +653,34 @@
           "$description": "Shimmer that sweeps across the base."
         }
       },
+      "footer": {
+        "$description": "Footer surface, as on uxrodrigo.com: navy in light, near-black in dark, light text.",
+        "bg": {
+          "$value": "{color.navy.700}"
+        },
+        "bottom-bg": {
+          "$value": "{color.navy.800}",
+          "$description": "Bottom bar (copyright, legal links)."
+        },
+        "border": {
+          "$value": "{color.navy.700}"
+        },
+        "text": {
+          "$value": "{color.white}",
+          "$description": "Footer links. 11.78:1 on footer.bg."
+        },
+        "text-muted": {
+          "$value": "{color.navy.200}",
+          "$description": "Bottom bar text, dividers, pressed links. 7.67:1 on footer.bg."
+        },
+        "disabled": {
+          "$value": "{color.navy.400}"
+        },
+        "focus": {
+          "$value": "{color.coral.400}",
+          "$description": "Focus ring on the footer. 4.03:1 on footer.bg."
+        }
+      },
       "text": {
         "primary": {
           "$value": "{color.neutral.900}"
@@ -799,6 +831,34 @@
         "highlight": {
           "$value": "{color.neutral.600}",
           "$description": "Shimmer that sweeps across the base."
+        }
+      },
+      "footer": {
+        "$description": "Footer surface, as on uxrodrigo.com: navy in light, near-black in dark, light text.",
+        "bg": {
+          "$value": "{color.neutral.900}"
+        },
+        "bottom-bg": {
+          "$value": "{color.black}",
+          "$description": "Bottom bar (copyright, legal links)."
+        },
+        "border": {
+          "$value": "{color.neutral.700}"
+        },
+        "text": {
+          "$value": "{color.navy.100}",
+          "$description": "Footer links. 16.1:1 on footer.bg."
+        },
+        "text-muted": {
+          "$value": "{color.neutral.400}",
+          "$description": "Bottom bar text, dividers, pressed links. 5.58:1 on footer.bg."
+        },
+        "disabled": {
+          "$value": "{color.neutral.500}"
+        },
+        "focus": {
+          "$value": "{color.coral.400}",
+          "$description": "Focus ring on the footer. 6.78:1 on footer.bg."
         }
       },
       "text": {

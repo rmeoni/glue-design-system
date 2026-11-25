@@ -30,7 +30,7 @@ Todos los componentes viven en [`css/components.css`](../css/components.css), us
 | Estadística | `.g-stats`, `.g-stat` | [estadistica.md](componentes/estadistica.md) |
 | Cita | `.g-quote` | [cita.md](componentes/cita.md) |
 | Breadcrumbs | `.g-breadcrumbs` | [breadcrumbs.md](componentes/breadcrumbs.md) |
-| Utilidades | `.g-theme-toggle`, `.g-back-to-top`, `.g-skip-link`, `.g-visually-hidden`, `.g-divider` | [utilidades.md](componentes/utilidades.md) |
+| Utilidades | `.g-theme-switch`, `.g-back-to-top`, `.g-skip-link`, `.g-visually-hidden`, `.g-divider` | [utilidades.md](componentes/utilidades.md) |
 
 Ver todos en vivo: [`examples/index.html`](../examples/index.html).
 

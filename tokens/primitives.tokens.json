@@ -165,6 +165,7 @@
     "$type": "duration",
     "fast": { "$value": "200ms" },
     "base": { "$value": "300ms" },
+    "moderate": { "$value": "400ms", "$description": "Nav link underline (as on uxrodrigo.com)." },
     "slow": { "$value": "500ms" },
     "loop": { "$value": "1600ms", "$description": "One cycle of a looping indicator (skeleton shimmer)." }
   },

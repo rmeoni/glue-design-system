@@ -70,7 +70,8 @@ Glue es plano por defecto. La sombra solo indica que algo flota sobre la página
 | Token | Valor | Uso |
 |---|---|---|
 | `duration.fast` | 200 ms | Hover, color |
-| `duration.base` | 300 ms | Subrayado de nav, paneles |
+| `duration.base` | 300 ms | Paneles |
+| `duration.moderate` | 400 ms | Línea de los enlaces del navbar (igual que en uxrodrigo.com) |
 | `duration.slow` | 500 ms | Zoom de imagen en tarjeta |
 | `duration.loop` | 1600 ms | Un ciclo de un indicador en bucle (brillo del skeleton) |
 | `easing.standard` | `cubic-bezier(.25,.46,.45,.94)` | Todo |

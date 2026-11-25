@@ -11,6 +11,7 @@
 
 ## Structure
 
+- Navbar and footer run edge to edge: their `.g-container` has no max width, so their side margin (gutter; footer 3vw on desktop) is smaller than the body on wide screens, as on uxrodrigo.com.
 - `.g-section` — vertical rhythm: 64px padding (128px from 992px). Modifiers: `--surface` (alternate background), `--inverse` (navy CTA, once per page, usually last), `--compact`, `--flush`, `--bordered`, `--angled` (profile hero: tinted bg-surface-alt header with a 9° diagonal bottom cut; pair with a circular `.g-media--profile` photo), `--angled-subtle` (project detail header: same tint, 2.5° cut, kept on phones with a 32px minimum height). Angled headers: one per page, always the first section; the profile hero drops its cut under 480px.
 - `.g-container` — max 1234px incl. gutters. `--medium` = 770px content, `--narrow` = 570px content.
 - `.g-intro` — centered eyebrow + h2 + text block, 570px wide (`--wide` 770px), 48px below.

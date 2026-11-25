@@ -19,3 +19,8 @@ Hand-made UXRodrigo line icons in `assets/icons/`: `monitor`, `layers`, `camera`
 2–4 features per row, one icon each, all the same size. Put them under a centered `.g-intro` (eyebrow + h2 + text).
 
 Do not invent new spot icons or mix in icons from other libraries in the same row.
+
+## UI icons: Material Symbols
+- The theme switch uses `light_mode` and `dark_mode`; the language toggle uses `language`. All from Google Material Symbols Outlined (fill 0, weight 400, grade 0, optical size 24), as on uxrodrigo.com.
+- Inline SVG with `fill="currentColor"`, `aria-hidden="true"`, `focusable="false"`; 22px in the navbar, 20–24px elsewhere. The accessible label goes on the button.
+- Never load the Material icon font. Never mix Material and hand-drawn spot icons in one control. Arrows, close and menu stay as each component's 2px line icons.

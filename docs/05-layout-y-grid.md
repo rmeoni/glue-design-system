@@ -21,6 +21,17 @@ Tokens: `breakpoint.md/lg/xl`, `layout.gutter-sm/md/lg`. En CSS el gutter vigent
 | `.g-container--medium` | 770 px | Artículos, casos de estudio |
 | `.g-container--narrow` | 570 px | Formularios sueltos, intros |
 
+**Navbar y footer, de borde a borde.** Como en uxrodrigo.com, el `.g-container` dentro de `.g-navbar` y `.g-footer` no tiene ancho máximo: en pantallas anchas su margen lateral es menor que el del cuerpo. No hace falta ninguna clase extra.
+
+| Ancho | Navbar | Footer | Texto del cuerpo |
+|---|---|---|---|
+| 1920 px | 32 px | 58 px (3vw) | 375 px |
+| 1280 px | 32 px | 38 px (3vw) | 55 px |
+| 1024 px | 32 px | 32 px | 32 px |
+| 768 px | 24 px | 24 px | 24 px |
+
+El navbar usa el gutter (32 / 24 / 16 px); el footer, `3vw` en escritorio con el gutter como mínimo. Así nunca tienen más margen que el cuerpo.
+
 ## Secciones
 
 ```html

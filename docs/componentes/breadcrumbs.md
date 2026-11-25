@@ -13,3 +13,5 @@ Muestra dónde está la página dentro del sitio. Para páginas de segundo nivel
 ```
 
 - `typography.small` · separador "/" · página actual en `text.primary` 500 sin enlace.
+
+- Hover: la misma línea animada que el navbar y el footer (1 px, color del enlace, entra por la izquierda y sale por la derecha). El texto no cambia de color.

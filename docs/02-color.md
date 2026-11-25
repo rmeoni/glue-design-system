@@ -68,6 +68,8 @@ Separados del coral para que un error nunca se confunda con el acento de marca.
 | `color.action.disabled-bg` / `-fg` | neutral.100 / 500 | neutral.800 / 500 | Deshabilitado |
 | `color.action.on-inverse` | navy.200 | navy.700 | Acción de texto sobre `bg.inverse` (snackbar) |
 | `color.skeleton.base` / `-highlight` | neutral.100 / 50 | neutral.700 / 600 | Skeleton de carga (decorativo) |
+| `color.footer.bg` / `-bottom-bg` / `-border` | navy.700 / 800 / 700 | neutral.900 / black / neutral.700 | Footer |
+| `color.footer.text` / `-text-muted` / `-disabled` / `-focus` | white / navy.200 / navy.400 / coral.400 | navy.100 / neutral.400 / neutral.500 / coral.400 | Footer |
 | `color.feedback.{success,warning,error,info}-{fg,bg}` | ver tabla anterior | | Alertas, errores de campo |
 
 En CSS cada token es una variable: `color.action.primary-bg` → `var(--color-action-primary-bg)`.

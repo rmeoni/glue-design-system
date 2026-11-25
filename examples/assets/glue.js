@@ -22,8 +22,15 @@
   function syncToggles() {
     var dark = currentTheme() === "dark";
     document.querySelectorAll("[data-glue-theme-toggle]").forEach(function (b) {
-      b.setAttribute("aria-pressed", String(dark));
-      b.setAttribute("aria-label", T(dark ? "Cambiar a modo claro" : "Cambiar a modo oscuro"));
+      if (b.getAttribute("role") === "switch") {
+        // .g-theme-switch: fixed label, state in aria-checked (as on uxrodrigo.com)
+        b.setAttribute("aria-checked", String(dark));
+        b.setAttribute("aria-label", T("Modo oscuro"));
+      } else {
+        // Deprecated .g-theme-toggle icon button
+        b.setAttribute("aria-pressed", String(dark));
+        b.setAttribute("aria-label", T(dark ? "Cambiar a modo claro" : "Cambiar a modo oscuro"));
+      }
     });
     // Ensure the icon CSS sees an explicit theme
     root.setAttribute("data-theme", currentTheme());
@@ -119,6 +126,38 @@
   window.Glue.hideSnackbar = function (id) { hideSnackbar(typeof id === "string" ? document.getElementById(id) : id); };
 
   document.addEventListener("DOMContentLoaded", syncToggles);
+
+  // Scroll-spy for one-page navbars: <header class="g-navbar" data-glue-spy>.
+  // Marks the link of the section you are reading with aria-current="location",
+  // in the bar and in the mobile menu. A section owns everything until the next
+  // linked section starts, so in-between sections count as part of the one above.
+  function initSpy() {
+    document.querySelectorAll("[data-glue-spy]").forEach(function (nav) {
+      var links = Array.prototype.slice.call(nav.querySelectorAll('.g-navbar__link[href^="#"]'));
+      var ids = [];
+      links.forEach(function (a) { var id = a.getAttribute("href").slice(1); if (ids.indexOf(id) === -1) ids.push(id); });
+      var targets = ids.map(function (id) { return document.getElementById(id); }).filter(Boolean);
+      if (!targets.length) return;
+      var current = null;
+      function update() {
+        var line = nav.getBoundingClientRect().bottom + 24, active = null;
+        targets.forEach(function (t) { if (t.getBoundingClientRect().top <= line) active = t.id; });
+        if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2) active = targets[targets.length - 1].id;
+        if (active === current) return;
+        current = active;
+        links.forEach(function (a) {
+          if (a.getAttribute("href") === "#" + active) a.setAttribute("aria-current", "location");
+          else a.removeAttribute("aria-current");
+        });
+      }
+      window.addEventListener("scroll", update, { passive: true });
+      window.addEventListener("resize", update);
+      window.addEventListener("hashchange", update);
+      update();
+    });
+  }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", initSpy);
+  else initSpy();
 
   // Skeleton loading (see "Skeleton while the page paints" in components.css)
   // Images: mark each .g-media image when it loads (or fails), so its skeleton goes away.

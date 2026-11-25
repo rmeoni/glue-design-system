@@ -628,9 +628,9 @@ body:has(.g-snackbar[data-open="true"]) .g-back-to-top {
 /* Text blocks: one bar per line (mask stripes every 1lh) */
 .g-is-loading :is(h1, h2, h3, h4, h5, h6, p, blockquote, figcaption, th, td,
   .g-field__label, .g-eyebrow, .g-navbar__link, .g-stat__value, .g-stat__label,
-  .g-breadcrumbs li, .g-footer li a, .g-footer__bottom > *),
+  .g-breadcrumbs li, .g-footer li a, .g-footer__nav a, .g-footer__bottom-inner > :not(.g-footer__dot)),
 /* Controls: solid shapes */
-.g-is-loading :is(.g-button, .g-badge, .g-chip, .g-input, .g-textarea, .g-select, .g-icon-button),
+.g-is-loading :is(.g-button, .g-badge, .g-chip, .g-input, .g-textarea, .g-select, .g-icon-button, .g-theme-switch, .g-lang-toggle),
 /* Images that have not loaded yet */
 .g-js .g-media:not(:has(> img[data-loaded])) {
   background-color: var(--color-skeleton-base) !important;
@@ -642,13 +642,13 @@ body:has(.g-snackbar[data-open="true"]) .g-back-to-top {
 
 .g-is-loading :is(h1, h2, h3, h4, h5, h6, p, blockquote, figcaption, th, td,
   .g-field__label, .g-eyebrow, .g-navbar__link, .g-stat__value, .g-stat__label,
-  .g-breadcrumbs li, .g-footer li a, .g-footer__bottom > *) {
+  .g-breadcrumbs li, .g-footer li a, .g-footer__nav a, .g-footer__bottom-inner > :not(.g-footer__dot)) {
   border-radius: var(--radius-xs);
   -webkit-mask: linear-gradient(transparent 0 20%, #000 20% 80%, transparent 80%) 0 0 / 100% 1lh repeat-y content-box;
           mask: linear-gradient(transparent 0 20%, #000 20% 80%, transparent 80%) 0 0 / 100% 1lh repeat-y content-box;
 }
 
-.g-is-loading :is(.g-button, .g-badge, .g-chip, .g-input, .g-textarea, .g-select, .g-icon-button) {
+.g-is-loading :is(.g-button, .g-badge, .g-chip, .g-input, .g-textarea, .g-select, .g-icon-button, .g-theme-switch, .g-lang-toggle) {
   border-color: transparent !important;
   box-shadow: none !important;
 }
@@ -815,22 +815,43 @@ body:has(.g-snackbar[data-open="true"]) .g-back-to-top {
   text-decoration: none;
 }
 
+/* Underline, as on uxrodrigo.com (.hover-line): 1px, 2px under the text,
+   enters from the left on hover and leaves to the right, 400ms outQuad.
+   The origin is right at rest and left on hover, so it grows from the left
+   and shrinks toward the right, the same as Webflow's slide inside overflow:hidden. */
 .g-navbar__link::after {
   content: "";
   position: absolute;
   right: 0;
-  bottom: 0;
+  bottom: calc(var(--space-2) - 2px - var(--border-width-thin));
   left: 0;
-  height: 2px;
+  height: var(--border-width-thin);
   background-color: currentColor;
   transform: scaleX(0);
-  transform-origin: left;
-  transition: transform var(--duration-base) var(--easing-standard);
+  transform-origin: right;
+  transition: transform var(--duration-moderate) var(--easing-standard);
 }
 
+/* States. [data-state] forces a state for documentation only (style guide, zeroheight). */
 .g-navbar__link:hover { text-decoration: none; }
-.g-navbar__link:hover::after,
-.g-navbar__link[aria-current="page"]::after { transform: scaleX(1); }
+.g-navbar__link:not([aria-disabled="true"]):is(:hover, [data-state="hover"])::after { transform-origin: left; }
+.g-navbar__link:not([aria-disabled="true"]):is(:hover, [data-state="hover"])::after,
+/* Current: aria-current="page" (this page), "true" (parent section) or "location" (section in view) */
+.g-navbar__link[aria-current]:not([aria-current="false"])::after { transform: scaleX(1); }
+
+/* Pressed: the underline fills at once and the text turns accent */
+.g-navbar__link:not([aria-disabled="true"]):is(:active, [data-state="pressed"]) { color: var(--color-text-accent); }
+.g-navbar__link:not([aria-disabled="true"]):is(:active, [data-state="pressed"])::after { transform: scaleX(1); transition: none; }
+
+/* Disabled: <a role="link" aria-disabled="true"> without href (not focusable) */
+.g-navbar__link[aria-disabled="true"] { color: var(--color-action-disabled-fg); cursor: not-allowed; }
+.g-navbar__link[aria-disabled="true"]::after { display: none; }
+
+.g-navbar__link[data-state="focus"],
+.g-footer a[data-state="focus"] {
+  outline: var(--border-width-focus) solid var(--color-focus-ring);
+  outline-offset: 2px;
+}
 
 .g-navbar__actions {
   display: flex;
@@ -840,13 +861,34 @@ body:has(.g-snackbar[data-open="true"]) .g-back-to-top {
 
 .g-navbar__actions .g-button--secondary { display: none; }
 
-/* Language toggle: a plain icon button that shows the target language code (EN / ES).
-   On phones the bar has no room, so it lives in the menu panel instead. */
+/* Language toggle, as on uxrodrigo.com: globe icon + the code of the language
+   you switch to (EN / ES). The icon is inline SVG in currentColor, so it follows
+   the theme. On phones the bar has no room, so it lives in the menu panel. */
 .g-lang-toggle {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  gap: var(--space-1);
+  height: var(--size-control-md);
+  padding: 0 var(--space-2);
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--color-text-primary);
+  cursor: pointer;
+}
+
+.g-lang-toggle__icon { display: block; flex: none; width: 22px; height: 22px; }
+
+.g-lang-toggle .g-lang-toggle__label {
+  color: var(--color-action-secondary-fg);
   font: var(--typography-label);
   font-weight: var(--font-weight-bold);
   letter-spacing: var(--font-letter-spacing-label);
 }
+
+/* In the menu panel it is a full-width ghost button: globe + "English" / "Español" */
+.g-button .g-lang-toggle__icon { width: var(--size-icon-md); height: var(--size-icon-md); }
 
 @media (max-width: 479px) {
   .g-navbar__actions .g-lang-toggle { display: none; }
@@ -879,8 +921,15 @@ body:has(.g-snackbar[data-open="true"]) .g-back-to-top {
   list-style: none;
 }
 
-.g-navbar__panel .g-navbar__link { display: block; padding: var(--space-3) 0; }
-.g-navbar__panel .g-navbar__link::after { display: none; }
+/* Mobile menu (and .g-navbar__link--block to show it outside the panel):
+   full-width rows; hover and current page use a 2px text underline. */
+:is(.g-navbar__panel .g-navbar__link, .g-navbar__link--block) { display: block; padding: var(--space-3) 0; }
+:is(.g-navbar__panel .g-navbar__link, .g-navbar__link--block)::after { display: none; }
+:is(.g-navbar__panel .g-navbar__link, .g-navbar__link--block):not([aria-disabled="true"]):is(:hover, [data-state="hover"], [aria-current]:not([aria-current="false"]), :active, [data-state="pressed"]) {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 6px;
+}
 
 @media (min-width: 992px) {
   .g-navbar__links { display: flex; }
@@ -893,19 +942,52 @@ body:has(.g-snackbar[data-open="true"]) .g-back-to-top {
   .g-navbar__actions .g-button--secondary { display: inline-flex; }
 }
 
+/* Edge-to-edge navbar and footer, as on uxrodrigo.com: their container drops
+   the 1234px limit, so on wide screens their side margin (the gutter, 32px)
+   is smaller than the page body's (centered 1234px). The footer uses 3vw on
+   desktop like the portfolio, never less than the gutter. */
+:is(.g-navbar, .g-footer, .g-footer__bottom) > .g-container { max-width: none; }
+
+@media (min-width: 992px) {
+  :is(.g-footer, .g-footer__bottom) > .g-container { padding-inline: max(var(--layout-gutter), 3vw); }
+}
+
 /* =========================================================
    FOOTER
    ========================================================= */
+/* Footer, as on uxrodrigo.com: navy surface in light (near-black in dark),
+   a row with the same links as the navbar (.g-footer__nav, 17px medium) and a
+   darker bottom bar with copyright and legal links separated by dots.
+   Colors: color.footer.*. Links use the animated 1px line in their own color. */
 .g-footer {
-  padding-block: var(--space-16) var(--space-8);
-  border-top: var(--border-width-thin) solid var(--color-border-default);
-  background-color: var(--color-bg-surface);
-  color: var(--color-text-secondary);
+  border-top: var(--border-width-thin) solid var(--color-footer-border);
+  background-color: var(--color-footer-bg);
+  color: var(--color-footer-text);
+}
+
+.g-footer > .g-container:not(.g-footer__bottom-inner) { padding-block: max(var(--space-8), 3vw); }
+
+.g-footer__nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-4) var(--space-8);
+}
+
+.g-footer__nav a {
+  padding-block: 3px;
+  font-size: var(--font-size-17);
+  line-height: var(--font-line-height-24);
+  font-weight: var(--font-weight-medium);
+}
+
+@media (max-width: 767px) {
+  .g-footer__nav { column-gap: var(--space-6); }
 }
 
 .g-footer__heading {
   margin-bottom: var(--space-4);
-  color: var(--color-text-primary);
+  color: var(--color-footer-text);
   font: var(--typography-h6);
 }
 
@@ -913,21 +995,43 @@ body:has(.g-snackbar[data-open="true"]) .g-back-to-top {
 .g-footer li + li { margin-top: var(--space-2); }
 
 .g-footer a {
-  color: var(--color-text-secondary);
+  color: var(--color-footer-text);
   text-decoration: none;
 }
 
-.g-footer a:hover { color: var(--color-text-primary); text-decoration: underline; }
+/* Hover uses the shared animated line (see "Animated link underline") */
+.g-footer a:not([aria-disabled="true"]):is(:active, [data-state="pressed"]) { color: var(--color-footer-text-muted); }
+.g-footer a[aria-current]:not([aria-current="false"])::after { transform: scaleX(1); }
+.g-footer a[aria-disabled="true"] { color: var(--color-footer-disabled); text-decoration: none; cursor: not-allowed; }
+.g-footer :focus-visible,
+.g-footer a[data-state="focus"] { outline-color: var(--color-footer-focus); }
 
 .g-footer__bottom {
+  background-color: var(--color-footer-bottom-bg);
+  color: var(--color-footer-text-muted);
+  font-size: var(--font-size-11);
+  line-height: var(--font-line-height-16);
+}
+
+.g-footer__bottom-inner {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  gap: var(--space-4);
-  margin-top: var(--space-12);
-  padding-top: var(--space-6);
-  border-top: var(--border-width-thin) solid var(--color-border-default);
-  font: var(--typography-small);
+  align-items: center;
+  row-gap: var(--space-2);
+  padding-block: var(--space-4);
+}
+
+.g-footer__bottom a { padding-block: 1px; }
+
+/* 3px dot between items */
+.g-footer__dot {
+  flex: none;
+  width: 3px;
+  height: 3px;
+  margin-inline: var(--space-2);
+  border-radius: var(--radius-full);
+  background-color: currentColor;
+  opacity: .6;
 }
 
 /* =========================================================
@@ -1021,6 +1125,43 @@ body:has(.g-snackbar[data-open="true"]) .g-back-to-top {
 /* =========================================================
    THEME TOGGLE and BACK TO TOP
    ========================================================= */
+/* =========================================================
+   THEME SWITCH (from uxrodrigo.com)
+   Sun · track with knob · moon. The knob sits by the sun in light mode and
+   slides to the moon in dark mode. role="switch" + aria-checked (glue.js),
+   fixed label "Modo oscuro". 22px tall graphic in a 44px tall button.
+   ========================================================= */
+.g-theme-switch {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  height: var(--size-control-md);
+  padding: 0 var(--space-2);
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--color-text-primary);
+  cursor: pointer;
+}
+
+.g-theme-switch svg { display: block; width: auto; height: 22px; }
+
+.g-theme-switch__knob { transition: transform var(--duration-base) var(--easing-standard); }
+
+/* 26 = distance between the two knob positions in the 115 × 35 artwork */
+[data-theme="dark"] .g-theme-switch__knob { transform: translateX(26px); }
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .g-theme-switch__knob { transform: translateX(26px); }
+}
+
+@media (max-width: 479px) {
+  .g-theme-switch { padding: 0 var(--space-1); }
+  .g-theme-switch svg { height: 18px; }
+}
+
+/* Deprecated: icon-button toggle with moon/sun. Use .g-theme-switch. */
 .g-theme-toggle .g-icon-sun  { display: none; }
 [data-theme="dark"] .g-theme-toggle .g-icon-sun  { display: block; }
 [data-theme="dark"] .g-theme-toggle .g-icon-moon { display: none; }
@@ -1052,5 +1193,42 @@ body:has(.g-snackbar[data-open="true"]) .g-back-to-top {
 }
 
 .g-breadcrumbs a { color: var(--color-text-secondary); text-decoration: none; }
-.g-breadcrumbs a:hover { color: var(--color-text-primary); text-decoration: underline; }
+.g-breadcrumbs a:not([aria-disabled="true"]):is(:active, [data-state="pressed"]) { color: var(--color-text-accent); }
+
+/* =========================================================
+   ANIMATED LINK UNDERLINE (footer and breadcrumbs)
+   Same line as the navbar, as on uxrodrigo.com (.hover-line): 1px in the
+   link's own color, 2px under the text, enters from the left on hover and
+   leaves to the right, duration.moderate. The text color does not change.
+   ========================================================= */
+:is(.g-footer, .g-breadcrumbs) a {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+}
+
+:is(.g-footer, .g-breadcrumbs) a::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: var(--border-width-thin);
+  background-color: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform var(--duration-moderate) var(--easing-standard);
+}
+
+:is(.g-footer, .g-breadcrumbs) a:not([aria-disabled="true"]):is(:hover, [data-state="hover"])::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+:is(.g-footer, .g-breadcrumbs) a:not([aria-disabled="true"]):is(:active, [data-state="pressed"])::after {
+  transform: scaleX(1);
+  transition: none;
+}
+
+:is(.g-footer, .g-breadcrumbs) a:hover { text-decoration: none; }
 .g-breadcrumbs [aria-current="page"] { color: var(--color-text-primary); font-weight: var(--font-weight-medium); }

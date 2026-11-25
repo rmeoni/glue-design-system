@@ -36,7 +36,7 @@ O abre los `.html` directamente: no necesitan build.
 
 La guía viva y las tres pantallas se escriben en español y se traducen al inglés con [`examples/assets/i18n.js`](../examples/assets/i18n.js).
 
-- **Toggle:** botón `ES`/`EN` en el navbar (`data-glue-lang-toggle="short"`) y "English"/"Español" en el menú móvil (`data-glue-lang-toggle="long"`). En móvil solo aparece en el menú.
+- **Toggle (`.g-lang-toggle`):** el mismo botón de uxrodrigo.com: globo terráqueo de 22 px + el código del idioma al que cambias (`EN`/`ES`), en el navbar justo después del interruptor de tema (`data-glue-lang-toggle="short"`). En el menú móvil es un botón ghost con globo + "English"/"Español" (`data-glue-lang-toggle="long"`). En móvil solo aparece en el menú. El globo es SVG inline en `currentColor` y la etiqueta va en `.g-lang-toggle__label`, que es lo único que cambia `i18n.js`.
 - **Persistencia:** la elección se guarda en `localStorage` (`glue-lang`) y se mantiene entre páginas y recargas.
 - **Primera visita:** español si el idioma del navegador es español o si la región (locale o zona horaria) es de un país hispanohablante; si no, inglés.
 - **Enlace directo:** `?lang=en` o `?lang=es` fuerza y guarda el idioma (útil para embeber en zeroheight).

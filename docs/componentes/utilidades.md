@@ -2,7 +2,9 @@
 
 | Clase | Qué hace |
 |---|---|
-| `.g-theme-toggle` | Botón de icono con luna/sol. Con `examples/assets/glue.js` cambia `data-theme` y lo recuerda. |
+| `.g-theme-switch` | Interruptor de tema de uxrodrigo.com: sol · pista con bola · luna. La bola está junto al sol en claro y se desliza a la luna en oscuro (`duration.base`). `role="switch"`, `aria-checked` y la etiqueta fija "Modo oscuro". SVG inline en `currentColor`, 22 px de alto (18 px bajo 480 px) en un botón de 44 px. Con `examples/assets/glue.js` cambia `data-theme` y lo recuerda. Copia el marcado de cualquier página de `examples/`. |
+| `.g-lang-toggle` | Botón de idioma de uxrodrigo.com: globo de 22 px (`.g-lang-toggle__icon`, SVG en `currentColor`) + código del idioma destino en `.g-lang-toggle__label` (`action.secondary-fg`, bold). Va después de `.g-theme-switch`. Ver [Pantallas de ejemplo](../07-pantallas-de-ejemplo.md#idioma-español--inglés). |
+| `.g-theme-toggle` | Obsoleto: botón de icono con luna/sol. Usa `.g-theme-switch`. |
 | `.g-back-to-top` | Fija un `.g-icon-button` abajo a la derecha. Necesita `aria-label="Volver arriba"`. |
 | `.g-skip-link` | "Saltar al contenido": primer elemento del `<body>`, visible al recibir foco. |
 | `.g-visually-hidden` | Oculta visualmente pero no para lectores de pantalla. |
