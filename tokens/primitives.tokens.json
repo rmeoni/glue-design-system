@@ -150,7 +150,10 @@
     "icon-lg":    { "$value": "24px" },
     "logo-sm":    { "$value": "24px", "$description": "Logo height on phones (≈159px wide)." },
     "logo-md":    { "$value": "30px", "$description": "Logo height in the navbar (≈199px wide, as on uxrodrigo.com)." },
-    "logo-lg":    { "$value": "48px", "$description": "Logo height in heroes and covers." }
+    "logo-lg":    { "$value": "48px", "$description": "Logo height in heroes and covers." },
+    "spot-sm":    { "$value": "32px", "$description": "Spot icon height in dense lists." },
+    "spot-md":    { "$value": "48px", "$description": "Spot icon height by default (as on uxrodrigo.com)." },
+    "spot-lg":    { "$value": "64px", "$description": "Spot icon height in heroes and empty states." }
   },
   "shadow": {
     "$type": "shadow",

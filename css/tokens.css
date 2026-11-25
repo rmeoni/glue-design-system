@@ -104,6 +104,9 @@
   --size-logo-sm: 24px;
   --size-logo-md: 30px;
   --size-logo-lg: 48px;
+  --size-spot-sm: 32px;
+  --size-spot-md: 48px;
+  --size-spot-lg: 64px;
   --shadow-sm: 0px 4px 12px 0px #0000001F;
   --shadow-card: 0px 10px 40px 0px #15318014;
   --shadow-lg: 0px 15px 40px 0px #0000001C;
@@ -168,6 +171,7 @@
   --color-border-default: var(--color-neutral-200);
   --color-border-control: var(--color-neutral-500);
   --color-border-strong: var(--color-navy-700);
+  --color-icon-spot: var(--color-navy-700);
   --color-focus-ring: var(--color-coral-600);
   --color-action-primary-bg: var(--color-navy-700);
   --color-action-primary-bg-hover: var(--color-navy-800);
@@ -209,6 +213,7 @@
   --color-border-default: var(--color-neutral-700);
   --color-border-control: var(--color-neutral-500);
   --color-border-strong: var(--color-neutral-100);
+  --color-icon-spot: var(--color-neutral-100);
   --color-focus-ring: var(--color-coral-400);
   --color-action-primary-bg: var(--color-navy-200);
   --color-action-primary-bg-hover: var(--color-navy-100);
@@ -251,6 +256,7 @@
     --color-border-default: var(--color-neutral-700);
     --color-border-control: var(--color-neutral-500);
     --color-border-strong: var(--color-neutral-100);
+    --color-icon-spot: var(--color-neutral-100);
     --color-focus-ring: var(--color-coral-400);
     --color-action-primary-bg: var(--color-navy-200);
     --color-action-primary-bg-hover: var(--color-navy-100);

@@ -21,6 +21,9 @@
       "control": { "$value": "{color.neutral.500}", "$description": "Edges of inputs and controls: 5.31:1 on white." },
       "strong":  { "$value": "{color.navy.700}" }
     },
+    "icon": {
+      "spot": { "$value": "{color.navy.700}", "$description": "Hand-made spot icons." }
+    },
     "focus-ring": { "$value": "{color.coral.600}" },
     "action": {
       "primary-bg":          { "$value": "{color.navy.700}" },

@@ -21,6 +21,9 @@
       "control": { "$value": "{color.neutral.500}", "$description": "3.73:1 on neutral-900." },
       "strong":  { "$value": "{color.neutral.100}" }
     },
+    "icon": {
+      "spot": { "$value": "{color.neutral.100}", "$description": "Hand-made spot icons." }
+    },
     "focus-ring": { "$value": "{color.coral.400}" },
     "action": {
       "primary-bg":          { "$value": "{color.navy.200}" },

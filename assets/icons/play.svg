@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linejoin="round" role="img" aria-label="Reproducir">
+  <title>Reproducir</title>
+  <circle cx="24" cy="24" r="22.3"/>
+  <circle cx="24" cy="24" r="15.6"/>
+  <path d="M20.5 18.2V29.8L30.2 24Z"/>
+</svg>

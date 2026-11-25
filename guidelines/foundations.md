@@ -67,7 +67,7 @@ Put spacing on the parent with `.g-stack` (vertical) or `.g-cluster` (horizontal
 
 ## Sizes
 
-Controls: `--size-control-sm` 36 · `-md` 44 · `-lg` 48. Icons: `--size-icon-sm` 16 · `-md` 20 · `-lg` 24. Icons are 2px-stroke line icons, round caps (Lucide style).
+Controls: `--size-control-sm` 36 · `-md` 44 · `-lg` 48. Icons: `--size-icon-sm` 16 · `-md` 20 · `-lg` 24. UI icons are 2px-stroke line icons, round caps (Lucide style). Spot icons (`--size-spot-sm` 32 · `-md` 48 · `-lg` 64, color `--color-icon-spot`) are the hand-made set in `assets/icons/`; see icons.md.
 
 ## Motion
 

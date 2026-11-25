@@ -424,6 +424,55 @@
 .g-alert--error   { background-color: var(--color-feedback-error-bg);   color: var(--color-feedback-error-fg); }
 
 /* =========================================================
+   SPOT ICON and FEATURE
+   Hand-made UXRodrigo line icons (assets/icons/). Inline the SVG
+   so its stroke="currentColor" takes the token color.
+   ========================================================= */
+.g-spot-icon {
+  display: block;
+  width: auto;
+  height: var(--spot-size, var(--size-spot-md));
+  flex: none;
+  color: var(--color-icon-spot);
+  border-radius: 0;
+}
+
+.g-spot-icon--sm { --spot-size: var(--size-spot-sm); }
+.g-spot-icon--lg { --spot-size: var(--size-spot-lg); }
+
+.g-section--inverse .g-spot-icon { color: inherit; }
+
+.g-features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: var(--space-4);
+  margin: var(--space-8) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.g-feature {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-6) var(--space-8);
+  text-align: center;
+}
+
+.g-feature__title {
+  margin: 0;
+  color: var(--color-text-primary);
+  font: var(--typography-h6);
+}
+
+.g-feature__text {
+  margin: 0;
+  color: var(--color-text-secondary);
+  font: var(--typography-small);
+}
+
+/* =========================================================
    NAVBAR
    Logo left, links centered (≥ 992px), actions right.
    Below 992px links move into a panel opened by the menu button.

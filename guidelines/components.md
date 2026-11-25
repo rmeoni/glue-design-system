@@ -54,6 +54,9 @@ Naming: `.g-{component}`, `--{variant}`, `__{part}`. State is set with native at
 - Variants: default info, `--success`, `--warning`, `--error`. Contains an icon SVG + `<div><strong class="g-alert__title">…</strong><p>…</p></div>`.
 - `role="alert"` for errors, `role="status"` otherwise.
 
+## Spot icon and feature — `.g-spot-icon`, `ul.g-features > li.g-feature`
+- Hand-made icons from `assets/icons/`, inlined. See [icons.md](icons.md).
+
 ## Logo — `.g-logo`
 - Always the real SVG from `assets/logo/`, never typed text. See [logo.md](logo.md).
 

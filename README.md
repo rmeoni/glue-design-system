@@ -13,11 +13,12 @@ Nace de los estilos de uxrodrigo.com: navy para actuar, coral para señalar, Int
 | **Tipografía** | [docs/03-tipografia.md](docs/03-tipografia.md): Inter, 14 estilos de texto |
 | **Espaciado** | [docs/04-espaciado.md](docs/04-espaciado.md): escala de 4 px, radios, bordes, elevación, movimiento |
 | **Layouts y grids** | [docs/05-layout-y-grid.md](docs/05-layout-y-grid.md): breakpoints, contenedores, secciones, grid 4/8/12 |
-| **Componentes** | [docs/06-componentes.md](docs/06-componentes.md): 16 componentes con ficha propia |
+| **Componentes** | [docs/06-componentes.md](docs/06-componentes.md): 17 componentes con ficha propia |
 | **Pantallas de ejemplo** | [docs/07-pantallas-de-ejemplo.md](docs/07-pantallas-de-ejemplo.md): home, agendar llamada, caso de estudio |
 | **Guía de uso** | [docs/08-guia-de-uso.md](docs/08-guia-de-uso.md): instalación, temas, tokens, zeroheight, Figma, Figma Make, contribución |
 | **Accesibilidad** | [docs/09-accesibilidad.md](docs/09-accesibilidad.md) |
 | **Logo** | [docs/10-logo.md](docs/10-logo.md): variantes, tamaños, área de protección y usos incorrectos |
+| **Iconos** | [docs/11-iconos.md](docs/11-iconos.md): 6 iconos de línea dibujados a mano, sprite y patrón feature |
 
 ## Estructura
 
@@ -30,6 +31,7 @@ tokens/                 Fuente de verdad (W3C DTCG + Tokens Studio)
   $themes.json          Temas Light / Dark para Tokens Studio y zeroheight
   $metadata.json
 assets/logo/            Logo (navy, blanco, mono), símbolo y favicons
+assets/icons/           Iconos ilustrativos hechos a mano (SVG) + sprite.svg GENERADO
 css/
   tokens.css            GENERADO: variables CSS
   base.css              Elementos y tipografía

@@ -2,6 +2,11 @@
 
 Formato [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/), versionado [SemVer](https://semver.org/lang/es/).
 
+## [1.2.0] — 2026-11-24
+
+### Añadido
+- Iconos ilustrativos hechos a mano en `assets/icons/` (monitor, capas, cámara, hojas, pesa, reproducir) en SVG con `currentColor`, sprite generado en el build, componentes `.g-spot-icon` y `.g-features`/`.g-feature`, tokens `color.icon.spot` y `size.spot-sm/md/lg`. Guía en `docs/11-iconos.md`. Sección "Enfoque en design thinking" en la home de ejemplo.
+
 ## [1.1.0] — 2026-11-24
 
 ### Añadido
