@@ -4,6 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Glue Design System</title>
+  <link rel="icon" href="../assets/logo/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="../assets/logo/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="../assets/logo/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -23,6 +26,15 @@
     .sg-box { padding: var(--space-6); border: 1px dashed var(--color-border-control); border-radius: var(--radius-md); }
     .sg-radius { display: flex; flex-wrap: wrap; gap: var(--space-6); }
     .sg-radius div { width: 96px; height: 96px; background: var(--color-bg-surface); border: 1px solid var(--color-border-control); display: grid; place-items: center; font: var(--typography-small); }
+    .sg-ds-name { margin-left: var(--space-3); padding-left: var(--space-3); border-left: 1px solid var(--color-border-control); font-weight: var(--font-weight-semibold); font-size: var(--font-size-15); color: var(--color-text-secondary); }
+    .sg-logo-tile { display: grid; place-items: center; min-height: 180px; padding: var(--space-8); border-radius: var(--radius-lg); border: 1px solid var(--color-border-default); }
+    .sg-logo-tile img { height: 36px; width: auto; border-radius: 0; }
+    .sg-logo-tile--symbol img { height: 64px; }
+    .sg-logo-tile--light { background: #FFFFFF; }
+    .sg-logo-tile--dark { background: #0A0A0A; }
+    .sg-logo-tile--navy { background: #153180; }
+    .sg-clear { position: relative; display: inline-block; padding: 15px; outline: 1px dashed var(--color-text-accent); background: repeating-linear-gradient(45deg, transparent 0 6px, color-mix(in srgb, var(--color-text-accent) 12%, transparent) 6px 7px); }
+    .sg-clear img { display: block; height: 30px; width: auto; background: #FFFFFF; }
     @media (max-width: 600px) { .sg-row { grid-template-columns: 1fr; gap: var(--space-1); } }
   </style>
 </head>
@@ -32,7 +44,7 @@
 <header class="g-navbar">
   <div class="g-container">
     <div class="g-navbar__inner">
-      <a class="g-navbar__brand" href="index.html">Glue<span class="g-text-accent">.</span></a>
+      <a class="g-navbar__brand" href="index.html" aria-label="Glue Design System de UXRodrigo, inicio"><span class="g-logo"><img class="g-logo__on-light" src="../assets/logo/uxrodrigo-logo.svg" alt="" width="199" height="30"><img class="g-logo__on-dark" src="../assets/logo/uxrodrigo-logo-white.svg" alt="" width="199" height="30"></span><span class="sg-ds-name">Glue</span></a>
       <ul class="g-navbar__links">
         <li><a class="g-navbar__link" href="#fundamentos" aria-current="page">Fundamentos</a></li>
         <li><a class="g-navbar__link" href="#layout">Layout</a></li>
@@ -101,6 +113,24 @@
       <h3 style="margin-top: var(--space-12)">Semánticos</h3>
       <p class="g-text-secondary">Cambia el tema con el botón de la barra para ver ambos valores.</p>
       <div class="sg-swatches" id="sg-semantic"></div>
+    </div>
+  </section>
+
+  <!-- Logo -->
+  <section class="g-section g-section--bordered" id="logo">
+    <div class="g-container">
+      <span class="g-eyebrow">Fundamentos</span>
+      <h2>Logo</h2>
+      <p class="g-lead">Símbolo de arco, wordmark "uxrodrigo" en minúsculas y badge de verificado. Navy sobre claro, blanco sobre oscuro.</p>
+      <div class="g-grid" style="margin-top: var(--space-8)">
+        <div class="g-col-md-4 g-col-lg-4 g-stack g-gap-2"><div class="sg-logo-tile sg-logo-tile--light"><img src="../assets/logo/uxrodrigo-logo.svg" alt="Logo UXRodrigo en navy"></div><span class="g-small g-text-secondary">uxrodrigo-logo.svg · fondos claros</span></div>
+        <div class="g-col-md-4 g-col-lg-4 g-stack g-gap-2"><div class="sg-logo-tile sg-logo-tile--dark"><img src="../assets/logo/uxrodrigo-logo-white.svg" alt="Logo UXRodrigo en blanco sobre negro"></div><span class="g-small g-text-secondary">uxrodrigo-logo-white.svg · fondos oscuros</span></div>
+        <div class="g-col-md-8 g-col-lg-4 g-stack g-gap-2"><div class="sg-logo-tile sg-logo-tile--navy"><img src="../assets/logo/uxrodrigo-logo-white.svg" alt="Logo UXRodrigo en blanco sobre navy"></div><span class="g-small g-text-secondary">uxrodrigo-logo-white.svg · sección inverse</span></div>
+        <div class="g-col-2 g-col-md-2 g-col-lg-2 g-stack g-gap-2"><div class="sg-logo-tile sg-logo-tile--light sg-logo-tile--symbol"><img src="../assets/logo/uxrodrigo-symbol.svg" alt="Símbolo UXRodrigo en navy"></div><span class="g-small g-text-secondary">Símbolo</span></div>
+        <div class="g-col-2 g-col-md-2 g-col-lg-2 g-stack g-gap-2"><div class="sg-logo-tile sg-logo-tile--dark sg-logo-tile--symbol"><img src="../assets/logo/uxrodrigo-symbol-white.svg" alt="Símbolo UXRodrigo en blanco"></div><span class="g-small g-text-secondary">Símbolo blanco</span></div>
+        <div class="g-col-md-4 g-col-lg-4 g-stack g-gap-2"><div class="sg-logo-tile sg-logo-tile--light"><span class="sg-clear"><img src="../assets/logo/uxrodrigo-logo.svg" alt="Área de protección del logo"></span></div><span class="g-small g-text-secondary">Área de protección: ½ de la altura del logo por cada lado</span></div>
+        <div class="g-col-md-4 g-col-lg-4 g-stack g-gap-2"><div class="sg-logo-tile g-stack g-gap-4" style="justify-items:start"><span class="g-logo g-logo--lg"><img class="g-logo__on-light" src="../assets/logo/uxrodrigo-logo.svg" alt="Logo a 48 px"><img class="g-logo__on-dark" src="../assets/logo/uxrodrigo-logo-white.svg" alt="Logo a 48 px"></span><span class="g-logo"><img class="g-logo__on-light" src="../assets/logo/uxrodrigo-logo.svg" alt="Logo a 30 px"><img class="g-logo__on-dark" src="../assets/logo/uxrodrigo-logo-white.svg" alt="Logo a 30 px"></span><span class="g-logo g-logo--sm"><img class="g-logo__on-light" src="../assets/logo/uxrodrigo-logo.svg" alt="Logo a 24 px"><img class="g-logo__on-dark" src="../assets/logo/uxrodrigo-logo-white.svg" alt="Logo a 24 px"></span></div><span class="g-small g-text-secondary">size-logo-lg 48 · md 30 · sm 24 (mínimo 18 px de alto)</span></div>
+      </div>
     </div>
   </section>
 

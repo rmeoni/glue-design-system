@@ -6,7 +6,10 @@ Barra superior fija con marca, enlaces y acciones.
 <header class="g-navbar">
   <div class="g-container">
     <div class="g-navbar__inner">
-      <a class="g-navbar__brand" href="/">UXRodrigo<span class="g-text-accent">.</span></a>
+      <a class="g-navbar__brand g-logo" href="/" aria-label="UXRodrigo, inicio">
+        <img class="g-logo__on-light" src="assets/logo/uxrodrigo-logo.svg" alt="" width="199" height="30">
+        <img class="g-logo__on-dark" src="assets/logo/uxrodrigo-logo-white.svg" alt="" width="199" height="30">
+      </a>
       <ul class="g-navbar__links">
         <li><a class="g-navbar__link" href="/" aria-current="page">Inicio</a></li>
         <li><a class="g-navbar__link" href="/trabajos">Trabajos</a></li>
@@ -31,6 +34,8 @@ Barra superior fija con marca, enlaces y acciones.
 | ≥ 1280 px | Aparece el botón secundario. |
 
 ## Reglas
+
+- ✅ El logo va a la izquierda, a 30 px de alto (24 px por debajo de 480 px). Ver [Logo](../10-logo.md).
 
 - ✅ Máximo 5 enlaces. ✅ `aria-current="page"` en el actual.
 - ✅ Un solo CTA primario.

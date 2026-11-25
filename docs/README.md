@@ -9,3 +9,4 @@
 7. [Pantallas de ejemplo](07-pantallas-de-ejemplo.md)
 8. [Guía de uso](08-guia-de-uso.md) (instalación, tokens, zeroheight, Figma, Figma Make, contribución)
 9. [Accesibilidad](09-accesibilidad.md)
+10. [Logo](10-logo.md)

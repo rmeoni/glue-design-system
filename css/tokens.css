@@ -44,6 +44,7 @@
   --color-amber-300: #F2B84B;
   --color-amber-700: #8A5A00;
   --color-amber-900: #3A2800;
+  --color-verified: #0095F6;
   --color-white: #FFFFFF;
   --color-black: #000000;
   --font-family-sans: Inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
@@ -100,6 +101,9 @@
   --size-icon-sm: 16px;
   --size-icon-md: 20px;
   --size-icon-lg: 24px;
+  --size-logo-sm: 24px;
+  --size-logo-md: 30px;
+  --size-logo-lg: 48px;
   --shadow-sm: 0px 4px 12px 0px #0000001F;
   --shadow-card: 0px 10px 40px 0px #15318014;
   --shadow-lg: 0px 15px 40px 0px #0000001C;

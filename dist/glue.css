@@ -45,6 +45,7 @@
   --color-amber-300: #F2B84B;
   --color-amber-700: #8A5A00;
   --color-amber-900: #3A2800;
+  --color-verified: #0095F6;
   --color-white: #FFFFFF;
   --color-black: #000000;
   --font-family-sans: Inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
@@ -101,6 +102,9 @@
   --size-icon-sm: 16px;
   --size-icon-md: 20px;
   --size-icon-lg: 24px;
+  --size-logo-sm: 24px;
+  --size-logo-md: 30px;
+  --size-logo-lg: 48px;
   --shadow-sm: 0px 4px 12px 0px #0000001F;
   --shadow-card: 0px 10px 40px 0px #15318014;
   --shadow-lg: 0px 15px 40px 0px #0000001C;
@@ -1030,6 +1034,57 @@ video {
 }
 
 .g-navbar__brand:hover { text-decoration: none; }
+
+/* =========================================================
+   LOGO
+   Two <img> per logo: __on-light (navy) and __on-dark (white).
+   CSS shows the one that fits the theme and the section.
+   ========================================================= */
+.g-logo {
+  display: inline-flex;
+  align-items: center;
+  line-height: 0;
+  color: var(--color-text-primary);
+  text-decoration: none;
+}
+
+/* No `display` here: it would outrank the theme rules below. Flex items
+   are block-level anyway. */
+.g-logo img,
+.g-logo svg {
+  width: auto;
+  height: var(--logo-height, var(--size-logo-md));
+  border-radius: 0;
+}
+
+.g-logo--sm { --logo-height: var(--size-logo-sm); }
+.g-logo--lg { --logo-height: var(--size-logo-lg); }
+
+.g-navbar .g-logo { --logo-height: var(--size-logo-sm); }
+
+@media (min-width: 480px) {
+  .g-navbar .g-logo { --logo-height: var(--size-logo-md); }
+}
+
+.g-logo__on-dark { display: none; }
+
+[data-theme="dark"] .g-logo__on-light { display: none; }
+[data-theme="dark"] .g-logo__on-dark  { display: block; }
+
+/* Light theme: inverse sections are navy, so use the white logo */
+.g-section--inverse .g-logo__on-light { display: none; }
+.g-section--inverse .g-logo__on-dark  { display: block; }
+
+/* Dark theme: inverse sections are light navy, so use the navy logo */
+[data-theme="dark"] .g-section--inverse .g-logo__on-light { display: block; }
+[data-theme="dark"] .g-section--inverse .g-logo__on-dark  { display: none; }
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .g-logo__on-light { display: none; }
+  :root:not([data-theme="light"]) .g-logo__on-dark  { display: block; }
+  :root:not([data-theme="light"]) .g-section--inverse .g-logo__on-light { display: block; }
+  :root:not([data-theme="light"]) .g-section--inverse .g-logo__on-dark  { display: none; }
+}
 
 .g-navbar__links {
   display: none;

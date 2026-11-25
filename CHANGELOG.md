@@ -2,6 +2,11 @@
 
 Formato [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/), versionado [SemVer](https://semver.org/lang/es/).
 
+## [1.1.0] — 2026-11-24
+
+### Añadido
+- Logo de UXRodrigo en `assets/logo/`: versión navy, blanca y mono, símbolo, favicons y componente `.g-logo` que cambia según el tema. Tokens `color.verified` y `size.logo-sm/md/lg`. Guía en `docs/10-logo.md`.
+
 ## [1.0.0] — 2026-11-24
 
 ### Añadido

@@ -61,6 +61,7 @@
       "700": { "$value": "#8A5A00" },
       "900": { "$value": "#3A2800" }
     },
+    "verified": { "$value": "#0095F6", "$description": "Verified badge in the UXRodrigo logo. Logo only: never for UI." },
     "white": { "$value": "#FFFFFF" },
     "black": { "$value": "#000000" }
   },
@@ -146,7 +147,10 @@
     "control-lg": { "$value": "48px" },
     "icon-sm":    { "$value": "16px" },
     "icon-md":    { "$value": "20px" },
-    "icon-lg":    { "$value": "24px" }
+    "icon-lg":    { "$value": "24px" },
+    "logo-sm":    { "$value": "24px", "$description": "Logo height on phones (≈159px wide)." },
+    "logo-md":    { "$value": "30px", "$description": "Logo height in the navbar (≈199px wide, as on uxrodrigo.com)." },
+    "logo-lg":    { "$value": "48px", "$description": "Logo height in heroes and covers." }
   },
   "shadow": {
     "$type": "shadow",

@@ -20,6 +20,7 @@ Todos los componentes viven en [`css/components.css`](../css/components.css), us
 | Tarjeta | `.g-card`, `.g-project-card` | [tarjeta.md](componentes/tarjeta.md) |
 | Media | `.g-media`, `.g-figure` | [media.md](componentes/media.md) |
 | Alerta | `.g-alert` | [alerta.md](componentes/alerta.md) |
+| Logo | `.g-logo` | [10-logo.md](10-logo.md) |
 | Navbar | `.g-navbar` | [navbar.md](componentes/navbar.md) |
 | Footer | `.g-footer` | [footer.md](componentes/footer.md) |
 | Timeline | `.g-timeline` | [timeline.md](componentes/timeline.md) |

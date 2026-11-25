@@ -1,15 +1,16 @@
 {
   "name": "@uxrodrigo/glue-design-system",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Glue, the design system of UXRodrigo: design tokens, CSS components and guidelines for zeroheight, Figma and Figma Make.",
   "type": "module",
   "style": "dist/glue.css",
   "main": "dist/glue.css",
-  "files": ["dist", "css", "tokens", "guidelines", "docs"],
+  "files": ["dist", "css", "tokens", "assets", "guidelines", "docs"],
   "exports": {
     ".": "./dist/glue.css",
     "./css/*": "./css/*",
     "./tokens/*": "./tokens/*",
+    "./assets/*": "./assets/*",
     "./tokens.json": "./dist/tokens.json"
   },
   "scripts": {

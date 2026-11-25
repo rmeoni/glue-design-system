@@ -6,6 +6,7 @@ Read the files below before writing code:
 - [foundations.md](foundations.md) — color, type, spacing, radius, elevation tokens
 - [layout.md](layout.md) — container, sections, 12-column grid, breakpoints
 - [components.md](components.md) — every component, its markup and its rules
+- [logo.md](logo.md) — the UXRodrigo logo: files, sizes, theme switching
 
 ## Setup
 

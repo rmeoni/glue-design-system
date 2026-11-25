@@ -54,8 +54,11 @@ Naming: `.g-{component}`, `--{variant}`, `__{part}`. State is set with native at
 - Variants: default info, `--success`, `--warning`, `--error`. Contains an icon SVG + `<div><strong class="g-alert__title">…</strong><p>…</p></div>`.
 - `role="alert"` for errors, `role="status"` otherwise.
 
+## Logo — `.g-logo`
+- Always the real SVG from `assets/logo/`, never typed text. See [logo.md](logo.md).
+
 ## Navbar — `header.g-navbar`
-- Structure: `.g-container > .g-navbar__inner > (.g-navbar__brand, ul.g-navbar__links, .g-navbar__actions)` plus `nav.g-navbar__panel` for mobile.
+- Structure: `.g-container > .g-navbar__inner > (a.g-navbar__brand.g-logo, ul.g-navbar__links, .g-navbar__actions)` plus `nav.g-navbar__panel` for mobile.
 - Links `.g-navbar__link` with `aria-current="page"` on the current one. Max 5 links.
 - Actions: optional secondary `--md` button (shows ≥1280px), primary `--md` CTA, theme toggle, menu button (`aria-expanded`, `aria-controls`, hidden ≥992px).
 - Below 480px the bar hides its buttons: repeat the primary CTA inside `.g-navbar__panel` as `g-button g-button--md g-button--block`.
