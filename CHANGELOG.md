@@ -2,6 +2,12 @@
 
 Formato [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/), versionado [SemVer](https://semver.org/lang/es/).
 
+## [Sin publicar]
+
+### Corregido
+- Botones `--secondary` y `--ghost` dentro de `.g-section--inverse`: el hover ponía texto blanco sobre el celeste `navy.50` (ilegible) y en oscuro texto `navy.900` sobre `neutral.700`. Ahora el sistema los adapta y en hover se invierten (11.8:1 en ambos temas). Se quitaron los estilos inline de `examples/index.html` y `examples/screens/home.html`.
+- Grid: `.g-col-lg-start-*` hacía que la columna ocupara 1 sola columna. Los spans ahora son `grid-column: auto / span N`.
+
 ## [1.2.0] — 2026-11-24
 
 ### Añadido

@@ -79,6 +79,8 @@ En CSS cada token es una variable: `color.action.primary-bg` → `var(--color-ac
 | neutral.600 sobre white | 7.79:1 | AAA |
 | neutral.500 (borde control) sobre white | 5.31:1 | ≥3:1 ✓ |
 | navy.900 sobre navy.200 (primario oscuro) | 11.80:1 | AAA |
+| navy.700 sobre white (hover de secundario en `--inverse`, claro) | 11.78:1 | AAA |
+| navy.200 sobre navy.900 (hover de secundario en `--inverse`, oscuro) | 11.80:1 | AAA |
 | coral.400 sobre neutral.900 | 6.78:1 | AA |
 | neutral.400 sobre neutral.900 | 5.58:1 | AA |
 | green.600 / red.600 / amber.700 sobre white | 5.35 / 6.54 / 5.93 | AA |
@@ -89,5 +91,7 @@ En CSS cada token es una variable: `color.action.primary-bg` → `var(--color-ac
 - ✅ Usa siempre el token semántico. ❌ `color: #153180`.
 - ✅ Coral para señalar (texto pequeño, foco, selección). ❌ Botones con fondo coral.
 - ✅ Un solo `bg.inverse` por página, normalmente la sección de contacto final.
+- ✅ Sobre un fondo claro tintado (`navy.50`, `navy.100`, el celeste claro del hover y de los chips) el texto es siempre `navy.700`. ❌ Texto blanco o heredado de `--inverse` sobre ese celeste: no llega a 4.5:1.
+- ✅ En `.g-section--inverse` usa `g-button--secondary` o `g-button--ghost` tal cual: el sistema los adapta (borde y texto `text.on-inverse`; en hover se invierten). ❌ `style="color: inherit"` o `border-color: currentColor` en un botón: el estilo inline gana al `:hover` y rompe el contraste.
 - ❌ No pongas `border.default` en un control: no llega a 3:1. Usa `border.control`.
 - ❌ No uses `red` para destacar algo positivo ni `coral` para un error.

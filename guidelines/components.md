@@ -85,4 +85,5 @@ Naming: `.g-{component}`, `--{variant}`, `__{part}`. State is set with native at
 ## Do not
 - Invent new components when composition with existing ones works.
 - Use coral buttons, two primary buttons, or more than one `--inverse` section.
+- Override button colors inline (`style="color: inherit"`, `border-color: currentColor`). Inside `.g-section--inverse` use `.g-button--secondary` or `.g-button--ghost` as is: they take on-inverse colors and invert on hover. Never put white or on-inverse text on the light navy tint (`navy.50`/`navy.100`); text there is always `navy.700`.
 - Use icon fonts or emoji as icons; use inline SVG line icons.
